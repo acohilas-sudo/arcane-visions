@@ -1,0 +1,13 @@
+{
+  "name": "arcane-visions",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "deploy": "npx wrangler deploy --assets dist/"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^12.0.0"
+  }
+}

@@ -1,0 +1,43 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Cloudflare Pages — production headers for arcanevisions.art
+# ──────────────────────────────────────────────────────────────────────────────
+# Path matching is most-specific-first. Keep cache rules above the catch-all,
+# and keep /admin/* override above the catch-all so Decap CMS still loads.
+
+# ── Asset cache (immutable, year-long) ───────────────────────────────────────
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/uploads/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── /data/*.json — short cache so CMS edits propagate within ~5 min ─────────
+/data/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+# ── Admin (Decap CMS) — relax script-src so unpkg + GitHub API work ─────────
+/admin/*
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: blob: https://*.githubusercontent.com https://avatars.githubusercontent.com; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://api.github.com https://api.netlify.com; frame-src 'self' https://app.netlify.com; object-src 'none'; base-uri 'self'
+
+# ── Public site (catch-all) ─────────────────────────────────────────────────
+# CSP is conservative: own-origin defaults, Google Fonts whitelisted, Formspree
+# whitelisted for form posts, inline scripts allowed (the SPA uses inline JS).
+# 'unsafe-inline' is required by the current inline-script architecture; a
+# future hardening pass could move JS to a separate file and switch to a
+# nonce-based CSP.
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com; media-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests

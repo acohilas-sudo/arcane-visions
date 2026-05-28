@@ -1,0 +1,133 @@
+backend:
+  name: github
+  repo: acohilas-sudo/arcane-visions
+  branch: main
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+collections:
+  - name: "catalogue"
+    label: "The Work"
+    label_singular: "Work"
+    folder: "content/catalogue"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{name}} — {{tradition}} / {{category}}"
+    sortable_fields: ["name", "tradition", "category"]
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+      - label: "Tradition / Context"
+        name: "tradition"
+        widget: "select"
+        options:
+          - "Hermetic Order of the Golden Dawn"
+          - "Rosicrucian"
+          - "Martinist"
+          - "Masonic"
+          - "Rectified Scottish Rite"
+          - "Christian Hermetic"
+          - "Private Collector"
+          - "Independent / Custom"
+        default: "Hermetic Order of the Golden Dawn"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Regalia"
+          - "Bas-Reliefs"
+          - "Symbolic Art"
+          - "Portraiture"
+          - "Bespoke Fashion"
+          - "Heraldry"
+          - "Altar Furnishings"
+          - "Ritual Objects"
+          - "Other"
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Toggle ON to display this work on the home page."
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        label_singular: "Photo"
+        summary: "{{fields.alt}}"
+        required: false
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "image"
+            choose_url: false
+          - label: "Alt Text"
+            name: "alt"
+            widget: "string"
+            hint: "Brief description for accessibility and SEO."
+      - label: "Price"
+        name: "price"
+        widget: "string"
+        required: false
+        hint: "Leave blank for Price on Inquiry."
+      - label: "Specifications"
+        name: "specs"
+        widget: "text"
+        required: false
+        hint: "Dimensions, materials, techniques — one per line."
+      - label: "Description"
+        name: "body"
+        widget: "markdown"
+  - name: "home"
+    label: "Home Page"
+    files:
+      - name: "home"
+        label: "Home Page Content"
+        file: "content/home.md"
+        fields:
+          - label: "Tagline"
+            name: "tagline"
+            widget: "string"
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "text"
+          - label: "Tradition Tags"
+            name: "tradition_tags"
+            widget: "list"
+            field:
+              label: "Tag"
+              name: "tag"
+              widget: "string"
+  - name: "about"
+    label: "About Page"
+    files:
+      - name: "about"
+        label: "About Page Content"
+        file: "content/about.md"
+        fields:
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+  - name: "commissions"
+    label: "Commissions Page"
+    files:
+      - name: "commissions"
+        label: "Commissions Content"
+        file: "content/commissions.md"
+        fields:
+          - label: "Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+          - label: "Requirements"
+            name: "requirements"
+            widget: "list"
+            field:
+              label: "Item"
+              name: "item"
+              widget: "string"
