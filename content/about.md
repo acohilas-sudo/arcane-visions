@@ -10,11 +10,6 @@ body: |-
       There is a difference between owning a sacred object and working with one.
     </div>
 
-    <div class="about-image-block">
-      <img src="/images/uploads/products/the-pelican-in-her-piety/primary.jpg" alt="The Pelican in Her Piety — bas-relief, full composition" width="1350" height="1800" loading="lazy" decoding="async" />
-      <div class="image-caption">The Pelican in Her Piety — Arcane Visions</div>
-    </div>
-
     <div class="about-body">
 
       <p>Arcane Visions was founded on that distinction. We create sacred objects — symbolic art, bas-relief works, regalia, and ceremonial pieces — designed to function within the living current of initiatic practice and serious collection, not merely to decorate a shelf or photograph well. Every piece we produce is made to be lived with and worked alongside, by those who understand what they are for.</p>
