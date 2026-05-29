@@ -1,7 +1,7 @@
 ---
 name: HOGD Adept Lamen
 tradition: Hermetic Order of the Golden Dawn
-category: Regalia
+category: Symbolic Art
 featured: true
 price: "$1,500"
 purchase_mode: inquiry
