@@ -1,7 +1,7 @@
 ---
 name: Bespoke Masonic Lodge Coat of Arms
 tradition: Masonic
-category: Heraldry
+category: Heraldic Works
 featured: false
 price: ""
 purchase_mode: commission

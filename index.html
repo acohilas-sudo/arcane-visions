@@ -2188,6 +2188,12 @@ renderFeatured();
         products.forEach(function(p) {
           if (cats.indexOf(p.category) === -1) cats.push(p.category);
         });
+        // Explicit filter order by medium; categories not listed fall in afterward, in encounter order.
+        var CATEGORY_ORDER = ['Stained Glass', 'Bas-Reliefs', 'Paintings & Panels', 'Portraiture', 'Wearable Works', 'Heraldic Works'];
+        var presentCats = cats.filter(function(c) { return c !== 'All'; });
+        cats = ['All']
+          .concat(CATEGORY_ORDER.filter(function(c) { return presentCats.indexOf(c) !== -1; }))
+          .concat(presentCats.filter(function(c) { return CATEGORY_ORDER.indexOf(c) === -1; }));
         categories.length = 0;
         cats.forEach(function(c) { categories.push(c); });
         renderFeatured();

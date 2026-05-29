@@ -1,7 +1,7 @@
 ---
 name: Custom Hand-Painted Rosicrucian Battle Jacket
 tradition: Rosicrucian
-category: Bespoke Fashion
+category: Wearable Works
 featured: false
 price: ""
 purchase_mode: commission

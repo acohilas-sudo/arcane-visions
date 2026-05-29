@@ -1,7 +1,7 @@
 ---
 name: Bespoke Magical Shoes
 tradition: Independent / Custom
-category: Bespoke Fashion
+category: Wearable Works
 featured: false
 price: ""
 purchase_mode: commission

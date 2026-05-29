@@ -1,7 +1,7 @@
 ---
 name: Paschal Lamb
 tradition: Christian Hermetic
-category: Bas-Reliefs
+category: Stained Glass
 featured: true
 price: "$1,200"
 purchase_mode: direct

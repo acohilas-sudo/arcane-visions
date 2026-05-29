@@ -333,7 +333,15 @@ function bakeProductGridsIntoTemplate(template, catalogue) {
     if (product.category && !categories.includes(product.category)) categories.push(product.category);
   }
 
-  const filters = categories
+  // Explicit filter order by medium; categories not listed fall in afterward, in encounter order.
+  const CATEGORY_ORDER = ['Stained Glass', 'Bas-Reliefs', 'Paintings & Panels', 'Portraiture', 'Wearable Works', 'Heraldic Works'];
+  const presentCats = categories.filter(c => c !== 'All');
+  const orderedCategories = ['All',
+    ...CATEGORY_ORDER.filter(c => presentCats.includes(c)),
+    ...presentCats.filter(c => !CATEGORY_ORDER.includes(c))
+  ];
+
+  const filters = orderedCategories
     .map((cat, i) => `<button class="filter-btn${i === 0 ? ' active' : ''}" type="button">${escapeHtml(cat)}</button>`)
     .join('\n        ');
   const catalogueCards = catalogue.map(product => renderProductCardHTML(product, true)).join('\n        ');
