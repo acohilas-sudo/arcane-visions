@@ -10,6 +10,18 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-29
 
+### Production Deployment Verification — 2026-05-29
+
+* Verified Cloudflare Pages production deployment sourced from Git commit `4cd561b`
+* Confirmed Bespoke Rosicrucian Battle Jacket entry is live
+* Confirmed all 7 jacket images return HTTP 200 and render in correct order
+* Confirmed listing appears under Wearable Works
+* Confirmed featured placement appears on the home page
+* Confirmed About page displays "Sacred Art for the Initiated"
+* Confirmed old "Sacred work for operative practice" heading is absent
+* Confirmed production deployment originated from committed Git state rather than local working-tree changes
+* Confirmed no uncommitted modifications reached production
+
 ### Bespoke Rosicrucian Battle Jacket — 2026-05-29
 
 - Created new one-of-one Wearable Works catalogue entry
