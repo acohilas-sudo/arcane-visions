@@ -10,6 +10,19 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-29
 
+### Bespoke Rosicrucian Battle Jacket — 2026-05-29
+
+- Created new one-of-one Wearable Works catalogue entry
+- Added and organized final image gallery
+- Written catalogue card copy
+- Written full product-page copy
+- Set featured: true for home/featured presentation
+- Verified successful build
+- Verified entry renders correctly
+- Verified category placement under Wearable Works
+- Verified image ordering
+- Verified featured flag behavior
+
 ### About Page
 
 * Removed problematic About hero image block
