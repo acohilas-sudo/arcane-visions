@@ -4,7 +4,7 @@ body: |-
 
     <div class="section-label">About Arcane Visions</div>
 
-    <h2 class="about-heading">Sacred work for <em>operative practice</em></h2>
+    <h2 class="about-heading">Sacred Art for the Initiated</h2>
 
     <div class="opening-statement">
       There is a difference between owning a sacred object and working with one.
