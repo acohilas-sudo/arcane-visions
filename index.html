@@ -267,6 +267,16 @@
     display: none; background: var(--bg);
     border-bottom: 1px solid var(--gold-dim);
     padding: 22px 28px; flex-direction: column; gap: 20px;
+    /* Fixed to the VIEWPORT, not document flow. Previously this panel was
+       position:static, so opening it inserted it at the top of the document —
+       off-screen and unreachable whenever the reader had scrolled down. It now
+       overlays from any scroll position, anchored just beneath the sticky header
+       (which stays above it at z-index 100 so the ✕ close control is tappable). */
+    position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+    padding-top: 84px;
+    max-height: 100vh; max-height: 100dvh; overflow-y: auto;
+    overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+    box-shadow: 0 22px 50px rgba(0,0,0,0.5);
   }
   .mobile-nav.open { display: flex; }
   .mobile-nav a {

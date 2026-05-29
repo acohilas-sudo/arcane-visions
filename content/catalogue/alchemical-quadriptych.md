@@ -14,19 +14,9 @@ specs: |-
   Handcrafted in Virginia
 photos:
   - image: /images/uploads/products/alchemical-quadriptych/primary.jpg
-    alt: Alchemical Quadriptych — full set
-  - image: /images/uploads/products/alchemical-quadriptych/gallery-1.jpg
-    alt: Alchemical Quadriptych — panel detail
-  - image: /images/uploads/products/alchemical-quadriptych/gallery-2.jpg
-    alt: Alchemical Quadriptych — second panel detail
-  - image: /images/uploads/products/alchemical-quadriptych/gallery-3.jpg
-    alt: Alchemical Quadriptych — third panel detail
-  - image: /images/uploads/products/alchemical-quadriptych/gallery-4.jpg
-    alt: Alchemical Quadriptych — fourth panel detail
-  - image: /images/uploads/products/alchemical-quadriptych/gallery-5.jpg
-    alt: Alchemical Quadriptych — close detail of figural work
+    alt: "Alchemical Quadriptych — the complete set of four panels: Nigredo, Albedo, Citrinitas, Rubedo"
   - image: /images/uploads/products/alchemical-quadriptych/gallery-6.jpg
-    alt: Alchemical Quadriptych — close detail of surface
+    alt: Alchemical Quadriptych — the Citrinitas panel shown complete
 ---
 
 A quadriptych on the alchemical opus. Four panels, read together or separately, tracking the stages by which a base substance becomes something else. The pictorial language is plainly alchemical: the work does not paraphrase the tradition into decoration; it draws directly from the established figures of nigredo, albedo, citrinitas, and rubedo.

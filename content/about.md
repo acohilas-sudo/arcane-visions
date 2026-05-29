@@ -11,7 +11,7 @@ body: |-
     </div>
 
     <div class="about-image-block">
-      <img src="/images/uploads/about/about-hero.jpg" alt="Alchemical Quadriptych — handcrafted by Arcane Visions" />
+      <img src="/images/uploads/products/alchemical-quadriptych/primary.jpg" alt="Alchemical Quadriptych — the complete set of four panels: Nigredo, Albedo, Citrinitas, Rubedo" width="1800" height="1651" loading="lazy" decoding="async" />
       <div class="image-caption">Alchemical Quadriptych — Arcane Visions</div>
     </div>
 
