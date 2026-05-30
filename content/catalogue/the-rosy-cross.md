@@ -1,7 +1,7 @@
 ---
 name: The Rosy Cross
 tradition: Rosicrucian
-category: Paintings & Panels
+category: Symbolic Art
 featured: false
 price: ""
 purchase_mode: direct

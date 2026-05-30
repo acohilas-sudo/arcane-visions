@@ -1,7 +1,7 @@
 ---
 name: The Pelican in Her Piety
 tradition: Rosicrucian
-category: Bas-Reliefs
+category: Symbolic Art
 featured: true
 price: ""
 purchase_mode: direct

@@ -1,7 +1,7 @@
 ---
 name: Alchemical Quadriptych
 tradition: Christian Hermetic
-category: Paintings & Panels
+category: Symbolic Art
 featured: true
 price: ""
 purchase_mode: inquiry

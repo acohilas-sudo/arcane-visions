@@ -1,7 +1,7 @@
 ---
 name: Paschal Lamb
 tradition: Christian Hermetic
-category: Stained Glass
+category: Symbolic Art
 featured: true
 price: "$1,200"
 purchase_mode: direct
