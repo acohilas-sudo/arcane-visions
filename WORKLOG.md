@@ -10,6 +10,17 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-29
 
+### Battle Jacket Offerings Restructured — 2026-05-29
+
+- Corrected the pricing/positioning of the two battle jackets to reflect reality
+- Created **Pelican Battle Jacket** as the finished one-of-one available for acquisition ($2,200, featured), using the actual available jacket's photos
+- Repositioned **Bespoke Rosicrucian Battle Jacket** (Dum Spiro Spero) as a bespoke commission offering (Commissions from $2,200), and unfeatured it
+- Retired the old generic commission template (`custom-hand-painted-rosicrucian-battle-jacket`); its role is now filled by the Bespoke Rosicrucian commission entry
+- Moved the Pelican jacket photos into the new listing's image folder
+- Added a 301 redirect from the retired template's URL to the new Pelican Battle Jacket page
+- Note: "Pelican Battle Jacket" is a separate work from the existing "The Pelican in Her Piety" bas-relief
+- Verified successful build
+
 ### Production Deployment Verification — 2026-05-29
 
 * Verified Cloudflare Pages production deployment sourced from Git commit `4cd561b`

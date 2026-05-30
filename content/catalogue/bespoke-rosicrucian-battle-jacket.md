@@ -2,12 +2,12 @@
 name: Bespoke Rosicrucian Battle Jacket
 tradition: Rosicrucian
 category: Wearable Works
-featured: true
-price: "$2,200"
-purchase_mode: inquiry
-acquisition_note: "A single original work — not reproduced and not editioned. Available to one collector."
+featured: false
+price: "Commissions from $2,200"
+purchase_mode: commission
+acquisition_note: "Created to commission. Final price varies with symbolism, complexity, materials, and customization; $2,200 is the starting point."
 specs: |-
-  One-of-one original — no reproductions, no second edition
+  Created to commission — each jacket unique to its wearer
   Hand-painted on a premium black Levi's denim trucker jacket
   Rosy Cross and the motto Dum Spiro Spero across the back
   Acrylic, heat-applied vinyl, and rhinestone accents · over 20 hours by hand
@@ -32,7 +32,7 @@ photos:
 
 Some works are worn. Fewer are kept, studied, and handed on. This is one of the latter — a single painted jacket that carries the central emblem of the Rosicrucian tradition across its back and asks to be read as carefully as it was made.
 
-Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe, I hope." Beneath it, a radiant Rosy Cross opens at the centre of a field of roses, serpents, and the black-and-white pavement of the temple. There is one. There will only ever be one — no reproduction, no second edition.
+Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe, I hope." Beneath it, a radiant Rosy Cross opens at the centre of a field of roses, serpents, and the black-and-white pavement of the temple. Each jacket of this kind is painted to commission — created once, for one wearer, and never repeated.
 
 ## Artist & Craftsmanship
 
@@ -55,14 +55,12 @@ Above it all stands the motto. *Dum Spiro Spero* is a maxim of perseverance: hop
 - High-quality heat-applied vinyl elements
 - Rhinestone accents
 - More than 20 hours of hand craftsmanship
-- One-of-one creation — no reproductions, no second edition
+- Created to commission — each jacket unique to its wearer; never reproduced
 
 ## Pricing & Acquisition
 
-Offered at **$2,200**. The figure reflects what the piece is: a signed, singular work by a professional artist of long standing, conceived as a whole and executed by hand over many hours, that will never be made again. It is acquired as one acquires a painting — for its authorship, its symbolic literacy, and its permanence — and it happens to be wearable. The collector who keeps it owns the only one in existence.
+Each jacket is created to commission. The work shown here is one such piece; yours would be painted to your own symbolism, tradition, and specification. Final pricing varies with the complexity of the imagery, the materials and customization involved, and the scope agreed — **commissions begin at $2,200**, and a consultation is required to confirm scope.
 
-## Acquisition
+A commission begins with a conversation: we confirm the symbolic field, source garment, sizing, materials, and timeline in writing before any work begins.
 
-This work is available to a single collector. Acquisition is by private inquiry; a closer viewing of its details can be arranged on request.
-
-**$2,200** · One-of-one · Inquire to acquire.
+**Commissions from $2,200** · Created to commission · Begin a commission inquiry.

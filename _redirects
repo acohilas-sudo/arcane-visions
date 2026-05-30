@@ -1,0 +1,10 @@
+# Cloudflare Pages redirects
+# Contact was merged into Commissions — preserve old links and any external
+# references by sending them to the inquiry experience.
+/contact      /commissions/   301
+/contact/     /commissions/   301
+
+# Old generic battle-jacket commission template retired; its photos now belong to the
+# finished one-of-one Pelican Battle Jacket. Preserve the old live URL.
+/the-work/custom-hand-painted-rosicrucian-battle-jacket   /the-work/pelican-battle-jacket/   301
+/the-work/custom-hand-painted-rosicrucian-battle-jacket/  /the-work/pelican-battle-jacket/   301
