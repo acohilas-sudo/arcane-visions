@@ -203,7 +203,10 @@
 
   .content { position: relative; z-index: 1; }
 
-  body.modal-open { overflow: hidden; }
+  /* Robust scroll lock: pin the body in place (position:fixed) so iOS Safari
+     cannot touch-scroll the page behind the lightbox. The scroll offset is
+     restored in JS on close, so there is no viewport jump or position loss. */
+  body.modal-open { position: fixed; left: 0; right: 0; width: 100%; overflow: hidden; }
 
   .font-display { font-family: 'Cinzel Decorative', 'Cinzel', serif; }
   .font-heading { font-family: 'Cinzel', serif; }
@@ -614,10 +617,11 @@
     color: var(--text-soft);
   }
 
-  /* Lightbox — solid black, no blur */
+  /* Lightbox — solid black, no blur. Fully opaque so no underlying card,
+     price, CTA, or adjacent product can bleed through the overlay. */
   .lightbox {
     display: none; position: fixed; inset: 0; z-index: 300;
-    background: rgba(0,0,0,0.96);
+    background: #000;
     align-items: center; justify-content: center; cursor: pointer;
   }
   .lightbox.open { display: flex; animation: fadeIn 0.3s ease; }
@@ -1599,6 +1603,31 @@ document.addEventListener('click', (e) => {
   openLightbox(images, idx);
 });
 
+// Keyboard parity for the static-page gallery (B4): make the stacked detail
+// images focusable and openable via Enter/Space, mirroring the click handler.
+function enhanceDetailImageA11y() {
+  document.querySelectorAll('#productDetailLayout img[data-lightbox-images]').forEach(img => {
+    if (img.dataset.kbReady) return;
+    img.dataset.kbReady = '1';
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    if (!img.getAttribute('aria-label')) {
+      img.setAttribute('aria-label', (img.getAttribute('alt') || 'Product image') + ' - open image viewer');
+    }
+  });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+  const img = e.target.closest && e.target.closest('#productDetailLayout img[data-lightbox-images]');
+  if (!img) return;
+  e.preventDefault();
+  const images = JSON.parse(img.getAttribute('data-lightbox-images').replace(/&quot;/g, '"'));
+  const idx = parseInt(img.getAttribute('data-lightbox-index'), 10);
+  openLightbox(images, idx);
+});
+if (document.readyState !== 'loading') enhanceDetailImageA11y();
+else document.addEventListener('DOMContentLoaded', enhanceDetailImageA11y);
+
 // Each render guards on `products.length === 0` so the build-time static cards
 // stay on screen until the fetch hydrates. Previously these functions wiped
 // the grid immediately on page load and relied on the fetch arriving — if the
@@ -1690,7 +1719,22 @@ function releaseFocus() {
 function syncBodyModalOpen() {
   const anyOpen = ['inquiryModal', 'lightbox']
     .some(id => document.getElementById(id)?.classList.contains('open'));
-  document.body.classList.toggle('modal-open', anyOpen);
+  const body = document.body;
+  const isLocked = body.classList.contains('modal-open');
+  if (anyOpen && !isLocked) {
+    // Remember scroll position, then pin the body so the background cannot
+    // scroll on iOS Safari while a modal is open.
+    const y = window.scrollY || window.pageYOffset || 0;
+    body.dataset.scrollY = String(y);
+    body.style.top = (-y) + 'px';
+    body.classList.add('modal-open');
+  } else if (!anyOpen && isLocked) {
+    // Unpin and restore the exact scroll position - no jump, no position loss.
+    const y = parseInt(body.dataset.scrollY || '0', 10);
+    body.classList.remove('modal-open');
+    body.style.top = '';
+    window.scrollTo(0, y);
+  }
 }
 
 const BASE_ORIGIN = 'https://arcanevisions.art';
@@ -2047,8 +2091,11 @@ function openLightbox(images, index) {
   lightboxIndex = index;
   const img = document.getElementById('lightboxImg');
   img.style.opacity = 0;
-  img.src = images[index];
+  // Reveal on load OR error - never leave the viewer blank/transparent if an
+  // image fails (e.g. a 404 or an HTML response from a cache-poisoned URL).
   img.onload = () => { img.style.opacity = 1; };
+  img.onerror = () => { img.style.opacity = 1; };
+  img.src = images[index];
   const lightbox = document.getElementById('lightbox');
   lightbox.classList.add('open');
   updateLightboxCounter();
@@ -2072,8 +2119,9 @@ function navLightbox(dir) {
   const img = document.getElementById('lightboxImg');
   img.style.opacity = 0;
   setTimeout(() => {
-    img.src = lightboxImages[lightboxIndex];
     img.onload = () => { img.style.opacity = 1; };
+    img.onerror = () => { img.style.opacity = 1; };
+    img.src = lightboxImages[lightboxIndex];
   }, 100);
   updateLightboxCounter();
 }
@@ -2086,7 +2134,7 @@ function updateLightboxCounter() {
 }
 
 document.addEventListener('keydown', (e) => {
-  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (!document.getElementById('lightbox')?.classList.contains('open')) return;
   if (e.key === 'ArrowRight') navLightbox(1);
   if (e.key === 'ArrowLeft') navLightbox(-1);
 });
