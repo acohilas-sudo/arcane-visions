@@ -1,6 +1,6 @@
 ---
 name: The Pelican in Her Piety
-tradition: Rosicrucian
+tradition: Christian
 category: Symbolic Art
 featured: true
 price: ""
@@ -28,7 +28,7 @@ The Pelican in Her Piety is one of the older sacred figures of the Western tradi
 
 ## Symbolic Register
 
-In its Christian register the Pelican is the sacrificial Christ — the body opened, the life poured out, the children fed. In its Rosicrucian register it sits at the centre of the order's Christian-hermetic lineage and appears in the regalia of the 18° degree of the Rose Croix. In its older alchemical register the Pelican is the vessel: the closed retort in which a substance circulates and feeds back upon itself until something purified emerges.
+The Pelican is first a Christian figure — the sacrificial Christ, the body opened, the life poured out, the children fed. The same image was carried into Rosicrucian iconography, where it appears in the 18° degree of the Rose Croix. (The name is older still: in alchemy the *pelican* is the closed vessel in which a substance circulates and feeds back upon itself until something purified emerges.)
 
 This bas-relief carries the figure plainly. The wound is shown. The young are shown. The composition is not softened.
 
@@ -36,9 +36,9 @@ This bas-relief carries the figure plainly. The wound is shown. The young are sh
 
 The work is built as a sculptural bas-relief on a stable substrate, hand-finished with restrained gold on the principal forms against a dark ground. The relief is registered for legibility — wing, breast, beak, young — at altar or wall distance. The surface is not polished to a mirror finish; it reads as a sculptural object.
 
-## Use
+## Placement
 
-The piece is sized for long-form display: sanctum, library, lodge, or collector's wall. It is intended for placement rather than ritual handling.
+The piece is sized for long-form display: a private collection, library, or gallery wall.
 
 ## Acquisition
 

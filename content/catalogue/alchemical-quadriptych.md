@@ -1,6 +1,6 @@
 ---
 name: Alchemical Quadriptych
-tradition: Christian Hermetic
+tradition: Alchemical
 category: Symbolic Art
 featured: true
 price: ""
@@ -29,9 +29,9 @@ The four-panel form mirrors the four traditional stages of the Great Work. Each 
 
 The set is painted on prepared panel and finished as a hung quadriptych. Gold is used where the source figures require it; the rest of the field is held in dark earth. The panels read as a single composition when hung in sequence, and stand independently when separated.
 
-## Use
+## Placement
 
-The complete quadriptych is the intended unified composition — sized and constructed for long-form display in a collector's sanctum, library, or temple, wherever a four-panel set has the wall to breathe. The panels also stand on their own, and individual panels may be acquired separately.
+The complete quadriptych is the intended unified composition — sized and constructed for long-form display in a private collection or library, wherever a four-panel set has the wall to breathe. The panels also stand on their own, and individual panels may be acquired separately.
 
 ## Acquisition
 

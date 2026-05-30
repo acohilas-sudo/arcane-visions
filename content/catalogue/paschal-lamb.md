@@ -1,6 +1,6 @@
 ---
 name: Paschal Lamb
-tradition: Christian Hermetic
+tradition: Christian
 category: Symbolic Art
 featured: true
 price: "$1,200"
@@ -9,7 +9,7 @@ specs: |-
   The Agnus Dei with banner and triumphant cross
   Sculptural bas-relief construction
   Hand-finished surface in restrained gold and dark ground
-  Symbolic register: Christian, Rosicrucian, and Hermetic
+  Symbolic register: Christian, with Rosicrucian resonance
   Limited edition · Handcrafted in Virginia
 photos:
   - image: /images/uploads/products/paschal-lamb/primary.jpg
@@ -28,7 +28,7 @@ The Paschal Lamb — the Agnus Dei standing with the banner of the Resurrection 
 
 ## Symbolic Register
 
-The Lamb carries multiple registers at once. In its Christian register it is the slain and risen Christ, the sacrificial offering at Passover and the victor over death. In its Rosicrucian register it descends from the same lineage of Christian hermetic symbolism that gives the Rosy Cross its proper context. In its Hermetic register it appears within the inner symbolic system of several Western orders, where the Lamb is bound to the imagery of the Mount, the Book, and the seal.
+The Lamb is first a Christian figure — the slain and risen Christ, the sacrificial offering at Passover and the victor over death. The same image was carried into Rosicrucian iconography through the Christian lineage that gives the Rosy Cross its context, where the Lamb upon the Book of Seven Seals belongs to the imagery of the Rose Croix.
 
 The figure here is the canonical figure: the Lamb standing, the banner of the cross of victory unfurled, the head turned in the traditional posture.
 
@@ -36,9 +36,9 @@ The figure here is the canonical figure: the Lamb standing, the banner of the cr
 
 The piece is built in materials chosen for long-form display: a stable substrate, hand-finished relief surface, and restrained gilding on the principal symbolic elements. The composition is centred and bordered cleanly; the work is intended to read at altar or wall distance.
 
-## Use
+## Placement
 
-Suited to altar placement, devotional sanctum, ceremonial library, or the collector's wall. Sized for long-form display rather than ritual wear.
+Suited to a private collection, library, study, or gallery wall. Sized for long-form display.
 
 ## Acquisition
 
