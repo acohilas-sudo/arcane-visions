@@ -29,7 +29,7 @@ photos:
     alt: Pelican Battle Jacket — alternate rose sleeve view
 ---
 
-Some works are worn. Fewer are kept, studied, and handed on. This is the finished one — a single painted jacket, complete and available to one collector, that carries the Pelican in Her Piety at its heart.
+Created as a one-of-one wearable artwork on premium black denim, hand-painted with the Pelican in Her Piety.
 
 Across the shoulders runs the motto *IGNE NATURA RENOVATUR INTEGRA*. Beneath it, the Pelican — crowned and ringed in sacred flame — wounds her own breast to feed her young, set upon the Rosy Cross above the banner **INRI**. Roses climb one sleeve, a serpent the other, and checkerboard panels run the sides. There is one, and only one.
 
@@ -37,7 +37,7 @@ Across the shoulders runs the motto *IGNE NATURA RENOVATUR INTEGRA*. Beneath it,
 
 The jacket is the work of Debbi Cohilas. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
 
-More than twenty hours of handwork went into it. The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not — and sealed for the realities of wear.
+Approximately twenty hours of artistic labor went into the piece. The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not — and sealed for the realities of wear.
 
 ## Symbolism & Meaning
 

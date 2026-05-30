@@ -9,7 +9,7 @@ specs: |-
   Sculptural bas-relief of the Pelican vulning her breast
   The mother bird in piety, feeding her young from her own blood
   Restrained gold finish on dark ground
-  Sized for sanctum, library, or altar display
+  Sized for a private collection, library, or gallery wall
   Limited edition · Handcrafted in Virginia
 photos:
   - image: /images/uploads/products/the-pelican-in-her-piety/primary.jpg
@@ -26,7 +26,7 @@ photos:
 
 The Pelican in Her Piety is one of the older sacred figures of the Western tradition. The mother bird turns to her own breast, opens it, and feeds her young with her own blood. The image carried weight in early Christian and Rosicrucian iconography long before it became a heraldic ornament, and it has not lost it.
 
-## Symbolic Register
+## Symbolism
 
 The Pelican is first a Christian figure — the sacrificial Christ, the body opened, the life poured out, the children fed. The same image was carried into Rosicrucian iconography, where it appears in the 18° degree of the Rose Croix. (The name is older still: in alchemy the *pelican* is the closed vessel in which a substance circulates and feeds back upon itself until something purified emerges.)
 

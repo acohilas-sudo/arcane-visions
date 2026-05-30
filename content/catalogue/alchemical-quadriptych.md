@@ -21,7 +21,7 @@ photos:
 
 A quadriptych on the alchemical opus. Four panels, read together or separately, tracking the stages by which a base substance becomes something else. The pictorial language is plainly alchemical: the work does not paraphrase the tradition into decoration; it draws directly from the established figures of nigredo, albedo, citrinitas, and rubedo.
 
-## Symbolic Register
+## Symbolism
 
 The four-panel form mirrors the four traditional stages of the Great Work. Each panel carries the figures appropriate to its stage — the dissolution, the washing, the yellowing, the reddening — handled with the restraint of source material rather than the flourish of fantasy illustration. The viewer who reads the tradition will recognise the figures. The viewer who does not will read the work as a careful sequence of paintings.
 

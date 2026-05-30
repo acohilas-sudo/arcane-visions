@@ -21,7 +21,7 @@ A bespoke portrait in colored pencil and watercolor on paper. The medium is ligh
 
 A commission begins with a conversation about the sitter, the intended placement of the finished work, and the kind of presence the portrait should carry. Reference photography is supplied or arranged. The piece is built from those references with a deliberate, low-volume cadence.
 
-The medium suits portraits intended for a private space — a study, a library, a personal sanctum — rather than a large public wall.
+The medium suits portraits intended for a private space — a study or library — rather than a large public wall.
 
 ## Use
 

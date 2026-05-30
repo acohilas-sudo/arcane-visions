@@ -17,11 +17,11 @@ photos:
 
 A painted Rosy Cross. The figure has held weight in the Western tradition for centuries; this rendering places it on the wall rather than on the breast.
 
-The piece is hand-painted on prepared ground, restrained in palette, finished to be looked at and lived with rather than worked in. Each example carries the small natural variation of brushwork — the lines are not stenciled.
+The piece is hand-painted on prepared ground, restrained in palette, and finished to be displayed and lived with. Each example carries the small natural variation of brushwork — the lines are not stenciled.
 
 ## Placement
 
-Sized for a sanctum wall, a library, or a study — wherever the figure is wanted as a fixed presence.
+Sized for a private collection, library, or study wall.
 
 ## Acquisition
 

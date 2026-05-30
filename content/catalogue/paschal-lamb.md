@@ -9,7 +9,7 @@ specs: |-
   The Agnus Dei with banner and triumphant cross
   Sculptural bas-relief construction
   Hand-finished surface in restrained gold and dark ground
-  Symbolic register: Christian, with Rosicrucian resonance
+  Symbolism: Christian, with Rosicrucian resonance
   Limited edition · Handcrafted in Virginia
 photos:
   - image: /images/uploads/products/paschal-lamb/primary.jpg
@@ -26,7 +26,7 @@ photos:
 
 The Paschal Lamb — the Agnus Dei standing with the banner of the Resurrection and the triumphant cross — is one of the oldest sacred figures of the Western tradition. The work renders this figure as a bas-relief object, built in restrained material so the symbol carries its weight without ornament.
 
-## Symbolic Register
+## Symbolism
 
 The Lamb is first a Christian figure — the slain and risen Christ, the sacrificial offering at Passover and the victor over death. The same image was carried into Rosicrucian iconography through the Christian lineage that gives the Rosy Cross its context, where the Lamb upon the Book of Seven Seals belongs to the imagery of the Rose Croix.
 

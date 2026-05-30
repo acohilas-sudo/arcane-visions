@@ -9,7 +9,7 @@ specs: |-
   Sculptural Rosicrucian Rosy Cross
   Bas-relief construction
   Restrained gold finish on dark ground
-  Sized for altar, sanctum, or collector wall
+  Sized for a private collection, library, or gallery wall
   Limited edition · Handcrafted in Virginia
 photos:
   - image: /images/uploads/products/rosicrucian-rosy-cross-bas-relief/primary.jpg
@@ -20,13 +20,13 @@ photos:
     alt: Rosicrucian Rosy Cross Bas-Relief — close detail
 ---
 
-A sculptural rendering of the Rosicrucian Rosy Cross — the figure lifted into three dimensions for altar, sanctum, or collector wall.
+A sculptural rendering of the Rosicrucian Rosy Cross — the figure lifted into three dimensions for a private collection, library, or gallery wall.
 
 The piece is built as a bas-relief on a stable substrate, finished with restrained gilding on the principal forms against a dark ground. Sculptural relief registers the major symbolic elements rather than ornamenting the field — the figure reads clearly at the working distance of a temple wall or library, in candlelight or low ambient light. The surface is not polished to a high gloss; it reads as a sculptural object, not as print and not as mirror.
 
 ## Placement
 
-Sized to be hung or set on a sanctum altar, in a temple, or in a private collector's library. Long-form display.
+Sized to be hung or set in a private collection, library, or gallery. Long-form display.
 
 ## Acquisition
 

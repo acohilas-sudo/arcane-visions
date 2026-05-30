@@ -7,8 +7,8 @@ price: ""
 purchase_mode: commission
 specs: |-
   Hand-finished bespoke shoes
-  Personal symbolic field worked into the upper, sole, or interior
-  Built to the wearer's measurements and to the wearer's practice
+  Personal symbolic design hand-painted on the upper, sole, or interior
+  Built to the wearer's measurements
   One-of-one · Handcrafted in Virginia
 photos:
   - image: /images/uploads/products/bespoke-magical-shoes/primary.jpg
@@ -19,11 +19,11 @@ photos:
     alt: Bespoke Magical Shoes — second alternate view
 ---
 
-A pair of hand-finished shoes, built to the wearer and to the wearer's practice. The premise is straightforward: the things a person walks in carry weight, and a piece of footwear made with intent carries different weight than a piece made anonymously.
+A pair of hand-finished shoes, hand-painted with a personal symbolic design and built to the wearer's measurements — a one-of-one wearable artwork made to commission.
 
 ## Approach
 
-A commission begins with a conversation about the wearer's practice and the role the shoes should play within it. Symbolic elements — a working sigil on the insole, a private inscription beneath the heel, a hand-painted figure on the upper — are placed where the wearer wants them placed, including in positions only the wearer will ever see.
+A commission begins with a conversation about the design and the symbolism the wearer wants. Hand-painted elements — a symbol on the insole, an inscription beneath the heel, a figure on the upper — are placed where the wearer chooses.
 
 Construction follows the agreed brief. Materials, sole construction, and finish are confirmed before work begins.
 

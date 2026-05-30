@@ -30,7 +30,7 @@ photos:
     alt: Serpent sleeve detail — a crowned serpent beside a checkerboard panel
 ---
 
-Some works are worn. Fewer are kept, studied, and handed on. This is one of the latter — a single painted jacket that carries the central emblem of the Rosicrucian tradition across its back and asks to be read as carefully as it was made.
+Created as a one-of-one wearable artwork on premium black denim, hand-painted with the Rosy Cross — the central emblem of the Rosicrucian tradition.
 
 Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe, I hope." Beneath it, a radiant Rosy Cross opens at the centre of a field of roses, serpents, and the black-and-white pavement of the temple. Each jacket of this kind is painted to commission — created once, for one wearer, and never repeated.
 
@@ -38,7 +38,7 @@ Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe,
 
 The jacket is the work of Debbi Cohilas. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
 
-More than twenty hours of handwork went into it. The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not. The back panel was built by hand from the centre outward, as the process photographs attest.
+Approximately twenty hours of artistic labor went into the piece. The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not. The back panel was built by hand from the centre outward, as the process photographs attest.
 
 ## Symbolism & Meaning
 
