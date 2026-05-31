@@ -6,6 +6,9 @@ featured: true
 featured_order: 4
 price: "$175 per panel · $600 complete set"
 purchase_mode: retail
+purchase_links:
+  - label: "Purchase the Complete Set — $600"
+    url: "https://buy.stripe.com/00w9AVbdN9hg2Mg6pk4sE09"
 specs: |-
   Four original watercolor paintings representing the stages of the Magnum Opus
   Nigredo, Albedo, Citrinitas, and Rubedo
