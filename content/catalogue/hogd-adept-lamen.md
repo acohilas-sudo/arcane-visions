@@ -7,11 +7,12 @@ featured_order: 5
 price: "$1,500"
 purchase_mode: inquiry
 specs: |-
-  Adeptus Minor 5°=6° breast-plate · Rosy Cross of the Adept
-  Hand-painted to the Order's color attributions
-  Hebrew letters in their canonical placements
-  Materials confirmed at commission · Made to specification
-  Handcrafted in Virginia
+  Limited edition of 5 worldwide · 4 of 5 remaining
+  18″ × 14″ (45.7 cm × 35.6 cm)
+  Leaded stained glass · King Scale colors · integrated warm LED lighting
+  Deep matte black shadow box · ready to hang · hanging hardware included
+  Includes signed Certificate of Authenticity, numbered 2/5
+  In stock · ships ready to hang · delivery timeline confirmed at order
 photos:
   - image: /images/uploads/products/hogd-adept-lamen/primary.jpg
     alt: HOGD Adept Lamen — Rosy Cross of the Adept, Arcane Visions
@@ -19,24 +20,32 @@ photos:
     alt: HOGD Adept Lamen — alternate view
 ---
 
-The Adept Lamen is the breast-plate of the Adeptus Minor of the Hermetic Order of the Golden Dawn — the symbolic figure worn over the heart and consecrated to the Adept's individual working. Its design is the Rosy Cross of the Adept: a seven-rayed cross bearing the Hebrew letters of the four scales of color, the planetary signatures, and the rose of the Adept at the centre.
+# Hermetic Order of the Golden Dawn Adept Lamen
 
-## Symbolic Construction
+This is the Adept Lamen of the Hermetic Order of the Golden Dawn. The central emblem of the Rosae Rubae et Aureae Crucis — the Second Order of the Golden Dawn — worn over the heart by the Adeptus Minor at the moment of their initiation into the inner mysteries. Here rendered as a full 18″ × 14″ leaded stained glass panel, handcrafted with the precision and reverence the symbol demands.
 
-The lamen is built from the source description set out in the inner Order's instruction. The cross-rays are laid in the King Scale, the rose petals in the Queen, Prince, and Princess Scales as the petals require, and the Hebrew letters are placed in their canonical positions across the four arms. The planetary signs occupy the central hexagram. The rose at the centre carries the twenty-two letters of the Hebrew alphabet, ordered by element, planet, and zodiac, and the central INRI is fixed in the appropriate hand.
+Every detail is faithful and intentional. The cross is divided into its four elemental arms: yellow above, red to the left, blue to the right, the lower arm banded in the four colors of Earth — yellow, russet, green, and black — the complete elemental attribution as given in the King Scale. At the center, the great 22-segment color wheel — one segment for each path of the Tree of Life, each bearing its Hebrew letter, rendered here in individual leaded glass in the full King Scale of color. At the very heart of the wheel, a single red jewel — the rose, the blood, the center that holds everything. Radiating outward from the cross through the opalescent white field behind it, leaded spokes fan out like rays of the inner sun. On each arm, the planetary and elemental symbols of the Western magical tradition — pentagrams, planetary glyphs, alchemical sigils — each painted with precision onto the glass. The border: black and white checkered tiles, the most ancient floor of the Temple.
 
-Color is not interpreted. The placements follow the source.
+The integrated LED lighting illuminates the piece from within, transforming the opalescent background into something that genuinely glows — the way a rose window glows in a cathedral, from the inside out.
 
-## Materials
+This piece honors the teachings preserved by Israel Regardie and the tradition that shaped the modern Western esoteric revival. It is not reproduction merchandise. It is a handcrafted devotional piece for the serious practitioner, the dedicated collector, or the initiate who wants the central symbol of their Work on their wall — rendered as it deserves to be rendered.
 
-The lamen is built to the specifications agreed at commission. Materials are selected for ceremonial life — sized correctly for breast-plate wear, finished so the symbolic field reads at a working distance, and constructed to the standard of a piece intended to remain in service across an Adept's working life.
+This edition is limited to 5 pieces worldwide. One has already found its home. Four remain.
 
-## Use
+Each piece is hand-numbered and accompanied by a signed Certificate of Authenticity from the artist. When this edition closes, it closes permanently.
 
-The Adept Lamen is worn during ritual work appropriate to the grade. It is not display regalia. It is consecrated to the Adept and is, by convention, the Adept's own.
+Edition 2 of 5. Hand-crafted. Irreplaceable.
 
-## Acquisition
+## Details
 
-Acquisition is by inquiry. The Adept's grade, the source diagram preferred (where there is a choice), and any variant required by the Adept's particular line are confirmed before the piece is built.
+Dimensions: 18″ × 14″ (45.7 cm × 35.6 cm)
 
-**$1,500** · Made to specification · Inquire for timeline.
+Materials: Leaded stained glass, King Scale colors, integrated warm LED lighting
+
+Presentation: Deep matte black shadow box, ready to hang or display — hanging hardware included
+
+Includes: Signed Certificate of Authenticity, numbered 2/5
+
+Price: $1,500 — includes secure shipping and handling
+
+Availability: 4 of 5 remaining — this edition will not reopen
