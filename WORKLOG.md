@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Battle Jacket + Pelican Images — HDR/PQ → sRGB SDR Conversion — 2026-05-30
+
+- **Root cause of the "washed out on desktop, fine on mobile" regression:** eight product photos were authored as Apple gain-map **HDR JPEGs** — `Display P3 Primaries; PQ` (and one `BT.2020 Primaries; PQ`) with an Adaptive Gain Curve. Desktop browsers mis-tone-mapped the PQ gain map to a flat/washed SDR rendering; Apple mobile rendered them correctly. Identical asset + identical CSS both sides — it was purely the embedded HDR color profile (not CSS, overlays, filters, or responsive images; all of those were audited clean).
+- **Fix:** color-managed conversion to standard **sRGB IEC61966-2.1** (`sips --matchTo "sRGB Profile.icc" --setProperty formatOptions high`) — proper tone-mapping, **not** a profile strip. Filenames, dimensions, and aspect ratios unchanged; quality high (file sizes comparable).
+- Files converted (8): `bespoke-rosicrucian-battle-jacket/{primary, gallery-1..6}.jpg` and `the-pelican-in-her-piety/primary.jpg` (its primary was the lone PQ file in that set).
+- Verified each output is sRGB, dimensions preserved, and visually correct (deep blacks, vivid reds — washout gone) before committing. **No CSS, template, or build.js changes.**
+- Note: `/images/uploads/*` is served `immutable`, so returning visitors who already cached the old PQ files may need a hard-refresh / cache expiry to see the corrected images; new visitors and cache-busted fetches get sRGB immediately.
+
 ### Alchemical Quadriptych — Single-Panel Stripe Link Wired (integration complete, website side) — 2026-05-30
 
 - Added the second `purchase_links` item — "Purchase a Single Panel — $175" (`buy.stripe.com/4gM28t6Xx798cmQ3d84sE0a`) — alongside the complete-set button. Frontmatter-only; no code/template/styling changes. The page now renders both purchase buttons.
