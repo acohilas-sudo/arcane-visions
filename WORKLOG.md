@@ -10,6 +10,16 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Stripe Payment Link Purchasing (purchase_links) — 2026-05-30
+
+- Restored real purchase functionality using **Stripe Payment Links** (static buy.stripe.com URLs). No SDK, Checkout Sessions, server code, webhooks, env vars, or new dependencies — matches the no-backend static-site architecture.
+- Added a minimal, mode-agnostic `purchase_links` mechanism to the **deployed** build (did NOT deploy the larger uncommitted rework). A product with a non-empty `purchase_links` list (each `label` + `url`) renders one purchase button per link **instead of** the inquiry CTA, and suppresses that product's inquiry/commission next-step note and the auto "Timeline: confirmed at commission inquiry" spec line.
+- Trigger is solely the presence of `purchase_links` — **no new purchase modes introduced**. Every product without `purchase_links` is byte-for-byte unchanged (verified: 12 of 13 product pages identical with scripts stripped; home/the-work differ only by the Lamen card label).
+- **Wired: HOGD Adept Lamen → "Purchase — $1,500"** Stripe Payment Link (`buy.stripe.com/eVq28t5Tt0KK4Uo9Bw4sE08`). Lamen now shows the purchase button, no inquiry CTA/messaging/timeline; body + specs unchanged.
+- Files: `build.js` (loader + detail render + card label + client data export), `index.html` (SPA `showProduct` + card-label mirror), `admin/config.yml` (Purchase Links CMS field), `content/catalogue/hogd-adept-lamen.md` (`purchase_links`).
+- **JSON-LD untouched** (verified byte-identical to prior HEAD; fixed-price Offer still $1,500). No copy/design/layout/unrelated-metadata changes. Inventory reconciliation is manual per approved policy.
+- **Pending (awaiting URLs):** Alchemical Quadriptych — $600 complete set + $175 single panel Payment Links not yet provided, so it remains on its current CTA until those URLs arrive.
+
 ### HOGD Adept Lamen — Body Replaced + Specs Reconciled to Stained Glass — 2026-05-30
 
 - Replaced the Adept Lamen product description (body) verbatim with supplied copy describing a **leaded stained-glass** Adept Lamen — 18″ × 14″, King Scale colors, integrated warm LED, deep matte black shadow box, limited edition of 5 (this piece 2/5), $1,500 including secure shipping, 4 of 5 remaining. No rewrite/condense/optimize/embellish; supplied text used exactly.
