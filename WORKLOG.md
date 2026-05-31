@@ -10,6 +10,12 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Alchemical Quadriptych — Single-Panel Stripe Link Wired (integration complete, website side) — 2026-05-30
+
+- Added the second `purchase_links` item — "Purchase a Single Panel — $175" (`buy.stripe.com/4gM28t6Xx798cmQ3d84sE0a`) — alongside the complete-set button. Frontmatter-only; no code/template/styling changes. The page now renders both purchase buttons.
+- Verified: only the Quadriptych page differs from prior HEAD; all other products + home + the-work byte-identical; HOGD Lamen button intact. Body copy, highlights/specs, pricing, JSON-LD unchanged.
+- **Stripe-side configuration NOT verifiable from here:** the public Payment Link page is a JS shell — the painting options (Nigredo/Albedo/Citrinitas/Rubedo), the "Selected Painting" field, its required flag, and whether the selection is recorded on the order are loaded client-side from Stripe's API and are absent from the served HTML. With no Stripe dashboard/API access, the "which panel was bought" custom-field config can only be confirmed inside the Stripe Dashboard. Flagged for the user to verify there.
+
 ### Alchemical Quadriptych — Complete-Set Stripe Link Wired — 2026-05-30
 
 - Wired the Quadriptych's **complete set ($600)** purchase via the already-live `purchase_links` architecture — frontmatter-only change, **no code touched**.
