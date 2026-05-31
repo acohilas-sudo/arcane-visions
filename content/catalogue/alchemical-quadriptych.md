@@ -20,22 +20,39 @@ photos:
     alt: Alchemical Quadriptych — the Citrinitas panel shown complete
 ---
 
-A quadriptych on the alchemical opus. Four panels, read together or separately, tracking the stages by which a base substance becomes something else. The pictorial language is plainly alchemical: the work does not paraphrase the tradition into decoration; it draws directly from the established figures of nigredo, albedo, citrinitas, and rubedo.
+# Alchemical Quadriptych – The Four Stages of the Magnum Opus
 
-## Symbolism
+**Original Watercolor Paintings by Debbi Cohilas**
+**Set of Four (Nigredo, Albedo, Citrinitas, Rubedo) | Each 12″ × 16″ (framed)**
 
-The four-panel form mirrors the four traditional stages of the Great Work. Each panel carries the figures appropriate to its stage — the dissolution, the washing, the yellowing, the reddening — handled with the restraint of source material rather than the flourish of fantasy illustration. The viewer who reads the tradition will recognise the figures. The viewer who does not will read the work as a careful sequence of paintings.
+This exquisite alchemical quadriptych captures the four classical stages of the Great Work (Magnum Opus) in radiant watercolor, each panel a meditative portal into the transformative journey of the soul. Hand-painted with luminous pigments and delicate gold accents, the series reflects esoteric mastery.
 
-## Construction
+**Nigredo (“Blackening”)** — A deep purple-black tulip blooms against a shadowed ground, symbolizing dissolution, putrefaction, and the death of the ego. The dark crucible where base matter is broken down to reveal hidden potential.
 
-The set is painted on prepared panel and finished as a hung quadriptych. Gold is used where the source figures require it; the rest of the field is held in dark earth. The panels read as a single composition when hung in sequence, and stand independently when separated.
+**Albedo (“Whitening”)** — A pure white lily rises on a pale field, encircled by the alchemical triangle (△), representing purification, resurrection, and the emergence of the silver moon-like soul after the nigredo’s darkness.
 
-## Placement
+**Citrinitas (“Yellowing”)** — A radiant sunflower glows in warm gold and orange, crowned with the Greek letter theta (θ) and sprouting fresh green leaves, evoking the dawn of wisdom, solar awakening, and the first rays of spiritual illumination.
 
-The complete quadriptych is the intended unified composition — sized and constructed for long-form display in a private collection or library, wherever a four-panel set has the wall to breathe. The panels also stand on their own, and individual panels may be acquired separately.
+**Rubedo (“Reddening”)** — A full crimson rose unfurls at the center of a golden cross, framed by the alchemical circle (○) and inscribed with “RUBEDO” in elegant script, signifying the final union of opposites, the Philosopher’s Stone, and the perfected red elixir of immortality.
 
-## Acquisition
+Each panel is individually signed, matted in archival white, and presented in a sleek black frame with gold inner fillet for a luxurious gallery-ready finish. The set is designed to be displayed together as a complete alchemical narrative—symbolizing the full cycle of transformation from death to divine rebirth.
 
-The complete quadriptych may be acquired as a unified four-panel work, or individual panels may be acquired separately. Acquisition is by inquiry. Pricing for the complete set and per-panel pricing are confirmed on response, alongside current availability and provenance documentation.
+## Details
 
-<!-- TODO(pricing): Confirm and publish the set price + per-panel price once Drew and Debbi have set them. Until then the page renders "Price on Inquiry" and acquisition is handled in correspondence. -->
+**Medium:** Original watercolor on archival paper
+**Dimensions per panel:** Approximately 12″ × 16″ (framed)
+**Edition:** One-of-a-kind originals (no reproductions of this exact set)
+Includes signed Certificate of Authenticity for the complete quadriptych
+
+## Pricing
+
+**Individual panels:** $175 each
+**Complete quadriptych (all four panels):** $600 (save $100 over individual purchase)
+
+## Ideal For
+
+Alchemical enthusiasts, practitioners of the Western Mystery Tradition, Rosicrucian and Hermetic students, Masonic collectors, or anyone seeking sacred art to meditate on the stages of inner transformation. Perfect for a ritual altar, meditation room, study, or as a powerful symbolic gift.
+
+A beautiful, harmonious cycle of death, purification, illumination, and union—crafted with reverence and offered as a living map of the soul’s journey through the Great Work.
+
+Available now through Arcane Visions Studios. Inquire for viewing or custom variations.
