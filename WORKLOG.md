@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Alchemical Quadriptych — Complete-Set Stripe Link Wired — 2026-05-30
+
+- Wired the Quadriptych's **complete set ($600)** purchase via the already-live `purchase_links` architecture — frontmatter-only change, **no code touched**.
+- Added `purchase_links` → "Purchase the Complete Set — $600" (`buy.stripe.com/00w9AVbdN9hg2Mg6pk4sE09`). The page now renders that purchase button; the retail "Available Now" note is suppressed (designed purchasable behavior, same as the Lamen).
+- Single file changed: `content/catalogue/alchemical-quadriptych.md`. Verified only the Quadriptych page differs from prior HEAD; all 12 other product pages + home + the-work byte-identical; HOGD Lamen Stripe button intact.
+- Untouched: body copy, highlights/specs, pricing, dimensions, symbolism, details/ideal-for, layout, styling, JSON-LD.
+- **Pending:** single-panel ($175) Stripe link not yet created — to be added in a follow-up commit (will become a second item in the same `purchase_links` list → a second button).
+
 ### Alchemical Quadriptych — Highlights (specs) Block Corrected — 2026-05-30
 
 - Replaced the product-detail highlights list — the `specs` frontmatter field, rendered between the price and the "Available Now" note — which still held leftover AI-generated summary bullets ("…rendered in four registers", "Painted on prepared panel · finished as a hung quadriptych", "Restrained gold and dark ground", "Reads as a single field…", "…available by acquisition", "Handcrafted in Virginia").
