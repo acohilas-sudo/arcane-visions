@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Alchemical Quadriptych — Restored Historical Copy — 2026-05-30
+
+- Restored the original/historical Alchemical Quadriptych product description ("The Four Stages of the Magnum Opus") verbatim, replacing the later rewritten body copy
+- This was a restoration, not a rewrite: no paraphrase, no modernization, no SEO/marketing edits, no new symbolism — wording and formatting preserved exactly as supplied
+- The only intentional deviation from the historical version: removal of the sentence referencing Debbi's animation / visual storytelling background
+- Single source touched: `content/catalogue/alchemical-quadriptych.md` (body only; frontmatter left intact)
+- Flagged for follow-up (not changed): frontmatter still has `price: ""` + `purchase_mode: inquiry`, so the page chrome shows "Price on Inquiry" while the restored body states explicit prices ($175 / $600) and "Available now" — a display tension to reconcile if desired; and the site-wide artist Person JSON-LD still lists Debbi's storyboard/animation career (separate from this product's copy)
+
 ### About Page — Removed Tradition Badge Grid — 2026-05-30
 
 - Removed the tradition badge/grid section (Golden Dawn, Rosicrucianism, Martinism, Rectified Scottish Rite, Élus Coëns) and the "commissioned by collectors and patrons … internationally" statement below it
