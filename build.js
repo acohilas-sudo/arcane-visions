@@ -209,6 +209,12 @@ function buildBreadcrumbJsonLD(crumbs) {
 // Three tiers of acquisition copy. The next-step note + the CTA button differ
 // by tier; the underlying inquiry modal flow is the same until checkout ships.
 function productNextStepHTML(purchaseMode) {
+  if (purchaseMode === 'retail') {
+    return `<div class="next-step-note">
+        <div class="next-step-title">Available Now</div>
+        <p>This work is available now at the fixed prices shown. Acquire a single panel or the complete set through Arcane Visions Studios.</p>
+      </div>`;
+  }
   if (purchaseMode === 'direct') {
     return `<div class="next-step-note">
         <div class="next-step-title">Direct Acquisition</div>
@@ -229,6 +235,7 @@ function productNextStepHTML(purchaseMode) {
 }
 
 function productCTALabel(purchaseMode) {
+  if (purchaseMode === 'retail') return 'Acquire This Work';
   if (purchaseMode === 'direct') return 'Reserve via Inquiry';
   if (purchaseMode === 'commission') return 'Begin a Commission Inquiry';
   return 'Send an Inquiry';
@@ -236,7 +243,7 @@ function productCTALabel(purchaseMode) {
 
 function renderProductDetailHTML(product) {
   const specsArr = (product.specs || '').split('\n').filter(Boolean);
-  if (!specsArr.some(s => /timeline/i.test(s))) {
+  if ((product.purchase_mode || 'inquiry') !== 'retail' && !specsArr.some(s => /timeline/i.test(s))) {
     specsArr.push('Timeline: confirmed at commission inquiry');
   }
 
@@ -290,7 +297,7 @@ function renderProductCardHTML(product, showSpecs) {
   const href = slug ? `/the-work/${slug}/` : '#';
   const imgs = (product.photos || []).map(p => p.image).filter(Boolean);
   const specsArr = (product.specs || '').split('\n').filter(Boolean);
-  const ctaLabel = 'View / Inquire';
+  const ctaLabel = (product.purchase_mode === 'retail') ? 'View / Purchase' : 'View / Inquire';
   let visualHTML;
 
   if (imgs.length) {

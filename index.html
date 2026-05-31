@@ -1543,7 +1543,7 @@ function createProductCard(product, showSpecs) {
   }
 
   let specsHTML = '';
-  const ctaLabel = 'View / Inquire';
+  const ctaLabel = (product.purchase_mode === 'retail') ? 'View / Purchase' : 'View / Inquire';
   if (showSpecs) {
     const preview = (product.specs || []).slice(0, 3).join(' · ');
     specsHTML = `<div class="product-card-specs">${preview}</div>
@@ -1888,6 +1888,12 @@ function toggleMobileMenu() {
 // Tier-aware acquisition copy — kept in sync with build.js's productNextStepHTML()
 // so the JS-rendered detail view matches the build-time static rendering.
 function productNextStepHTML(purchaseMode) {
+  if (purchaseMode === 'retail') {
+    return `<div class="next-step-note">
+      <div class="next-step-title">Available Now</div>
+      <p>This work is available now at the fixed prices shown. Acquire a single panel or the complete set through Arcane Visions Studios.</p>
+    </div>`;
+  }
   if (purchaseMode === 'direct') {
     return `<div class="next-step-note">
       <div class="next-step-title">Direct Acquisition</div>
@@ -1906,6 +1912,7 @@ function productNextStepHTML(purchaseMode) {
   </div>`;
 }
 function productCTALabel(purchaseMode) {
+  if (purchaseMode === 'retail') return 'Acquire This Work';
   if (purchaseMode === 'direct') return 'Reserve via Inquiry';
   if (purchaseMode === 'commission') return 'Begin a Commission Inquiry';
   return 'Send an Inquiry';
@@ -1932,7 +1939,7 @@ function showProduct(product, noPush) {
   }
 
   const specsArr = Array.isArray(product.specs) ? product.specs : (product.specs || '').split('\n').filter(Boolean);
-  if (!specsArr.some(s => /timeline/i.test(s))) {
+  if ((product.purchase_mode || 'inquiry') !== 'retail' && !specsArr.some(s => /timeline/i.test(s))) {
     specsArr.push('Timeline: confirmed at commission inquiry');
   }
   const specsHTML = specsArr.length

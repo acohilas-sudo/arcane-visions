@@ -4,8 +4,8 @@ tradition: Alchemical
 category: Symbolic Art
 featured: true
 featured_order: 4
-price: ""
-purchase_mode: inquiry
+price: "$175 per panel · $600 complete set"
+purchase_mode: retail
 specs: |-
   Four panels — the alchemical opus rendered in four registers
   Painted on prepared panel · finished as a hung quadriptych
