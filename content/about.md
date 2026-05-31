@@ -16,17 +16,9 @@ body: |-
 
       <p>We create for the discerning seeker: those drawn to the symbolism, mystery, and contemplative depth of the Western Mystery Tradition.</p>
 
-      <div class="traditions">
-        <span class="tradition-tag">Golden Dawn</span>
-        <span class="tradition-tag">Rosicrucianism</span>
-        <span class="tradition-tag">Martinism</span>
-        <span class="tradition-tag">Rectified Scottish Rite</span>
-        <span class="tradition-tag">Élus Coëns</span>
-      </div>
+      <p>Our work is created in the Western Mystery Tradition.</p>
 
-      <div class="trust-signal">
-        Our work has been commissioned by collectors and patrons of the Western Mystery Tradition internationally.
-      </div>
+      <p>We create original esoteric and occult artworks for the discerning seeker and collector.</p>
 
       <p>We accept bespoke commissions for those who want a work made to a precise symbolic brief — specific imagery, dimensions, palette, and materials.</p>
 
