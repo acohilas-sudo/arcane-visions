@@ -3,6 +3,7 @@ name: Masonic Portrait — The Faithful Craftsman
 tradition: Masonic
 category: Portraiture
 featured: true
+featured_order: 6
 price: ""
 purchase_mode: commission
 specs: |-

@@ -52,6 +52,7 @@ function readCatalogue() {
       tradition: data.tradition || '',
       category: data.category || '',
       featured: data.featured || false,
+      featured_order: typeof data.featured_order === 'number' ? data.featured_order : null,
       photos: data.photos || [],
       specs: data.specs || '',
       price: data.price || '',
@@ -347,7 +348,9 @@ function bakeProductGridsIntoTemplate(template, catalogue) {
   const catalogueCards = catalogue.map(product => renderProductCardHTML(product, true)).join('\n        ');
   // Home "Selected Works" — only featured items so the section reads as curated editorial.
   // /the-work/ still receives the full catalogue.
-  const featuredCatalogue = catalogue.filter(p => p.featured);
+  const featuredCatalogue = catalogue
+    .filter(p => p.featured)
+    .sort((a, b) => (a.featured_order ?? Infinity) - (b.featured_order ?? Infinity));
   const featuredCards = (featuredCatalogue.length ? featuredCatalogue : catalogue)
     .map(product => renderProductCardHTML(product, false))
     .join('\n        ');

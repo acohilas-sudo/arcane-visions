@@ -3,6 +3,7 @@ name: Alchemical Quadriptych
 tradition: Alchemical
 category: Symbolic Art
 featured: true
+featured_order: 4
 price: ""
 purchase_mode: inquiry
 specs: |-

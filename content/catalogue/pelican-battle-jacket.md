@@ -3,6 +3,7 @@ name: Pelican Battle Jacket
 tradition: Rosicrucian
 category: Wearable Works
 featured: true
+featured_order: 7
 price: "$2,200"
 purchase_mode: inquiry
 acquisition_status: "Available · One-of-One Work"

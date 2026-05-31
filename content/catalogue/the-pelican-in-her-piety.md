@@ -3,6 +3,7 @@ name: The Pelican in Her Piety
 tradition: Christian
 category: Symbolic Art
 featured: true
+featured_order: 1
 price: ""
 purchase_mode: direct
 specs: |-

@@ -3,6 +3,7 @@ name: Rosicrucian Rosy Cross Bas-Relief
 tradition: Rosicrucian
 category: Symbolic Art
 featured: true
+featured_order: 2
 price: "$1,500"
 purchase_mode: direct
 specs: |-

@@ -54,6 +54,12 @@ collections:
         widget: "boolean"
         default: false
         hint: "Toggle ON to display this work on the home page."
+      - label: "Featured Order"
+        name: "featured_order"
+        widget: "number"
+        required: false
+        value_type: "int"
+        hint: "Optional. Lower numbers appear first in the home 'Selected Works' row; blank falls to the end."
       - label: "Photos"
         name: "photos"
         widget: "list"

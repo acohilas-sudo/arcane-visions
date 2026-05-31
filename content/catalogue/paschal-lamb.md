@@ -3,6 +3,7 @@ name: Paschal Lamb
 tradition: Christian
 category: Symbolic Art
 featured: true
+featured_order: 3
 price: "$1,200"
 purchase_mode: direct
 specs: |-
