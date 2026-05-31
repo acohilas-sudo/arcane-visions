@@ -10,6 +10,13 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Alchemical Quadriptych — Highlights (specs) Block Corrected — 2026-05-30
+
+- Replaced the product-detail highlights list — the `specs` frontmatter field, rendered between the price and the "Available Now" note — which still held leftover AI-generated summary bullets ("…rendered in four registers", "Painted on prepared panel · finished as a hung quadriptych", "Restrained gold and dark ground", "Reads as a single field…", "…available by acquisition", "Handcrafted in Virginia").
+- New highlights (supplied text, used exactly): four original watercolors of the Magnum Opus stages · Nigredo, Albedo, Citrinitas, and Rubedo · approximately 12″ × 16″ framed · one-of-a-kind originals · available individually or as a complete set · signed Certificate of Authenticity included.
+- **Source confirmed:** the `specs` field in `content/catalogue/alchemical-quadriptych.md` (not a separate highlights field, not body copy, not the template). Single file changed.
+- Untouched: body copy, pricing, dimensions, symbolism/Details/Ideal-For sections, layout, styling, Stripe/purchase behavior, JSON-LD. No other product affected.
+
 ### Stripe Payment Link Purchasing (purchase_links) — 2026-05-30
 
 - Restored real purchase functionality using **Stripe Payment Links** (static buy.stripe.com URLs). No SDK, Checkout Sessions, server code, webhooks, env vars, or new dependencies — matches the no-backend static-site architecture.
