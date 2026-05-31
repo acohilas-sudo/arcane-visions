@@ -10,7 +10,7 @@ specs: |-
   Created to commission — each jacket unique to its wearer
   Hand-painted on a premium black Levi's denim trucker jacket
   Rosy Cross and the motto Dum Spiro Spero across the back
-  Acrylic, heat-applied vinyl, and rhinestone accents · over 20 hours by hand
+  Acrylic, heat-applied vinyl, and rhinestone accents · individually hand-painted and finished
   Roses, crowned serpents, and checkerboard panels
   Handcrafted in the Washington, DC region
 photos:
@@ -38,7 +38,7 @@ Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe,
 
 The jacket is the work of Debbi Cohilas. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
 
-Approximately twenty hours of artistic labor went into the piece. The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not. The back panel was built by hand from the centre outward, as the process photographs attest.
+The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not. The back panel was built by hand from the centre outward, as the process photographs attest.
 
 ## Symbolism & Meaning
 
@@ -54,7 +54,7 @@ Above it all stands the motto. *Dum Spiro Spero* is a maxim of perseverance: hop
 - Hand-painted acrylic artwork
 - High-quality heat-applied vinyl elements
 - Rhinestone accents
-- More than 20 hours of hand craftsmanship
+- Hand-painted and finished by the artist
 - Created to commission — each jacket unique to its wearer; never reproduced
 
 ## Pricing & Acquisition

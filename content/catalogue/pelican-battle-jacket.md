@@ -12,7 +12,7 @@ specs: |-
   Hand-painted on a premium black Levi's denim trucker jacket
   The Pelican in Her Piety, crowned in sacred flame, upon the Rosy Cross
   INRI · IGNE NATURA RENOVATUR INTEGRA across the shoulders
-  Acrylic, heat-applied vinyl, and rhinestone accents · over 20 hours by hand
+  Acrylic, heat-applied vinyl, and rhinestone accents · individually hand-painted and finished
   Roses, serpent, and checkerboard panels · Handcrafted in the Washington, DC region
 photos:
   - image: /images/uploads/products/pelican-battle-jacket/gallery-1.jpg
@@ -37,7 +37,7 @@ Across the shoulders runs the motto *IGNE NATURA RENOVATUR INTEGRA*. Beneath it,
 
 The jacket is the work of Debbi Cohilas. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
 
-Approximately twenty hours of artistic labor went into the piece. The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not — and sealed for the realities of wear.
+The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not — and sealed for the realities of wear.
 
 ## Symbolism & Meaning
 
@@ -51,7 +51,7 @@ The **Pelican in Her Piety** is among the oldest emblems of the tradition — se
 - Hand-painted acrylic artwork
 - High-quality heat-applied vinyl elements
 - Rhinestone accents
-- More than 20 hours of hand craftsmanship
+- Hand-painted and finished by the artist
 - One-of-one original — available for acquisition, not reproduced and not editioned
 
 ## Pricing & Acquisition
