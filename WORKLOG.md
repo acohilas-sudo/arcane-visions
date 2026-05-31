@@ -10,6 +10,15 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Homepage — Order List Replaced with Offering-Based Positioning — 2026-05-30
+
+- Replaced the beneath-hero "traditions" block — which listed esoteric **organizations** (Hermetic Order of the Golden Dawn, Rosicrucian, Martinist, Rectified Scottish Rite, Private Collectors) — with what Arcane Visions **offers**: Original Works · Collector Editions · Bespoke Commissions · Private Collections.
+- Rationale: listing the orders implied Arcane Visions *serves* those bodies (Theurgic Arts' role); the replacement reinforces the luxury symbolic-art atelier offering instead.
+- Content-only: same `.traditions-list` markup/typography/letter-spacing/uppercase/spacing and responsive `@media` behavior; 5 spans → 4. Title-case in markup (CSS uppercases for display), matching the existing convention.
+- Files: `index.html` (the visible block) + `content/home.md` (`tradition_tags`, the parallel data source — aligned so no stale order list lingers; note it is not currently rendered/in site-content.json).
+- Out of scope / intentionally untouched: the order names still appear in (a) the page's **JSON-LD** structured data (Organization/Person `knowsAbout`/description) and (b) the featured **HOGD Adept Lamen product card's** tradition label (that artwork's actual tradition). Both are "copy elsewhere"/product metadata the task said not to alter.
+- No hero/nav/layout/styling changes; no other homepage copy changed; no product pages modified.
+
 ### Battle Jacket + Pelican Images — HDR/PQ → sRGB SDR Conversion — 2026-05-30
 
 - **Root cause of the "washed out on desktop, fine on mobile" regression:** eight product photos were authored as Apple gain-map **HDR JPEGs** — `Display P3 Primaries; PQ` (and one `BT.2020 Primaries; PQ`) with an Adaptive Gain Curve. Desktop browsers mis-tone-mapped the PQ gain map to a flat/washed SDR rendering; Apple mobile rendered them correctly. Identical asset + identical CSS both sides — it was purely the embedded HDR color profile (not CSS, overlays, filters, or responsive images; all of those were audited clean).
