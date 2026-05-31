@@ -516,7 +516,7 @@ function buildProductPage(template, product) {
 function buildTheWorkPage(template) {
   const canonical = `${BASE_ORIGIN}/the-work/`;
   const title = `The Work | ${BRAND_NAME}`;
-  const metaDesc = 'Handcrafted ceremonial and esoteric works from the Arcane Visions atelier — limited symbolic art, regalia, and bas-reliefs for practitioners and collectors of the Western Mystery Tradition.';
+  const metaDesc = 'Original esoteric and occult artworks, bas-relief works, and portraiture from the Arcane Visions atelier — limited and one-of-one works for collectors and patrons of the Western Mystery Tradition.';
   const ogImage = OG_IMAGE_FALLBACK;
 
   let html = rewriteHead(template, {
@@ -533,7 +533,7 @@ function buildTheWorkPage(template) {
 function buildCommissionsPage(template) {
   const canonical = `${BASE_ORIGIN}/commissions/`;
   const title = `Commissions | ${BRAND_NAME}`;
-  const metaDesc = 'Private commissions for ceremonial regalia, symbolic art, and collector-grade ritual objects. Built to the order or tradition\'s exact specifications, in the Virginia / Washington DC atelier.';
+  const metaDesc = 'Bespoke esoteric artistic commissions from the Arcane Visions atelier — original esoteric artworks, bas-relief works, and portraiture created to the collector\'s brief, in the Virginia / Washington DC area.';
   const ogImage = OG_IMAGE_FALLBACK;
 
   let html = rewriteHead(template, {
@@ -550,7 +550,7 @@ function buildCommissionsPage(template) {
 function buildAboutPage(template, about) {
   const canonical = `${BASE_ORIGIN}/about/`;
   const title = `About | ${BRAND_NAME}`;
-  const metaDesc = 'Arcane Visions is a ceremonial and esoteric atelier producing handcrafted ritual objects, symbolic art, and collector-grade occult works in the Virginia / Washington DC area.';
+  const metaDesc = 'Arcane Visions is an esoteric art atelier creating original occult and esoteric artworks and bespoke commissions in the Virginia / Washington DC area.';
   const ogImage = OG_IMAGE_FALLBACK;
 
   let html = rewriteHead(template, {

@@ -1,6 +1,6 @@
 ---
-tagline: "Handcrafted Ritual Objects & Collector-Grade Esoteric Works"
-subtitle: "An atelier producing ceremonial regalia, symbolic art, and bas-relief works for practitioners and collectors of the Western Mystery Tradition. Each piece is built by hand, in limited numbers, to museum-grade specification."
+tagline: "Original Occult & Esoteric Artworks"
+subtitle: "An esoteric art atelier creating original occult and esoteric artworks, bas-relief works, portraiture, and bespoke commissions for collectors and patrons of the Western Mystery Tradition. Each piece is made by hand, in limited numbers, to museum-grade specification."
 tradition_tags:
   - "Hermetic Order of the Golden Dawn"
   - "Rosicrucian"
