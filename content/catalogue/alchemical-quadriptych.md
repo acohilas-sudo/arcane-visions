@@ -7,12 +7,12 @@ featured_order: 4
 price: "$175 per panel · $600 complete set"
 purchase_mode: retail
 specs: |-
-  Four panels — the alchemical opus rendered in four registers
-  Painted on prepared panel · finished as a hung quadriptych
-  Restrained gold and dark ground throughout the set
-  Reads as a single field; reads as four separate works
-  Complete set or individual panels available by acquisition
-  Handcrafted in Virginia
+  Four original watercolor paintings representing the stages of the Magnum Opus
+  Nigredo, Albedo, Citrinitas, and Rubedo
+  Approximately 12″ × 16″ framed
+  One-of-a-kind originals
+  Available individually or as a complete set
+  Signed Certificate of Authenticity included
 photos:
   - image: /images/uploads/products/alchemical-quadriptych/primary.jpg
     alt: "Alchemical Quadriptych — the complete set of four panels: Nigredo, Albedo, Citrinitas, Rubedo"
