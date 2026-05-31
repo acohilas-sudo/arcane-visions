@@ -32,7 +32,7 @@ photos:
 
 Created as a one-of-one wearable artwork on premium black denim, hand-painted with the Rosy Cross — the central emblem of the Rosicrucian tradition.
 
-Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe, I hope." Beneath it, a radiant Rosy Cross opens at the centre of a field of roses, serpents, and the black-and-white pavement of the temple. Each jacket of this kind is painted to commission — created once, for one wearer, and never repeated.
+Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe, I hope." Beneath it, a radiant Rosy Cross opens at the centre, ringed by roses and serpents; the Mosaic Pavement runs the side panels. Each jacket of this kind is painted to commission — created once, for one wearer, and never repeated.
 
 ## Artist & Craftsmanship
 
@@ -44,7 +44,7 @@ Approximately twenty hours of artistic labor went into the piece. The imagery is
 
 At the heart of the back panel is the **Rosy Cross** — the rose set at the centre of the cross, the emblem from which the Rosicrucian current takes its name. It is the old image of the soul flowering upon the frame of discipline: the cross as the structure of a life, the rose as what opens at its centre when the work is done patiently and well.
 
-The roses that climb the sleeves and ring the central panel carry the same idea in repetition — beauty drawn up through thorn, the slow unfolding of something cultivated rather than seized. The **serpents** along the arm speak the language of transformation and renewal: the creature that sheds its skin and continues, crowned here to mark mastery of that process rather than mere survival of it. The **checkerboard** panels are the mosaic pavement — the ground of light and dark on which such work is done.
+The roses that climb the sleeves and ring the central panel carry the same idea in repetition — beauty drawn up through thorn, the slow unfolding of something cultivated rather than seized. The **serpents** along the arm speak the language of transformation and renewal: the creature that sheds its skin and continues, crowned here to mark mastery of that process rather than mere survival of it. The **checkerboard** panels are the Mosaic Pavement — the ground of light and dark on which such work is done.
 
 Above it all stands the motto. *Dum Spiro Spero* is a maxim of perseverance: hope held not as sentiment but as discipline, sustained for as long as there is breath. A hexagram and a scatter of planetary and zodiacal signs set the whole within the wider symbolic cosmos of the Western Mystery Tradition.
 
