@@ -1543,7 +1543,7 @@ function createProductCard(product, showSpecs) {
   }
 
   let specsHTML = '';
-  const ctaLabel = (product.purchase_mode === 'retail') ? 'View / Purchase' : 'View / Inquire';
+  const ctaLabel = ((product.purchase_links && product.purchase_links.length) || product.purchase_mode === 'retail') ? 'View / Purchase' : 'View / Inquire';
   if (showSpecs) {
     const preview = (product.specs || []).slice(0, 3).join(' · ');
     specsHTML = `<div class="product-card-specs">${preview}</div>
@@ -1938,8 +1938,10 @@ function showProduct(product, noPush) {
     visualHTML = `<div class="product-detail-glyph">${product.glyph || '✦'}</div>`;
   }
 
+  const purchaseLinks = (product.purchase_links || []).filter(l => l && l.url);
+  const isPurchasable = purchaseLinks.length > 0;
   const specsArr = Array.isArray(product.specs) ? product.specs : (product.specs || '').split('\n').filter(Boolean);
-  if ((product.purchase_mode || 'inquiry') !== 'retail' && !specsArr.some(s => /timeline/i.test(s))) {
+  if (!isPurchasable && (product.purchase_mode || 'inquiry') !== 'retail' && !specsArr.some(s => /timeline/i.test(s))) {
     specsArr.push('Timeline: confirmed at commission inquiry');
   }
   const specsHTML = specsArr.length
@@ -1952,7 +1954,7 @@ function showProduct(product, noPush) {
 
   const safeName = (product.name || '').replace(/'/g, "\\'");
   const mode = product.purchase_mode || 'inquiry';
-  const nextStepHTML = productNextStepHTML(mode);
+  const nextStepHTML = isPurchasable ? '' : productNextStepHTML(mode);
   const ctaLabel = productCTALabel(mode);
 
   layout.innerHTML = `
@@ -1970,7 +1972,9 @@ function showProduct(product, noPush) {
   // TODO(stripe): When direct purchase ships, swap this button for a Stripe/Link
   // checkout when mode === 'direct'. Until then, all three modes use the inquiry
   // modal as a single unified entry point.
-  inquireEl.innerHTML = `<button class="btn" onclick="openInquiry('${safeName}')">${ctaLabel}</button>`;
+  inquireEl.innerHTML = isPurchasable
+    ? purchaseLinks.map(l => `<a class="btn" href="${l.url}" data-cta="product-purchase">${l.label || 'Purchase'}</a>`).join('')
+    : `<button class="btn" onclick="openInquiry('${safeName}')">${ctaLabel}</button>`;
 
   window._currentProduct = product;
 

@@ -56,6 +56,7 @@ function readCatalogue() {
       photos: data.photos || [],
       specs: data.specs || '',
       price: data.price || '',
+      purchase_links: Array.isArray(data.purchase_links) ? data.purchase_links.filter(l => l && l.url) : [],
       // 'direct'      = completed limited edition; checkout integration forthcoming
       // 'inquiry'     = one-of-one collector piece or made-to-specification
       // 'commission'  = bespoke commission requiring conversation
@@ -242,8 +243,10 @@ function productCTALabel(purchaseMode) {
 }
 
 function renderProductDetailHTML(product) {
+  const purchaseLinks = (product.purchase_links || []).filter(l => l && l.url);
+  const isPurchasable = purchaseLinks.length > 0;
   const specsArr = (product.specs || '').split('\n').filter(Boolean);
-  if ((product.purchase_mode || 'inquiry') !== 'retail' && !specsArr.some(s => /timeline/i.test(s))) {
+  if (!isPurchasable && (product.purchase_mode || 'inquiry') !== 'retail' && !specsArr.some(s => /timeline/i.test(s))) {
     specsArr.push('Timeline: confirmed at commission inquiry');
   }
 
@@ -266,15 +269,17 @@ function renderProductDetailHTML(product) {
 
   const safeName = escapeHtml(product.name).replace(/'/g, "\\'");
   const mode = product.purchase_mode || 'inquiry';
-  const nextStepHTML = productNextStepHTML(mode);
+  const nextStepHTML = isPurchasable ? '' : productNextStepHTML(mode);
   const ctaLabel = productCTALabel(mode);
   // TODO: For purchase_mode === 'direct', replace this inquiry button with a
   // Stripe Checkout / Link button when the payment integration ships. Until
   // then, the inquiry modal serves both reservation and inquiry flows.
-  const stripeMarker = mode === 'direct'
+  const stripeMarker = (!isPurchasable && mode === 'direct')
     ? `\n<!-- TODO(stripe): Replace this CTA with a Stripe/Link checkout button when the payment integration is live. price=${escapeAttr(product.price || '')} sku=${productSku(product)} -->`
     : '';
-  const inquireButtonHTML = `${stripeMarker}<button class="btn" onclick="openInquiry('${safeName}')">${escapeHtml(ctaLabel)}</button>`;
+  const inquireButtonHTML = isPurchasable
+    ? purchaseLinks.map(l => `<a class="btn" href="${escapeAttr(l.url)}" data-cta="product-purchase">${escapeHtml(l.label || 'Purchase')}</a>`).join('\n      ')
+    : `${stripeMarker}<button class="btn" onclick="openInquiry('${safeName}')">${escapeHtml(ctaLabel)}</button>`;
 
   return {
     layout: `
@@ -297,7 +302,7 @@ function renderProductCardHTML(product, showSpecs) {
   const href = slug ? `/the-work/${slug}/` : '#';
   const imgs = (product.photos || []).map(p => p.image).filter(Boolean);
   const specsArr = (product.specs || '').split('\n').filter(Boolean);
-  const ctaLabel = (product.purchase_mode === 'retail') ? 'View / Purchase' : 'View / Inquire';
+  const ctaLabel = ((product.purchase_links && product.purchase_links.length) || product.purchase_mode === 'retail') ? 'View / Purchase' : 'View / Inquire';
   let visualHTML;
 
   if (imgs.length) {
@@ -678,6 +683,7 @@ fs.writeFileSync(
       specs: p.specs,
       price: p.price,
       purchase_mode: p.purchase_mode,
+      purchase_links: p.purchase_links,
       description: p.description
     })),
     home,

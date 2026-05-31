@@ -80,6 +80,22 @@ collections:
         widget: "string"
         required: false
         hint: "Leave blank for Price on Inquiry."
+      - label: "Purchase Links"
+        name: "purchase_links"
+        widget: "list"
+        required: false
+        label_singular: "Purchase Link"
+        summary: "{{fields.label}}"
+        hint: "Add a Stripe Payment Link to make this piece directly purchasable. Each link renders a purchase button; leave empty for inquiry/commission pieces."
+        fields:
+          - label: "Button Label"
+            name: "label"
+            widget: "string"
+            hint: 'e.g. "Purchase — $1,500"'
+          - label: "Stripe Payment Link URL"
+            name: "url"
+            widget: "string"
+            pattern: ['^https://buy\.stripe\.com/.+$', "Must be a Stripe Payment Link (https://buy.stripe.com/...)"]
       - label: "Specifications"
         name: "specs"
         widget: "text"

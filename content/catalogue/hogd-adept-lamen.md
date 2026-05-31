@@ -6,6 +6,9 @@ featured: true
 featured_order: 5
 price: "$1,500"
 purchase_mode: inquiry
+purchase_links:
+  - label: "Purchase — $1,500"
+    url: "https://buy.stripe.com/eVq28t5Tt0KK4Uo9Bw4sE08"
 specs: |-
   Limited edition of 5 worldwide · 4 of 5 remaining
   18″ × 14″ (45.7 cm × 35.6 cm)
