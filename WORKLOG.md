@@ -10,6 +10,15 @@ Git history remains the authoritative technical record.
 
 ## 2026-05-30
 
+### Organization JSON-LD — knowsAbout Expanded + Normalized (Option B) — 2026-05-30
+
+- Expanded the `#organization` JSON-LD `knowsAbout` from 12 → 20 entities to better reflect the catalogue's esoteric/initiatic/symbolic subject matter (machine-readable discovery only; not visible copy).
+- **Added (8):** Western Esotericism, Hermeticism, Alchemy, Kabbalah, Christian Mysticism, Élus Coëns, Esoteric Symbolism, Sacred Art. (Rosicrucianism and Martinism from the proposal were satisfied by normalizing existing entries, not duplicated.)
+- **Normalized (4):** Rosicrucian traditions → Rosicrucianism; Martinist Order → Martinism; Ceremonial magic → Ceremonial Magic; Symbolic art → Symbolic Art.
+- **Deliberately excluded** as standalone entities: magic, occult, esoteric, ritual magic, high magic.
+- **Scope:** Organization JSON-LD only. Person arrays (Debbi/Drew), LocalBusiness/ArtGallery, product JSON-LD, visible homepage, navigation, and styling all unchanged. Both JSON-LD blocks validated as syntactically valid JSON.
+- Single file: `index.html`.
+
 ### Homepage — Order List Replaced with Offering-Based Positioning — 2026-05-30
 
 - Replaced the beneath-hero "traditions" block — which listed esoteric **organizations** (Hermetic Order of the Golden Dawn, Rosicrucian, Martinist, Rectified Scottish Rite, Private Collectors) — with what Arcane Visions **offers**: Original Works · Collector Editions · Bespoke Commissions · Private Collections.
