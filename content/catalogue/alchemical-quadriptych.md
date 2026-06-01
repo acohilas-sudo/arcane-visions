@@ -4,20 +4,21 @@ tradition: Alchemical
 category: Symbolic Art
 featured: true
 featured_order: 4
-price: "$175 per panel · $600 complete set"
+price: "$250 per panel · $950 complete set"
 purchase_mode: retail
 purchase_links:
-  - label: "Purchase the Complete Set — $600"
+  - label: "Purchase the Complete Set — $950"
     url: "https://buy.stripe.com/00w9AVbdN9hg2Mg6pk4sE09"
-  - label: "Purchase a Single Panel — $175"
+  - label: "Purchase a Single Panel — $250"
     url: "https://buy.stripe.com/4gM28t6Xx798cmQ3d84sE0a"
 specs: |-
-  Four original watercolor paintings representing the stages of the Magnum Opus
-  Nigredo, Albedo, Citrinitas, and Rubedo
-  Approximately 12″ × 16″ framed
-  One-of-a-kind originals
-  Available individually or as a complete set
-  Signed Certificate of Authenticity included
+  Set of four original watercolors — Nigredo, Albedo, Citrinitas, Rubedo
+  Original watercolor with gold accents on archival paper
+  12″ × 16″ per panel (framed)
+  Archival white mat · black frame with gold inner fillet
+  Individually signed by Debbie Cohilas
+  Certificate of Authenticity for the complete quadriptych
+  Individual panels $250 · complete quadriptych $950
 photos:
   - image: /images/uploads/products/alchemical-quadriptych/primary.jpg
     alt: "Alchemical Quadriptych — the complete set of four panels: Nigredo, Albedo, Citrinitas, Rubedo"
@@ -25,39 +26,50 @@ photos:
     alt: Alchemical Quadriptych — the Citrinitas panel shown complete
 ---
 
-# Alchemical Quadriptych – The Four Stages of the Magnum Opus
+The Great Work
 
-**Original Watercolor Paintings by Debbi Cohilas**
-**Set of Four (Nigredo, Albedo, Citrinitas, Rubedo) | Each 12″ × 16″ (framed)**
+The Magnum Opus cannot be captured in a single image. It must be walked through — stage by stage. These four original watercolors by Debbie Cohilas trace the complete alchemical journey: from the dissolution of base matter to the perfection of the Philosopher's Stone.
 
-This exquisite alchemical quadriptych captures the four classical stages of the Great Work (Magnum Opus) in radiant watercolor, each panel a meditative portal into the transformative journey of the soul. Hand-painted with luminous pigments and delicate gold accents, the series reflects esoteric mastery.
+The Four Stages
 
-**Nigredo (“Blackening”)** — A deep purple-black tulip blooms against a shadowed ground, symbolizing dissolution, putrefaction, and the death of the ego. The dark crucible where base matter is broken down to reveal hidden potential.
+Nigredo — The Blackening
 
-**Albedo (“Whitening”)** — A pure white lily rises on a pale field, encircled by the alchemical triangle (△), representing purification, resurrection, and the emergence of the silver moon-like soul after the nigredo’s darkness.
+A deep purple tulip blooms beside the word NIGREDO. This is the first stage: dissolution, putrefaction, and the necessary death of the unreformed self. Nothing can be built until the base matter yields.
 
-**Citrinitas (“Yellowing”)** — A radiant sunflower glows in warm gold and orange, crowned with the Greek letter theta (θ) and sprouting fresh green leaves, evoking the dawn of wisdom, solar awakening, and the first rays of spiritual illumination.
+Albedo — The Whitening
 
-**Rubedo (“Reddening”)** — A full crimson rose unfurls at the center of a golden cross, framed by the alchemical circle (○) and inscribed with “RUBEDO” in elegant script, signifying the final union of opposites, the Philosopher’s Stone, and the perfected red elixir of immortality.
+A white lily rises on a pale field, enclosed within the alchemical triangle (△) and crescent moon. What survived the Nigredo — purified, distilled, lunar — emerges here. The moon's silver, not yet the sun's gold.
 
-Each panel is individually signed, matted in archival white, and presented in a sleek black frame with gold inner fillet for a luxurious gallery-ready finish. The set is designed to be displayed together as a complete alchemical narrative—symbolizing the full cycle of transformation from death to divine rebirth.
+Citrinitas — The Yellowing
 
-## Details
+A radiant sunflower in warm gold and orange, crowned by the Greek theta (θ) and caduceus, with fresh green at its base. The solar stage: the dawning of wisdom, the first light that heralds the Work's completion.
 
-**Medium:** Original watercolor on archival paper
-**Dimensions per panel:** Approximately 12″ × 16″ (framed)
-**Edition:** One-of-a-kind originals (no reproductions of this exact set)
-Includes signed Certificate of Authenticity for the complete quadriptych
+Rubedo — The Reddening
 
-## Pricing
+A rich crimson rose unfurls beside the word RUBEDO, enclosed within the alchemical circle (○). The final stage — the union of opposites, the Philosopher's Stone achieved. What began in darkness ends in sovereign red.
 
-**Individual panels:** $175 each
-**Complete quadriptych (all four panels):** $600 (save $100 over individual purchase)
+Craftsmanship & Presentation
 
-## Ideal For
+Each panel is an original watercolor on archival paper, painted with luminous pigments and hand-applied gold accents, individually signed by Debbie Cohilas. The four works are presented as a matched set: archivally matted in white and framed in black with a gold inner fillet. Designed to be read in sequence, they function as a single sustained initiatic work.
 
-Alchemical enthusiasts, practitioners of the Western Mystery Tradition, Rosicrucian and Hermetic students, Masonic collectors, or anyone seeking sacred art to meditate on the stages of inner transformation. Perfect for a ritual altar, meditation room, study, or as a powerful symbolic gift.
+Piece Details
 
-A beautiful, harmonious cycle of death, purification, illumination, and union—crafted with reverence and offered as a living map of the soul’s journey through the Great Work.
+Medium: Original watercolor with gold accents on archival paper
 
-Available now through Arcane Visions Studios. Inquire for viewing or custom variations.
+Dimensions: 12″ × 16″ per panel (framed)
+
+Presentation: Archival white mat, black frame with gold inner fillet
+
+Artist: Debbie Cohilas — individually signed
+
+Includes: Certificate of Authenticity for the complete quadriptych
+
+Edition: Original watercolor set
+
+Pricing
+
+Individual panels: $250 each
+
+Complete quadriptych: $950
+
+To own the complete quadriptych is to hold the full arc of the Magnum Opus — dissolution, purification, illumination, and perfection — as a unified initiatic sequence. Individual panels are available, but the complete set remains the truer vessel for those who understand that the Great Work is indivisible.
