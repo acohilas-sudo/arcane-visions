@@ -10,6 +10,16 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-01
 
+### Alchemical Quadriptych — Rewritten + Pricing Migrated to $250/$950 — 2026-06-01
+
+- Replaced the body copy verbatim with the final approved copy ("The Great Work"), superseding all prior Quadriptych drafts. All four stages (Nigredo/Albedo/Citrinitas/Rubedo) and their symbols (△ θ ○) render.
+- **Pricing migrated $175/$600 → $250/$950** across: price chrome field, both Stripe purchase-link button labels ("Purchase the Complete Set — $950", "Purchase a Single Panel — $250"), the specs sidebar, and the body's Pricing section. No $175/$600 remains.
+- Frontmatter reconciled to the approved Piece Details: specs rebuilt (medium "original watercolor with gold accents on archival paper", 12″ × 16″ per panel framed, archival white mat + black frame with gold inner fillet, individually signed, Certificate of Authenticity for the complete quadriptych); removed "One-of-a-kind originals", "save $100", and the legacy "Ideal For"/"ritual altar"/"esoteric mastery" framing.
+- **Stripe URLs unchanged** (existing set/panel Payment Links kept) — pricing migration reported complete by the user, no new URLs supplied; only the button **labels** updated to $950/$250. `purchase_mode: retail` preserved.
+- ⚠️ **Cannot externally verify** that the existing Payment Links now charge $250/$950 (Stripe pages are JS shells, no dashboard access). Recommended: confirm via a Stripe checkout that the set link charges $950 and the panel link $250; if the migration created NEW links, supply them and I'll swap.
+- **Artist name:** approved copy uses "Debbie Cohilas" (with *e*) — reproduced verbatim; site JSON-LD still uses "Debbi Cohilas". Flagged.
+- Single file: `content/catalogue/alchemical-quadriptych.md`. No code/template changes.
+
 ### Paschal Lamb — Rewritten to Actual Object (Stained Glass) — 2026-06-01
 
 - Replaced the body copy verbatim with the final approved copy ("The Lamb Triumphant"). The page previously described a **sculptural bas-relief** ("stable substrate", "restrained gilding", "Limited edition"); the actual object is a **12″ × 12″ hand-leaded stained glass** Agnus Dei with hand-painted glass detail, golden nimbus, crimson mandorla, dark gunmetal shadow box with integrated LED backlighting, $1,200, ships within 2 business days.
