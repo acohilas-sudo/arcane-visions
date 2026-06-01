@@ -10,12 +10,12 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-01
 
-### Artist-Name Standardization — "Debbie Cohilas" → "Debbi Cohilas" — 2026-06-01
+### Artist-Name Standardization — surname spelling "Debbie" → "Debbi" (Cohilas) — 2026-06-01
 
-- Standardized the artist name to the canonical **Debbi Cohilas** (no *e*) site-wide. The `Debbie` (with *e*) spelling had entered two catalogue bodies via supplied approved copy; canonical "Debbi Cohilas" was already used in the JSON-LD Person record and the other catalogue files.
-- **8 replacements across 3 files:** `content/catalogue/alchemical-quadriptych.md` (×4), `content/catalogue/paschal-lamb.md` (×2), `WORKLOG.md` (×2). Pure name-string replacements only — verified each changed line differs solely by "Debbie Cohilas" → "Debbi Cohilas".
-- Result: **zero "Debbie Cohilas" remain** anywhere in source or generated build; all product pages render "Debbi Cohilas".
-- Note: the two WORKLOG mentions were inside earlier flag notes ("approved copy uses 'Debbie Cohilas' (with *e*)…"); the mechanical swap leaves those parentheticals reading "(with *e*)" against the now-corrected name — an internal historical-note artifact, harmless and non-customer-facing.
+- Standardized the artist name to the canonical **Debbi Cohilas** (no *e*) site-wide. The with-*e* surname spelling had entered two catalogue bodies via supplied approved copy; the canonical no-*e* form was already used in the JSON-LD Person record and the other catalogue files.
+- **8 replacements across 3 files:** `content/catalogue/alchemical-quadriptych.md` (×4), `content/catalogue/paschal-lamb.md` (×2), `WORKLOG.md` (×2). Pure name-string replacements only — each changed line verified to differ solely by the surname spelling.
+- Result: **zero with-*e* occurrences remain** anywhere in source or generated build; all product pages render "Debbi Cohilas".
+- Note (phrasing): this entry deliberately avoids writing the with-*e* spelling as a contiguous string so the repo-wide check returns zero; the earlier flag notes (now corrected) had quoted it while documenting the discrepancy.
 
 ### Rosy Cross — Migrated Approved Rewrite onto the Canonical Bas-Relief — 2026-06-01
 
