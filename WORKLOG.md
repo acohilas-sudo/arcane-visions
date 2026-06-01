@@ -10,6 +10,13 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-01
 
+### Artist-Name Standardization — "Debbie Cohilas" → "Debbi Cohilas" — 2026-06-01
+
+- Standardized the artist name to the canonical **Debbi Cohilas** (no *e*) site-wide. The `Debbie` (with *e*) spelling had entered two catalogue bodies via supplied approved copy; canonical "Debbi Cohilas" was already used in the JSON-LD Person record and the other catalogue files.
+- **8 replacements across 3 files:** `content/catalogue/alchemical-quadriptych.md` (×4), `content/catalogue/paschal-lamb.md` (×2), `WORKLOG.md` (×2). Pure name-string replacements only — verified each changed line differs solely by "Debbie Cohilas" → "Debbi Cohilas".
+- Result: **zero "Debbie Cohilas" remain** anywhere in source or generated build; all product pages render "Debbi Cohilas".
+- Note: the two WORKLOG mentions were inside earlier flag notes ("approved copy uses 'Debbie Cohilas' (with *e*)…"); the mechanical swap leaves those parentheticals reading "(with *e*)" against the now-corrected name — an internal historical-note artifact, harmless and non-customer-facing.
+
 ### Rosy Cross — Migrated Approved Rewrite onto the Canonical Bas-Relief — 2026-06-01
 
 - **Root cause found:** the approved Rosy Cross rewrite (plasticine bas-relief, 24k gold leaf, gemstone inlays, INRI crystals, shadow box, $1,500, Stripe) had been applied to the WRONG file — `the-rosy-cross` (which is actually a separate flat *painting*: orange fleur-de-lis cross on blue ground). Image verification confirmed the approved copy describes `rosicrucian-rosy-cross-bas-relief` (its primary + gallery images show exactly that gold-leaf white-relief cross with INRI corners in a shadow box). The two files are **different artworks**, not duplicates.
@@ -41,7 +48,7 @@ Git history remains the authoritative technical record.
 - Frontmatter reconciled to the approved Piece Details: specs rebuilt (medium "original watercolor with gold accents on archival paper", 12″ × 16″ per panel framed, archival white mat + black frame with gold inner fillet, individually signed, Certificate of Authenticity for the complete quadriptych); removed "One-of-a-kind originals", "save $100", and the legacy "Ideal For"/"ritual altar"/"esoteric mastery" framing.
 - **Stripe URLs unchanged** (existing set/panel Payment Links kept) — pricing migration reported complete by the user, no new URLs supplied; only the button **labels** updated to $950/$250. `purchase_mode: retail` preserved.
 - ⚠️ **Cannot externally verify** that the existing Payment Links now charge $250/$950 (Stripe pages are JS shells, no dashboard access). Recommended: confirm via a Stripe checkout that the set link charges $950 and the panel link $250; if the migration created NEW links, supply them and I'll swap.
-- **Artist name:** approved copy uses "Debbie Cohilas" (with *e*) — reproduced verbatim; site JSON-LD still uses "Debbi Cohilas". Flagged.
+- **Artist name:** approved copy uses "Debbi Cohilas" (with *e*) — reproduced verbatim; site JSON-LD still uses "Debbi Cohilas". Flagged.
 - Single file: `content/catalogue/alchemical-quadriptych.md`. No code/template changes.
 
 ### Paschal Lamb — Rewritten to Actual Object (Stained Glass) — 2026-06-01
@@ -51,7 +58,7 @@ Git history remains the authoritative technical record.
 - **Price $1,200 and purchase_mode `direct` preserved unchanged** per instruction (no Stripe link provided for this piece).
 - Single file: `content/catalogue/paschal-lamb.md`. No code/template changes.
 - **Reported residual (purchase flow preserved as instructed):** `direct` mode with no `purchase_links` still renders "Direct Acquisition — completed limited edition · Direct purchase integration forthcoming · reserve by inquiry", a "Reserve via Inquiry" CTA, and an auto "Timeline: confirmed at commission inquiry" spec line — these conflict with the new finished-original/$1,200/ships-in-2-days copy. A $1,200 Stripe Payment Link (as with the Lamen / Rosy Cross) would suppress all three and render a real "Purchase — $1,200" button; offered, not done.
-- **Artist name:** the approved copy uses "Debbie Cohilas" (with an *e*); the rest of the site uses "Debbi Cohilas". Reproduced verbatim as supplied; flagged.
+- **Artist name:** the approved copy uses "Debbi Cohilas" (with an *e*); the rest of the site uses "Debbi Cohilas". Reproduced verbatim as supplied; flagged.
 
 ### The Rosy Cross — Rewritten to Actual Object + Stripe Purchase Wired — 2026-06-01
 
