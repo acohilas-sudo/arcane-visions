@@ -8,9 +8,9 @@ price: "$250 per panel · $950 complete set"
 purchase_mode: retail
 purchase_links:
   - label: "Purchase the Complete Set — $950"
-    url: "https://buy.stripe.com/00w9AVbdN9hg2Mg6pk4sE09"
+    url: "https://buy.stripe.com/3cI7sNbdNfFE5Ys6pk4sE0d"
   - label: "Purchase a Single Panel — $250"
-    url: "https://buy.stripe.com/4gM28t6Xx798cmQ3d84sE0a"
+    url: "https://buy.stripe.com/cNieVf4Pp1OOaeIeVQ4sE0c"
 specs: |-
   Set of four original watercolors — Nigredo, Albedo, Citrinitas, Rubedo
   Original watercolor with gold accents on archival paper
