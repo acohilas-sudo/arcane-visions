@@ -10,6 +10,15 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-01
 
+### Paschal Lamb — Rewritten to Actual Object (Stained Glass) — 2026-06-01
+
+- Replaced the body copy verbatim with the final approved copy ("The Lamb Triumphant"). The page previously described a **sculptural bas-relief** ("stable substrate", "restrained gilding", "Limited edition"); the actual object is a **12″ × 12″ hand-leaded stained glass** Agnus Dei with hand-painted glass detail, golden nimbus, crimson mandorla, dark gunmetal shadow box with integrated LED backlighting, $1,200, ships within 2 business days.
+- Frontmatter reconciled to the object: `specs` rebuilt (stained-glass medium, 12″ × 12″, presentation, full symbolic lineages — Masonic/Rosicrucian/Royal Arch/Scottish Rite/Christian Hermetic, original handcrafted work, ships-in-2-days); removed "Sculptural bas-relief", "stable substrate", "restrained gilding", "Limited edition", "Handcrafted in Virginia", "Symbolism: Christian, with Rosicrucian resonance". Primary photo `alt` corrected off "bas-relief".
+- **Price $1,200 and purchase_mode `direct` preserved unchanged** per instruction (no Stripe link provided for this piece).
+- Single file: `content/catalogue/paschal-lamb.md`. No code/template changes.
+- **Reported residual (purchase flow preserved as instructed):** `direct` mode with no `purchase_links` still renders "Direct Acquisition — completed limited edition · Direct purchase integration forthcoming · reserve by inquiry", a "Reserve via Inquiry" CTA, and an auto "Timeline: confirmed at commission inquiry" spec line — these conflict with the new finished-original/$1,200/ships-in-2-days copy. A $1,200 Stripe Payment Link (as with the Lamen / Rosy Cross) would suppress all three and render a real "Purchase — $1,200" button; offered, not done.
+- **Artist name:** the approved copy uses "Debbie Cohilas" (with an *e*); the rest of the site uses "Debbi Cohilas". Reproduced verbatim as supplied; flagged.
+
 ### The Rosy Cross — Rewritten to Actual Object + Stripe Purchase Wired — 2026-06-01
 
 - Replaced the body copy verbatim with the approved copy describing the **actual object**: a one-of-one **plasticine bas-relief** on a field of **genuine 24k gold leaf**, white sculptural rose-cross, **red gemstone inlays**, **deep red crystal INRI lettering**, in a **12″ × 12″ wooden shadow box with integrated interior lighting**, **$1,500** (secure shipping included), signed Certificate of Authenticity. The previous page wrongly described a flat "paint on prepared ground" "limited edition" work.
