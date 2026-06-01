@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-01
 
+### Bespoke Magical Shoes — Rewritten (Commission Flow Preserved) — 2026-06-01
+
+- Replaced the body copy verbatim with the final approved copy ("The Tree and the Rose"), superseding prior drafts. Both symbolism sections render (left shoe = Kabbalistic Tree of Life; right shoe = Rosicrucian Rose Cross / Seal of Solomon / INRI).
+- Frontmatter reconciled to the approved object: `specs` rebuilt (hand-painted acrylic on canvas high-top sneakers, client-supplied base shoe, fully bespoke, full symbolic-tradition list — Kabbalah/Golden Dawn/Rosicrucian/Hermetic/Alchemical/Martinist/Masonic/Thelemic, turnaround discussed at commission, starting at $500); removed "Hand-finished bespoke shoes", "Built to the wearer's measurements", "One-of-one · Handcrafted in Virginia". Price `""` → `"Starting at $500"`.
+- **Commission acquisition flow preserved and unchanged:** `purchase_mode` remains `commission` with no Stripe `purchase_links` → page renders the "Commission Inquiry" note + "Begin a Commission Inquiry" CTA (opens inquiry modal). **Not** converted to direct purchase; zero Stripe button. The copy explicitly states "The pair shown is not available for purchase."
+- Artist name "Debbi Cohilas" in the approved copy matches the site spelling (no discrepancy this time).
+- Single file: `content/catalogue/bespoke-magical-shoes.md`. No code/template changes; no other product affected (homepage unchanged — not featured; /the-work grid card updated to "Starting at $500").
+
 ### Alchemical Quadriptych — Replaced Invalid Stripe Payment Link URLs — 2026-06-01
 
 - Both existing Quadriptych Payment Links were reported invalid; swapped the **URLs only** (labels, pricing $950/$250, copy, specs, dimensions, acquisition flow all unchanged):
