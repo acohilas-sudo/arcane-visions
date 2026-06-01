@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-01
 
+### Alchemical Quadriptych — Replaced Invalid Stripe Payment Link URLs — 2026-06-01
+
+- Both existing Quadriptych Payment Links were reported invalid; swapped the **URLs only** (labels, pricing $950/$250, copy, specs, dimensions, acquisition flow all unchanged):
+  - Complete Set ($950): `…00w9AVbdN9hg2Mg6pk4sE09` → `…3cI7sNbdNfFE5Ys6pk4sE0d`
+  - Single Panel ($250): `…4gM28t6Xx798cmQ3d84sE0a` → `…cNieVf4Pp1OOaeIeVQ4sE0c`
+- Single file: `content/catalogue/alchemical-quadriptych.md` (diff = exactly the two `url:` lines). No code/template changes; no other product affected.
+- New links return HTTP 200; **active/dead status not externally verifiable** (Stripe pages are JS shells — old and new return identical 200 shells). Recommend a test checkout to confirm both new links charge correctly ($950 / $250).
+
 ### Alchemical Quadriptych — Rewritten + Pricing Migrated to $250/$950 — 2026-06-01
 
 - Replaced the body copy verbatim with the final approved copy ("The Great Work"), superseding all prior Quadriptych drafts. All four stages (Nigredo/Albedo/Citrinitas/Rubedo) and their symbols (△ θ ○) render.
