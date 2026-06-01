@@ -38,7 +38,7 @@ The Work
 
 The lamb stands in luminous white upon a three-lobed heraldic mount, bearing the triumphal banner on a gilded staff. The banner trails diagonally from the staff — each alternating stripe of white and ruby red an independently cut piece of glass.
 
-Working directly onto glass, Debbie Cohilas renders the lamb's face in fine-line brushwork at a scale that allows no correction: the eye, the expression, each stroke resolved and final. Across the neck and body, painted texture implies the density of wool — layered, slightly mottled, worked rather than filled. The golden nimbus arcs behind the head in true leaded glass, each piece individually hand-cut.
+Working directly onto glass, Debbi Cohilas renders the lamb's face in fine-line brushwork at a scale that allows no correction: the eye, the expression, each stroke resolved and final. Across the neck and body, painted texture implies the density of wool — layered, slightly mottled, worked rather than filled. The golden nimbus arcs behind the head in true leaded glass, each piece individually hand-cut.
 
 The lamb is enclosed within a deep crimson mandorla — the vesica of divine radiance — bounded by a gold ring with hand-painted botanical detail. The four corners are worked in blue and iridescent glass, each panel bearing scrolled vine motifs. The shadow box frame is dark gunmetal: minimal, presenting no competition to what it contains.
 
@@ -50,7 +50,7 @@ Dimensions: 12″ × 12″
 
 Medium: Hand-leaded stained glass with hand-painted glass detail
 
-Artist: Debbie Cohilas
+Artist: Debbi Cohilas
 
 Presentation: Dark gunmetal shadow box with integrated LED backlighting — ready to display, no installation required
 
