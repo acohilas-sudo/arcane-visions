@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-01
 
+### Rosy Cross — Migrated Approved Rewrite onto the Canonical Bas-Relief — 2026-06-01
+
+- **Root cause found:** the approved Rosy Cross rewrite (plasticine bas-relief, 24k gold leaf, gemstone inlays, INRI crystals, shadow box, $1,500, Stripe) had been applied to the WRONG file — `the-rosy-cross` (which is actually a separate flat *painting*: orange fleur-de-lis cross on blue ground). Image verification confirmed the approved copy describes `rosicrucian-rosy-cross-bas-relief` (its primary + gallery images show exactly that gold-leaf white-relief cross with INRI corners in a shadow box). The two files are **different artworks**, not duplicates.
+- **Migration:** moved the approved verbatim body, specs, $1,500 pricing, and Stripe purchase flow onto the canonical, featured product `rosicrucian-rosy-cross-bas-relief.md`. Kept its title ("Rosicrucian Rosy Cross Bas-Relief"), its own bas-relief images (alts corrected to the real object), and featured placement. `purchase_mode` direct → retail; added `purchase_links` (Purchase — $1,500, `buy.stripe.com/cNi5kFa9JeBA5Ys8xs4sE06`).
+- **Removed legacy** from the canonical page: "Limited edition", "Handcrafted in Virginia", the direct-mode "Reserve via Inquiry" note, the auto commission-timeline, "stable substrate"/"restrained gilding", and the old "sculptural rendering" body.
+- `the-rosy-cross` (the painting) **not touched** — byte-identical to HEAD. It still carries the bas-relief copy from the earlier misapplication; its own correction (restore painting copy vs retire) remains an open decision per option (b), deferred at the user's instruction.
+- Single file changed: `content/catalogue/rosicrucian-rosy-cross-bas-relief.md`. Verified only that product page + its featured card on home/the-work differ; all other products byte-identical.
+
 ### Bespoke Magical Shoes — Rewritten (Commission Flow Preserved) — 2026-06-01
 
 - Replaced the body copy verbatim with the final approved copy ("The Tree and the Rose"), superseding prior drafts. Both symbolism sections render (left shoe = Kabbalistic Tree of Life; right shoe = Rosicrucian Rose Cross / Seal of Solomon / INRI).
