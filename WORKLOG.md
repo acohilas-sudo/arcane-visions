@@ -8,6 +8,15 @@ Git history remains the authoritative technical record.
 
 ---
 
+## 2026-06-01
+
+### The Rosy Cross — Rewritten to Actual Object + Stripe Purchase Wired — 2026-06-01
+
+- Replaced the body copy verbatim with the approved copy describing the **actual object**: a one-of-one **plasticine bas-relief** on a field of **genuine 24k gold leaf**, white sculptural rose-cross, **red gemstone inlays**, **deep red crystal INRI lettering**, in a **12″ × 12″ wooden shadow box with integrated interior lighting**, **$1,500** (secure shipping included), signed Certificate of Authenticity. The previous page wrongly described a flat "paint on prepared ground" "limited edition" work.
+- Frontmatter reconciled: `price` ""→ "$1,500"; `purchase_mode` direct→retail; `specs` rebuilt to the real object (removed "Limited edition", "paint on prepared ground", "restrained palette", "Handcrafted in Virginia"); photo `alt` corrected from "hand-painted" to "plasticine bas-relief with 24k gold leaf".
+- **Stripe purchase wired** via the live `purchase_links` architecture: added `Purchase — $1,500` → `buy.stripe.com/cNi5kFa9JeBA5Ys8xs4sE06`. Presence of `purchase_links` suppresses the acquisition note entirely, so **no** commission/inquiry/"purchase forthcoming"/commission-timeline language renders — just the real purchase button.
+- Single file: `content/catalogue/the-rosy-cross.md`. No code/template changes. Verified only the Rosy Cross product page differs (plus its `/the-work` grid card, which correctly updates to "$1,500 / View / Purchase"); all other products byte-identical.
+
 ## 2026-05-30
 
 ### Organization JSON-LD — knowsAbout Expanded + Normalized (Option B) — 2026-05-30
