@@ -134,6 +134,10 @@ function readCatalogue() {
       // Stripe-hosted Payment Link (https://buy.stripe.com/...). A non-empty
       // value marks the piece as directly purchasable; blank keeps it inquiry-only.
       stripe_link: data.stripe_link || '',
+      // Multi-link purchase support (e.g. a set + single-panel price). Each item
+      // is { label, url }; presence makes the piece purchasable just like
+      // stripe_link. Additive — coexists with the single stripe_link field.
+      purchase_links: Array.isArray(data.purchase_links) ? data.purchase_links.filter(l => l && l.url) : [],
       // 'direct'      = completed limited edition; available by inquiry
       // 'inquiry'     = one-of-one collector piece or made-to-specification
       // 'commission'  = bespoke commission requiring conversation
@@ -432,7 +436,8 @@ function renderProductDetailHTML(product) {
   const commissionable = availability === 'private_collection_commissionable';
   // A Stripe Payment Link makes a piece directly purchasable — only ever an
   // obtainable work in The Work; never a commission example or an acquired work.
-  const isPurchasable = !!product.stripe_link && availability === 'available';
+  const purchaseLinks = (product.purchase_links || []).filter(l => l && l.url);
+  const isPurchasable = (purchaseLinks.length > 0 || !!product.stripe_link) && availability === 'available';
 
   const specsArr = (product.specs || '').split('\n').filter(Boolean);
   // Inquiry/commission pieces get a timeline line; purchasable and private-
@@ -502,8 +507,16 @@ function renderProductDetailHTML(product) {
   if (isPurchasable) {
     // Direct acquisition via Stripe-hosted checkout — a top-level navigation,
     // exactly the Theurgic Arts pattern. data-cta drives the analytics shim.
-    const buyLabel = product.price ? `Purchase — ${escapeHtml(product.price)}` : 'Purchase';
-    inquireButtonHTML = `<a class="btn" href="${escapeAttr(product.stripe_link)}" data-cta="product-purchase" data-work="${escapeAttr(product.name || '')}">${buyLabel}</a>`;
+    // Multi-link products (e.g. set + single panel) render one button per link;
+    // single-stripe_link products render one "Purchase — <price>" button.
+    if (purchaseLinks.length) {
+      inquireButtonHTML = purchaseLinks
+        .map(l => `<a class="btn" href="${escapeAttr(l.url)}" data-cta="product-purchase" data-work="${escapeAttr(product.name || '')}">${escapeHtml(l.label || 'Purchase')}</a>`)
+        .join('\n      ');
+    } else {
+      const buyLabel = product.price ? `Purchase — ${escapeHtml(product.price)}` : 'Purchase';
+      inquireButtonHTML = `<a class="btn" href="${escapeAttr(product.stripe_link)}" data-cta="product-purchase" data-work="${escapeAttr(product.name || '')}">${buyLabel}</a>`;
+    }
   } else if (availability === 'private_collection') {
     inquireButtonHTML = '';
   } else {
@@ -537,7 +550,7 @@ function renderProductCardHTML(product, showSpecs) {
   const imgs = photos.map(p => p.image);
   const specsArr = (product.specs || '').split('\n').filter(Boolean);
   const inPrivateCollection = product.availability === 'private_collection' || product.availability === 'private_collection_commissionable';
-  const isPurchasable = !!product.stripe_link && (product.availability || 'available') === 'available';
+  const isPurchasable = (((product.purchase_links && product.purchase_links.length) || !!product.stripe_link)) && (product.availability || 'available') === 'available';
   const ctaLabel = inPrivateCollection
     ? 'View'
     : (isPurchasable ? 'View / Purchase' : 'View / Inquire');
@@ -960,6 +973,7 @@ fs.writeFileSync(
       specs: p.specs,
       price: p.price,
       stripe_link: p.stripe_link || '',
+      purchase_links: p.purchase_links || [],
       purchase_mode: p.purchase_mode,
       // Resolved section — the hydrated SPA consumes this directly so it never
       // re-derives (single source of truth = build.js readCatalogue).

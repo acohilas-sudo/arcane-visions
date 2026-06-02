@@ -2003,7 +2003,7 @@ function createProductCard(product, showSpecs) {
 
   let specsHTML = '';
   const inPrivateCollection = isPrivateCollectionWork(product);
-  const isPurchasable = !!product.stripe_link && isAvailableWork(product);
+  const isPurchasable = (((product.purchase_links && product.purchase_links.length) || !!product.stripe_link)) && isAvailableWork(product);
   const ctaLabel = inPrivateCollection
     ? 'View'
     : (isPurchasable ? 'View / Purchase' : 'View / Inquire');
@@ -2439,7 +2439,8 @@ function showProduct(product, noPush) {
   const commissionable = availability === 'private_collection_commissionable';
   // Stripe checkout applies only to obtainable works in The Work — never a
   // commission example and never a work in a private collection.
-  const isPurchasable = !!product.stripe_link && availability === 'available';
+  const purchaseLinks = (product.purchase_links || []).filter(l => l && l.url);
+  const isPurchasable = (purchaseLinks.length > 0 || !!product.stripe_link) && availability === 'available';
 
   // Slice so the timeline append never mutates the cached product object.
   const specsArr = Array.isArray(product.specs) ? product.specs.slice() : (product.specs || '').split('\n').filter(Boolean);
@@ -2515,8 +2516,12 @@ function showProduct(product, noPush) {
   // to the on-site inquiry form. Kept in sync with build.js's static rendering.
   const workQuery = encodeURIComponent(product.name || '');
   if (isPurchasable) {
-    const buyLabel = product.price ? `Purchase — ${product.price}` : 'Purchase';
-    inquireEl.innerHTML = `<a class="btn" href="${product.stripe_link}" data-cta="product-purchase" data-work="${product.name || ''}">${buyLabel}</a>`;
+    if (purchaseLinks.length) {
+      inquireEl.innerHTML = purchaseLinks.map(l => `<a class="btn" href="${l.url}" data-cta="product-purchase" data-work="${product.name || ''}">${l.label || 'Purchase'}</a>`).join('');
+    } else {
+      const buyLabel = product.price ? `Purchase — ${product.price}` : 'Purchase';
+      inquireEl.innerHTML = `<a class="btn" href="${product.stripe_link}" data-cta="product-purchase" data-work="${product.name || ''}">${buyLabel}</a>`;
+    }
   } else if (availability === 'private_collection') {
     inquireEl.innerHTML = '';
   } else {
