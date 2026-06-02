@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-02
 
+### Stripe Purchasing Restored — purchase_links (multi-link) Regression Fix — 2026-06-02
+
+- **Regression:** commit `4b64550` ("status-driven sections + Works in Private Collections archive") rewrote the purchase path from `purchase_links` (list) → single `stripe_link`, orphaning the catalogue's `purchase_links` data and removing **all** Stripe purchase buttons site-wide (every purchasable product fell back to "Begin Commission Inquiry"). Last working commit: `5e6e4a8`.
+- **Fix (additive, both fields supported):** `build.js` + `index.html` now restore `purchase_links` rendering alongside `stripe_link`. Loader parses `purchase_links`; `isPurchasable = (purchaseLinks.length || stripe_link) && availability === 'available'`; detail render emits **one purchase button per link** (multi-price) else the single-`stripe_link` button; card label + client-data export updated; SPA `showProduct`/`createProductCard` mirrored.
+- **Restored:** HOGD Adept Lamen ($1,500), Rosicrucian Rosy Cross Bas-Relief ($1,500), Alchemical Quadriptych (**two** buttons — Complete Set $950 + Single Panel $250).
+- **Untouched / verified no regression:** `deriveAvailability`, availability logic, Private Collections, archive sections, commission flow, inquiry flow, navigation — with `<script>` stripped, only the 3 purchasable product pages differ; commissions/private-collections/about + all commission/inquiry/archived product pages are byte-identical. Home/The Work grids changed only in the 3 purchasable cards' label ("View / Inquire" → "View / Purchase").
+- Files: `build.js`, `index.html`. No frontmatter changes.
+
 ### Bespoke Masonic Lodge Coat of Arms — Hi-Res Image Replacement — 2026-06-02
 
 - Replaced the low-resolution placeholder `images/uploads/products/bespoke-masonic-lodge-coat-of-arms/primary.jpg` (300×388, 42 KB — was being upscaled by `width:100%` → blurry) with the supplied high-resolution artwork.
