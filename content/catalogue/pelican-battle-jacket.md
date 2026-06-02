@@ -6,6 +6,9 @@ featured: true
 featured_order: 7
 price: "$2,200"
 purchase_mode: inquiry
+purchase_links:
+  - label: "Purchase — $2,200"
+    url: "https://buy.stripe.com/5kQeVf2Hh0KKdqU9Bw4sE07"
 acquisition_status: "Available · One-of-One Work"
 acquisition_note: "A single original work — not reproduced and not editioned. Available to one collector."
 specs: |-
