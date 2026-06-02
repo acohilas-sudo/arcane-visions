@@ -10,6 +10,13 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-02
 
+### Pelican Battle Jacket — Resolved Status Contradiction → Directly Purchasable (Option A) — 2026-06-02
+
+- The finished, available one-of-one ($2,200, "Available · One-of-One Work") was rendering commission-style ("This piece is built to a particular order…" note + "Begin Commission Inquiry" CTA) because it had `purchase_mode: inquiry` and **no** purchase link — so `isPurchasable` was false and the CTA fell to the commission fallback.
+- Fix (Option A, frontmatter-only): added `purchase_links` → "Purchase — $2,200" (`buy.stripe.com/5kQeVf2Hh0KKdqU9Bw4sE07`) via the existing purchasing architecture. Now renders **Available · One-of-One Work / $2,200 / Ready to Acquire / Purchase — $2,200**; the commission note and commission CTA are gone. Stays in The Work; availability unchanged.
+- No code/architecture changes; no frontmatter changes beyond `purchase_links`. Verified no regression — only the Pelican product page differs; commissions, Private Collections, archive, and the other Stripe products (Lamen, Bas-Relief, Quadriptych) byte-identical. Home/The Work grids changed only in the Pelican card label ("View / Inquire" → "View / Purchase").
+
+
 ### Stripe Purchasing Restored — purchase_links (multi-link) Regression Fix — 2026-06-02
 
 - **Regression:** commit `4b64550` ("status-driven sections + Works in Private Collections archive") rewrote the purchase path from `purchase_links` (list) → single `stripe_link`, orphaning the catalogue's `purchase_links` data and removing **all** Stripe purchase buttons site-wide (every purchasable product fell back to "Begin Commission Inquiry"). Last working commit: `5e6e4a8`.
