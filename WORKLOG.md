@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-02
 
+### Homepage Positioning Correction — Order List → Offering-Based — 2026-06-02
+
+Corrected a homepage content regression. The hero-area list under the title had reverted to an older audience/order segmentation — *Hermetic Order of the Golden Dawn · Rosicrucian · Martinist · Rectified Scottish Rite · Private Collectors* — and now reads the approved offering-based positioning, aligned with the catalogue architecture: **Original Works · Bespoke Commissions · Private Collections**.
+
+- **Root cause:** the approved offering-based block (committed earlier as "replace homepage order list with offering-based positioning") had been reverted by uncommitted working-tree WIP; that reverted block rode along when `index.html` was staged whole for the catalogue architecture commit, and was deployed.
+- **Scope:** content-only — the same `.traditions` section, typography, spacing, alignment, and styling are unchanged (three items instead of five). Hero, hero video, navigation, and catalogue architecture untouched.
+- **Note:** `content/home.md` `tradition_tags` still holds the old list but is **dormant** (not rendered) — left for cleanup alongside the remaining working-tree WIP.
+
 ### Catalogue Architecture — Status-Driven Sections, Private Collections Archive & Migration — 2026-06-02
 
 Introduced a status-driven catalogue architecture that separates the catalogue into three sections — obtainable work, commissionable examples, and a permanent provenance archive — and migrated the first works into the archive. Built and committed as one coherent feature (framework + content migration). Detail-page URLs (`/the-work/{slug}/`) are unchanged throughout, so there are no redirects and no SEO loss; works move between sections by changing metadata, never by duplicating content.
