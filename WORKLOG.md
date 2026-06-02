@@ -8,6 +8,33 @@ Git history remains the authoritative technical record.
 
 ---
 
+## 2026-06-02
+
+### Catalogue Architecture — Status-Driven Sections, Private Collections Archive & Migration — 2026-06-02
+
+Introduced a status-driven catalogue architecture that separates the catalogue into three sections — obtainable work, commissionable examples, and a permanent provenance archive — and migrated the first works into the archive. Built and committed as one coherent feature (framework + content migration). Detail-page URLs (`/the-work/{slug}/`) are unchanged throughout, so there are no redirects and no SEO loss; works move between sections by changing metadata, never by duplicating content.
+
+**Architecture & framework:**
+
+- New **`availability`** field is the section axis — `available · commission · private_collection · private_collection_commissionable` — kept separate from the existing `purchase_mode` (which still describes *how* an obtainable work is acquired). When a work leaves `availability` blank it is placed automatically from `purchase_mode` (direct/inquiry → The Work, commission → Commissions, archival → Private Collections), so existing works needed no edits.
+- Three sections, each filtered by status from the single catalogue: **The Work** (`/the-work/`, obtainable works only), **Commissions** (`/commissions/`, now with a gallery of commissionable examples above the inquiry form), and the new **Works in Private Collections** (`/private-collections/`).
+
+**Private Collections implementation:**
+
+- New museum-style archive section and page, with introductory copy describing why certain works leave the atelier permanently. Archived works render the canonical status **"Placed in a Private Collection"** — never "Sold / Out of Stock / Unavailable" — with no pricing, no Stripe checkout, and no purchase or inquiry call to action. Structured data drops the commerce offer for archived works; breadcrumbs and the detail "back" link are section-aware. The CMS gained a "Section / Placement" field and a Private Collections content entry. The floating commission prompt is suppressed on the archive so it reads as a record, not a storefront.
+
+**Navigation promotion:** with the archive now holding three works (past the two-work threshold set when the framework was built), promoted **Works in Private Collections** from a footer link into the primary navigation, desktop and mobile — *Home · The Work · Commissions · Private Collections · About*. The redundant footer link was removed. "Commissions" was also surfaced as a primary navigation link alongside the existing inquiry button.
+
+**Archive migration — classification changes:**
+
+- **Paschal Lamb → Placed in a Private Collection** (`availability: private_collection`). The original has sold. Removed the displayed **$1,200** price, the "Available by Inquiry" status, and the body's pricing/"available by inquiry" line (replaced with a short Provenance note); trimmed the residual "Limited edition" wording from the specs. Symbolism, materials, and artistic description preserved.
+- **The Rosy Cross (the painting) → Placed in a Private Collection · Similar Works Available by Commission** (`availability: private_collection_commissionable`). The original has sold and was not a one-of-a-kind, so similar works may be commissioned. Removed the "Limited edition / available by inquiry" acquisition line (replaced with a Provenance + commission note) and the "Limited edition" spec. Artistic description preserved. This is the **painting** — distinct from the still-available Rosicrucian Rosy Cross **Bas-Relief**, which was not touched.
+- **The Pelican in Her Piety → remains Placed in a Private Collection** (pure archive). Removed the "Future reinterpretations may be available…" note so the page no longer implies a commission pathway.
+
+**Verification:** the site builds cleanly (13 works, 13 product pages, 5 section pages, sitemap). The catalogue now divides **4 available / 6 commission / 3 in private collections**. Static pages and in-browser rendering were both checked — archive pages show the correct status with no pricing or checkout, the Rosy Cross shows the commissionable status, and navigation, routing, and breadcrumbs resolve correctly with no errors. Not deployed.
+
+---
+
 ## 2026-06-01
 
 ### Artist-Name Standardization — surname spelling "Debbie" → "Debbi" (Cohilas) — 2026-06-01

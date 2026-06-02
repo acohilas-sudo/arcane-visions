@@ -3,26 +3,26 @@ name: The Pelican in Her Piety
 tradition: Christian
 category: Symbolic Art
 featured: true
-featured_order: 1
 price: ""
-purchase_mode: direct
+purchase_mode: archival
+acquisition_status: "Acquired · One-of-One Work"
 specs: |-
   Sculptural bas-relief of the Pelican vulning her breast
   The mother bird in piety, feeding her young from her own blood
   Restrained gold finish on dark ground
   Sized for a private collection, library, or gallery wall
-  Limited edition · Handcrafted in Virginia
+  One-of-one work · Handcrafted in the Washington, DC region
 photos:
   - image: /images/uploads/products/the-pelican-in-her-piety/primary.jpg
-    alt: The Pelican in Her Piety — bas-relief, Arcane Visions
+    alt: The Pelican in Her Piety — bas-relief, full composition
   - image: /images/uploads/products/the-pelican-in-her-piety/gallery-1.jpg
-    alt: The Pelican in Her Piety — detail of the breast wound
+    alt: The Pelican in Her Piety — vertical detail of the mother bird at the breast
   - image: /images/uploads/products/the-pelican-in-her-piety/gallery-2.jpg
-    alt: The Pelican in Her Piety — figure detail
+    alt: The Pelican in Her Piety — vertical detail of feathering and young
   - image: /images/uploads/products/the-pelican-in-her-piety/gallery-3.jpg
-    alt: The Pelican in Her Piety — horizontal detail
+    alt: The Pelican in Her Piety — horizontal crop showing the full sculpted field
   - image: /images/uploads/products/the-pelican-in-her-piety/gallery-4.jpg
-    alt: The Pelican in Her Piety — full composition
+    alt: The Pelican in Her Piety — vertical close detail of the relief surface
 ---
 
 The Pelican in Her Piety is one of the older sacred figures of the Western tradition. The mother bird turns to her own breast, opens it, and feeds her young with her own blood. The image carried weight in early Christian and Rosicrucian iconography long before it became a heraldic ornament, and it has not lost it.
@@ -40,7 +40,3 @@ The work is built as a sculptural bas-relief on a stable substrate, hand-finishe
 ## Placement
 
 The piece is sized for long-form display: a private collection, library, or gallery wall.
-
-## Acquisition
-
-Limited edition, kept intentionally small. Direct purchase integration forthcoming; reserve a piece by inquiry in the meantime.

@@ -6,25 +6,32 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Warm the DNS for Stripe-hosted checkout so the Purchase CTA navigates fast. -->
+<link rel="dns-prefetch" href="https://buy.stripe.com">
 
-<title>Arcane Visions | Esoteric Art Atelier</title>
-<meta name="description" content="Arcane Visions — an esoteric art atelier. Original occult and esoteric artworks, bas-relief works, portraiture, and bespoke commissions for collectors and patrons of the Western Mystery Tradition. Virginia / Washington DC.">
+<title>Arcane Visions | Ceremonial &amp; Esoteric Atelier</title>
+<meta name="description" content="Arcane Visions — ceremonial and esoteric atelier. Handcrafted symbolic art, bas-relief works, and portraiture. Washington, DC region.">
 
 <meta name="robots" content="index, follow">
 <meta name="author" content="Arcane Visions">
 
 <meta name="geo.region" content="US-VA" />
-<meta name="geo.placename" content="Virginia / Washington DC" />
+<meta name="geo.placename" content="Washington, DC region" />
 <link rel="canonical" href="https://arcanevisions.art/">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/images/uploads/favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/images/uploads/favicon/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/uploads/favicon/apple-touch-icon.png">
 
+<!-- Hero fallback still — preloaded so the home above-the-fold paints without delay,
+     ahead of the (lazier, preload=metadata) hero video. Hero-page only; other routes
+     can skip this without penalty since the still doesn't appear there. -->
+<link rel="preload" as="image" href="/images/uploads/hero/hero-fallback.jpg" fetchpriority="high">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Arcane Visions">
-<meta property="og:title" content="Arcane Visions | Esoteric Art Atelier">
-<meta property="og:description" content="Original occult and esoteric artworks, bas-relief works, and bespoke esoteric commissions from the Arcane Visions atelier. Virginia / Washington DC.">
+<meta property="og:title" content="Arcane Visions | Ceremonial &amp; Esoteric Atelier">
+<meta property="og:description" content="Handcrafted ritual objects, symbolic art, and collector-grade occult works from the Arcane Visions atelier. Washington, DC region.">
 <meta property="og:url" content="https://arcanevisions.art/">
 <meta property="og:image" content="https://arcanevisions.art/images/og-default.jpg">
 <meta property="og:image:width" content="1200">
@@ -32,8 +39,8 @@
 <meta property="og:locale" content="en_US">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Arcane Visions | Esoteric Art Atelier">
-<meta name="twitter:description" content="Original occult and esoteric artworks, bas-relief works, and bespoke esoteric commissions.">
+<meta name="twitter:title" content="Arcane Visions | Ceremonial &amp; Esoteric Atelier">
+<meta name="twitter:description" content="Handcrafted ritual objects, symbolic art, and collector-grade occult works.">
 <meta name="twitter:image" content="https://arcanevisions.art/images/og-default.jpg">
 
 <script type="application/ld+json">
@@ -45,7 +52,7 @@
       "@id": "https://arcanevisions.art/#organization",
       "name": "Arcane Visions",
       "alternateName": "Arcane Visions Studios",
-      "description": "Arcane Visions is an esoteric art atelier creating original occult and esoteric artworks — bas-relief works, devotional paintings, portraiture, and bespoke commissions — for collectors and patrons of the Western Mystery Tradition.",
+      "description": "Arcane Visions is a ceremonial and esoteric atelier producing handcrafted symbolic art, bas-relief works, and portraiture for practitioners and collectors of the Western Mystery Tradition.",
       "url": "https://arcanevisions.art",
       "logo": {
         "@type": "ImageObject",
@@ -57,30 +64,21 @@
       "email": "info@arcanevisionsstudios.com",
       "address": {
         "@type": "PostalAddress",
-        "addressRegion": "Virginia",
+        "addressRegion": "VA",
         "addressCountry": "US"
       },
-      "areaServed": "Worldwide",
+      "areaServed": ["Washington, DC region", "Worldwide"],
       "knowsAbout": [
-        "Western Esotericism",
         "Western Mystery Tradition",
-        "Hermeticism",
-        "Alchemy",
-        "Kabbalah",
-        "Rosicrucianism",
-        "Christian Mysticism",
         "Hermetic Order of the Golden Dawn",
-        "Martinism",
-        "Élus Coëns",
+        "Rosicrucian traditions",
+        "Martinist Order",
         "Rectified Scottish Rite",
         "Freemasonry",
-        "Ceremonial Magic",
-        "Esoteric Symbolism",
-        "Esoteric and occult art",
-        "Symbolic Art",
-        "Sacred Art",
-        "Devotional painting",
+        "Ceremonial magic",
         "Bas-relief sculpture",
+        "Symbolic art",
+        "Devotional painting",
         "Ceremonial portraiture"
       ],
       "founder": [
@@ -98,7 +96,7 @@
       "givenName": "Debbi",
       "familyName": "Cohilas",
       "jobTitle": "Artist & Visionary",
-      "description": "California Institute of the Arts–trained fine artist, storyboard artist, director, and animation timer with three decades of credits in film and television. Co-founder of Arcane Visions; brings symbolic fluency to bas-relief works, devotional paintings, and original esoteric art.",
+      "description": "California Institute of the Arts–trained fine artist, storyboard artist, director, and animation timer with three decades of credits in film and television. Co-founder of Arcane Visions; brings symbolic fluency to ceremonial regalia, bas-reliefs, and devotional paintings.",
       "alumniOf": {
         "@type": "EducationalOrganization",
         "name": "California Institute of the Arts"
@@ -108,7 +106,7 @@
         "Storyboard direction",
         "Animation",
         "Symbolic art",
-        "Bas-relief and panel painting",
+        "Ceremonial regalia construction",
         "Western Mystery Tradition"
       ],
       "worksFor": { "@id": "https://arcanevisions.art/#organization" },
@@ -123,14 +121,14 @@
       "givenName": "Drew",
       "familyName": "Cohilas",
       "jobTitle": "Manager & Creative Contributor",
-      "description": "Initiated Freemason working within the Rectified Scottish Rite current. Co-founder of Arcane Visions; manages commissions and collector relationships across the Western Mystery Tradition.",
+      "description": "Initiated Freemason working within the Rectified Scottish Rite current. Co-founder of Arcane Visions; manages commissions and works directly with Grand Lodge officers, lodge officers, and heads of esoteric orders.",
       "knowsAbout": [
         "Freemasonry",
         "Rectified Scottish Rite",
         "Rosicrucianism",
         "Martinist Order",
         "Western Mystery Tradition",
-        "Esoteric commission specification"
+        "Ceremonial regalia specification"
       ],
       "worksFor": { "@id": "https://arcanevisions.art/#organization" }
     },
@@ -139,7 +137,7 @@
       "@id": "https://arcanevisions.art/#website",
       "url": "https://arcanevisions.art",
       "name": "Arcane Visions",
-      "description": "Esoteric art atelier — original occult and esoteric artworks, bas-relief works, portraiture, and bespoke commissions.",
+      "description": "Ceremonial & esoteric atelier — handcrafted symbolic art, bas-relief works, and portraiture.",
       "publisher": { "@id": "https://arcanevisions.art/#organization" },
       "inLanguage": "en-US"
     },
@@ -147,7 +145,7 @@
       "@type": "VideoObject",
       "@id": "https://arcanevisions.art/#hero-video",
       "name": "Arcane Visions atelier — cinematic hero footage",
-      "description": "Atmospheric footage of relief, gold, and material surfaces from the Arcane Visions atelier in the Virginia / Washington DC area.",
+      "description": "Atmospheric footage of relief, gold, and material surfaces from the Arcane Visions atelier in the Washington, DC region.",
       "thumbnailUrl": "https://arcanevisions.art/images/uploads/hero/hero-fallback.jpg",
       "contentUrl": "https://arcanevisions.art/images/uploads/hero/hero-video.mp4",
       "uploadDate": "2026-05-27",
@@ -187,6 +185,12 @@
     --text-mid: #8e8478;
     --text-dim: #BFB6A4;
     --text-muted: #BFB6A4;
+
+    /* Form validation — muted terracotta, legible on the near-black ground
+       while staying within the warm ceremonial palette (AA on --bg). */
+    --error: #E6A08F;
+    --error-line: rgba(230,160,143,0.5);
+    --field-bg: rgba(255,255,255,0.018);
   }
 
   ::selection { background: var(--gold); color: var(--bg); }
@@ -634,7 +638,7 @@
   }
   .lightbox.open { display: flex; animation: fadeIn 0.3s ease; }
   .lightbox img {
-    max-width: 90vw; max-height: 90vh; object-fit: contain;
+    max-width: 90vw; max-height: 90vh; max-height: 90dvh; object-fit: contain;
     border: 1px solid var(--gold-dim);
     transition: opacity 0.2s ease; cursor: zoom-in;
     touch-action: pinch-zoom; user-select: none;
@@ -665,6 +669,18 @@
   .lightbox-nav:hover { color: var(--gold); }
   .lightbox-prev { left: 16px; }
   .lightbox-next { right: 16px; }
+  /* Mobile: keep nav controls off the artwork; let portraits read full and calm */
+  @media (max-width: 600px) {
+    .lightbox img { max-width: 94vw; max-height: 84vh; max-height: 80dvh; }
+    .lightbox-close { top: 14px; right: 16px; }
+    .lightbox-nav {
+      top: auto; bottom: 12px; transform: none;
+      font-size: 26px; padding: 8px 20px; opacity: 0.9;
+    }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+    .lightbox-counter { bottom: 26px; }
+  }
 
   /* Buttons */
   .btn {
@@ -725,27 +741,265 @@
   .spec-list div { padding-left: 18px; position: relative; }
   .spec-list div::before { content: '•'; position: absolute; left: 0; color: var(--gold); opacity: 0.85; }
 
-  /* Forms */
-  .form-group { margin-bottom: 24px; }
-  .form-label {
-    font-family: 'Cinzel', serif; font-size: 10px; font-weight: 600;
-    letter-spacing: 3.2px;
-    text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;
+  /* ── Commission inquiry form ──────────────────────────────────────────────
+     A private-consultation feel: generous spacing, serif inputs, gold rules
+     that warm on focus. No browser-default chrome; restrained motion only. */
+  .inquire-block { margin-top: 64px; }
+  .inquire-lead {
+    text-align: center; max-width: 620px; margin: 0 auto 44px;
+    font-size: 17px; line-height: 1.9; color: var(--text-soft); font-style: italic;
   }
-  .form-input, .form-textarea {
-    width: 100%; padding: 14px 16px; background: var(--gold-ghost);
-    border: 1px solid var(--gold-dim); color: var(--text);
-    font-family: 'Cormorant Garamond', serif; font-size: 16px;
-    transition: border-color 0.3s;
+  .inquiry-form { max-width: 720px; margin: 0 auto; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .field { display: grid; gap: 9px; margin-bottom: 26px; }
+  .field-row .field { margin-bottom: 0; }
+  .field-row { margin-bottom: 26px; }
+  .field > label {
+    font-family: 'Cinzel', serif; font-size: 10.5px; font-weight: 600;
+    letter-spacing: 2.6px; text-transform: uppercase; color: var(--gold);
   }
-  .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
-  .form-input:focus-visible,
-  .form-textarea:focus-visible {
-    outline: 2px solid var(--gold-bright);
-    outline-offset: 2px;
+  .field .opt { color: var(--text-mid); font-weight: 400; letter-spacing: 1.5px; }
+  .field .req { color: var(--gold-bright); margin-left: 2px; }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%; box-sizing: border-box;
+    background: var(--field-bg);
+    border: 1px solid var(--gold-dim);
+    color: var(--text-bright);
+    font-family: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+    font-size: 17px; line-height: 1.5;
+    padding: 14px 16px;
+    border-radius: 2px;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    -webkit-appearance: none; appearance: none;
+  }
+  .field textarea { min-height: 116px; resize: vertical; }
+  .field input::placeholder,
+  .field textarea::placeholder { color: var(--text-mid); opacity: 1; }
+  .field select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M3 5l4 4 4-4' stroke='%23C9A052' stroke-width='1.3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 16px center;
+    padding-right: 42px;
+  }
+  .field select option { background: var(--bg-second); color: var(--text-bright); }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
     border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold), 0 0 18px var(--gold-glow);
+    background: rgba(201,160,82,0.04);
   }
-  .form-textarea { resize: vertical; }
+  .field input[aria-invalid="true"],
+  .field select[aria-invalid="true"],
+  .field textarea[aria-invalid="true"] { border-color: var(--error-line); }
+  .field input[aria-invalid="true"]:focus,
+  .field select[aria-invalid="true"]:focus,
+  .field textarea[aria-invalid="true"]:focus {
+    border-color: var(--error); box-shadow: 0 0 0 1px var(--error);
+  }
+  .field-hint { font-size: 13px; color: var(--text-mid); font-style: italic; }
+  .field-msg { font-size: 13px; color: var(--error); min-height: 0; }
+  .field-msg:empty { display: none; }
+
+  /* Honeypot — present in the DOM, removed from view and the a11y tree. */
+  .hp-field {
+    position: absolute !important; left: -9999px !important;
+    width: 1px; height: 1px; overflow: hidden;
+  }
+
+  .form-actions { text-align: center; margin-top: 38px; }
+  .form-actions .btn[disabled] { opacity: 0.5; cursor: progress; pointer-events: none; }
+  .form-note {
+    text-align: center; font-size: 13px; color: var(--text-mid);
+    margin-top: 18px; line-height: 1.7;
+  }
+
+  /* Error summary (server/network failure) — never a silent failure. */
+  .form-error-summary {
+    border: 1px solid var(--error-line);
+    background: rgba(230,160,143,0.06);
+    padding: 20px 22px; margin-bottom: 30px;
+    color: var(--text); font-size: 15px; line-height: 1.7;
+  }
+  .form-error-summary[hidden] { display: none; }
+  .form-error-summary a { color: var(--gold); }
+
+  /* Success state — replaces the form in place. */
+  .inquiry-success {
+    text-align: center; padding: 24px 8px 8px;
+    animation: inquiryFadeIn 0.7s ease both;
+  }
+  .inquiry-success-mark {
+    font-size: 30px; color: var(--gold);
+    letter-spacing: 8px; margin-bottom: 22px;
+  }
+  .inquiry-success h2 {
+    font-family: 'Cinzel', serif; font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 500; letter-spacing: 1.5px; color: var(--text-bright);
+    margin-bottom: 18px;
+  }
+  .inquiry-success p {
+    max-width: 540px; margin: 0 auto 14px;
+    font-size: 17px; line-height: 1.85; color: var(--text-soft);
+  }
+  @keyframes inquiryFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ── Acquisition process — five ceremonial steps ─────────────────────────── */
+  .process-block { margin-top: 80px; }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 26px; max-width: 1080px; margin: 40px auto 0;
+  }
+  .process-step { border-top: 1px solid var(--gold-line); padding-top: 22px; }
+  .process-step-num {
+    font-family: 'Cinzel Decorative', serif; font-size: 22px;
+    color: var(--gold); opacity: 0.85; margin-bottom: 12px; line-height: 1;
+  }
+  .process-step-title {
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-bright);
+    margin-bottom: 10px;
+  }
+  .process-step p { font-size: 14px; line-height: 1.7; color: var(--text-soft); }
+  .process-timeframe {
+    text-align: center; margin-top: 40px; font-size: 15px;
+    color: var(--text-soft); font-style: italic;
+  }
+  .process-timeframe strong { color: var(--gold); font-style: normal; font-weight: 500; }
+
+  @media (max-width: 860px) {
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 22px 26px; }
+  }
+  @media (max-width: 600px) {
+    .field-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+    .field-row .field { margin-bottom: 26px; }
+    .process-steps { grid-template-columns: 1fr; }
+  }
+
+  /* ── Floating "Begin Commission Inquiry" CTA ─────────────────────────────── */
+  .floating-cta {
+    position: fixed; right: 26px; bottom: 26px; z-index: 70;
+    display: flex; align-items: center;
+    color: var(--gold);
+    padding: 14px 22px;
+    background: rgba(10,10,10,0.82);
+    border: 1px solid var(--gold-line);
+    border-radius: 2px;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+    opacity: 0; transform: translateY(14px); pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s, color 0.3s, border-color 0.3s;
+  }
+  .floating-cta.visible { opacity: 1; transform: none; pointer-events: auto; }
+  .floating-cta-link {
+    font-family: 'Cinzel', serif; font-size: 10.5px; font-weight: 600;
+    letter-spacing: 2.6px; text-transform: uppercase;
+    color: inherit; text-decoration: none;
+  }
+  @media (hover: hover) {
+    .floating-cta:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+  }
+  .floating-cta-x {
+    margin-left: 14px; opacity: 0.55; font-family: serif; font-size: 13px; line-height: 1;
+    border: 0; background: none; color: inherit; cursor: pointer; padding: 4px;
+  }
+  .floating-cta-x:hover { opacity: 1; }
+  @media (max-width: 600px) {
+    .floating-cta { left: 16px; right: 16px; bottom: 16px; text-align: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .floating-cta { transition: opacity 0.2s; transform: none; }
+    .inquiry-success { animation: none; }
+  }
+
+  /* ── Standardized CTA: nav chip + closing section bands ──────────────────── */
+  .nav-cta {
+    border: 1px solid var(--gold-line); border-radius: 2px;
+    padding: 9px 18px; color: var(--gold);
+    transition: color 0.3s, background 0.3s, border-color 0.3s;
+  }
+  .nav-cta::after { display: none; }
+  @media (hover: hover) {
+    .nav-cta:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
+  }
+  .nav-cta.active { background: rgba(201,160,82,0.10); }
+  .mobile-nav .nav-cta {
+    align-self: flex-start; border: 1px solid var(--gold-line);
+    border-radius: 2px; padding: 11px 20px; margin-top: 4px;
+  }
+
+  .cta-band { max-width: 720px; margin: 0 auto; padding: 18px 40px 96px; text-align: center; }
+  .cta-band-ornament {
+    color: var(--gold); font-size: 14px; letter-spacing: 8px; opacity: 0.75; margin-bottom: 20px;
+  }
+  .cta-band-text {
+    font-family: 'Cormorant Garamond', serif; font-size: 21px; font-style: italic;
+    line-height: 1.65; color: var(--text-soft); margin: 0 auto 30px; max-width: 540px;
+  }
+  @media (max-width: 600px) {
+    .cta-band { padding: 8px 22px 64px; }
+    .cta-band-text { font-size: 18px; }
+  }
+
+  /* ── Gallery polish: soft illumination + gentle image zoom on hover ──────── */
+  .product-card:hover { box-shadow: 0 12px 44px rgba(0,0,0,0.46); }
+  .product-images img { transition: border-color 0.3s, transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); }
+  .product-card:hover .product-images img { transform: scale(1.035); }
+
+  /* ── Commission pricing note (discreet, editorial — no fabricated figures) ─ */
+  .commission-pricing {
+    max-width: 640px; margin: 44px auto 0; text-align: center;
+    padding-top: 32px; border-top: 1px solid var(--gold-dim);
+  }
+  .commission-pricing-label {
+    font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+  }
+  .commission-pricing p {
+    font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic;
+    line-height: 1.7; color: var(--text-soft); margin: 0;
+  }
+
+  /* ── Social proof scaffold (testimonials + featured-in) — styles only ──────
+     Markup stays commented until real, verified content exists; nothing here
+     fabricates collectors, orders, affiliations, or press. ─────────────────── */
+  .proof-band { max-width: 1000px; margin: 0 auto; padding: 72px 40px; text-align: center; }
+  .proof-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 5px;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 34px;
+  }
+  .testimonial { max-width: 680px; margin: 0 auto; }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif; font-size: 23px; font-style: italic;
+    line-height: 1.6; color: var(--text); margin: 0 0 18px;
+  }
+  .testimonial-attr {
+    font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--text-soft);
+  }
+  .proof-logos {
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+    gap: 40px; margin-top: 30px;
+  }
+  .proof-logo {
+    font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--text-mid);
+  }
+  @media (max-width: 600px) {
+    .proof-band { padding: 48px 22px; }
+    .testimonial-quote { font-size: 19px; }
+    .proof-logos { gap: 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-card:hover .product-images img { transform: none; }
+  }
 
   *:focus-visible {
     outline: 2px solid var(--gold-bright);
@@ -767,38 +1021,6 @@
     margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
     white-space: nowrap; border: 0;
   }
-
-  /* Modal — solid surface, no glassmorphism */
-  .modal-overlay {
-    display: none; position: fixed; inset: 0; z-index: 200;
-    align-items: center; justify-content: center;
-    background: rgba(0,0,0,0.92);
-    padding: 24px 16px; box-sizing: border-box;
-  }
-  .modal-overlay.open { display: flex; animation: fadeIn 0.3s ease; }
-  .modal {
-    background: var(--surface); border: 1px solid var(--gold-dim);
-    padding: 44px; max-width: 480px; width: 90%; max-height: 80vh; overflow: auto;
-    margin: auto;
-  }
-  .modal-header {
-    display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px;
-  }
-  .modal-label {
-    font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
-  }
-  .modal-title {
-    font-family: 'Cinzel', serif; font-size: 18px; font-weight: 500;
-    color: var(--text); letter-spacing: 1px;
-  }
-  .modal-close {
-    color: var(--text-soft); cursor: pointer; font-size: 22px; line-height: 1;
-    background: none; border: none; padding: 0;
-    min-width: 44px; min-height: 44px;
-    display: inline-flex; align-items: center; justify-content: center;
-  }
-  .modal-close:hover { color: var(--gold); }
 
   /* Footer */
   .footer {
@@ -876,7 +1098,7 @@
   }
   .product-detail-images { position: relative; }
   .product-detail-images img {
-    width: 100%; display: block; border: 1px solid var(--gold-dim);
+    width: 100%; height: auto; display: block; border: 1px solid var(--gold-dim);
     margin-bottom: 8px; cursor: zoom-in; transition: border-color 0.3s, opacity 0.2s;
   }
   .product-detail-images img:hover { border-color: var(--gold); opacity: 0.92; }
@@ -895,12 +1117,25 @@
   }
   .product-detail-name {
     font-family: 'Cinzel', serif; font-size: clamp(24px, 2.6vw, 30px); font-weight: 600;
-    color: var(--text-bright); letter-spacing: 2px; line-height: 1.25; margin-bottom: 24px;
+    color: var(--text-bright); letter-spacing: 2px; line-height: 1.25;
+    margin: 0 0 24px 0;
   }
   .product-detail-price {
     font-family: 'Cinzel', serif; font-size: 16px; font-weight: 500;
     color: var(--gold);
     letter-spacing: 2.5px; margin-bottom: 32px;
+  }
+  /* Acquisition state lines: a status label (gold, restrained) and an optional
+     secondary note (muted) — used for edition, availability, acquired, and
+     reinterpretation messaging. */
+  .acquisition-status {
+    font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .acquisition-note {
+    font-size: 14px; line-height: 1.7; color: var(--text-soft);
+    margin-bottom: 32px; max-width: 46ch;
   }
   .product-detail-specs {
     border-left: 1px solid var(--gold); padding-left: 22px; margin-bottom: 36px;
@@ -947,6 +1182,57 @@
     .traditions { padding: 24px 20px; }
     .traditions-list { gap: 16px 28px; font-size: 10px; }
     .footer { padding: 36px 24px; }
+  }
+
+  /* ── Testimonial slot ─────────────────────────────────────────────────
+     Component-ready CSS for a future restrained collector/client testimonial
+     section. Intentionally NOT used in any markup yet — no fake social proof
+     ships. To activate later, render markup of the form:
+
+       <section class="testimonial-section">
+         <div class="testimonial-quote">"…attributed words…"</div>
+         <div class="testimonial-attribution">— Attribution line</div>
+       </section>
+
+     Place inside an existing page (e.g. between the home conversion strip
+     and Selected Works) once a real testimonial is obtained from a real
+     collector or lodge officer with their consent. */
+  .testimonial-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 40px 64px;
+    text-align: center;
+    border-top: 1px solid var(--gold-dim);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-bright);
+    line-height: 1.55;
+    max-width: 660px;
+    margin: 0 auto 22px;
+  }
+  .testimonial-quote::before,
+  .testimonial-quote::after {
+    color: var(--gold);
+    opacity: 0.6;
+    font-style: normal;
+  }
+  .testimonial-quote::before { content: '\201C'; margin-right: 4px; }
+  .testimonial-quote::after  { content: '\201D'; margin-left: 4px; }
+  .testimonial-attribution {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  @media (max-width: 600px) {
+    .testimonial-section { padding: 56px 24px 48px; }
   }
 
   /* About page (CMS body) */
@@ -1004,6 +1290,7 @@
   }
   .about-image-block img {
     width: 100%;
+    height: auto;
     display: block;
     border: 1px solid var(--gold-dim);
   }
@@ -1196,24 +1483,42 @@
   }
 
   @media (max-width: 768px) {
+    /* Tighten editorial rhythm: trim the large desktop margins that cause
+       scroll fatigue on mobile — typography sizes are preserved. */
+    .about-section { padding: 72px 32px; }
+    h2.about-heading { margin-bottom: 36px; }
+    .opening-statement { margin-bottom: 36px; padding-left: 22px; }
+    .about-image-block { margin: 40px 0; }
+    .about-body p { margin-bottom: 22px; }
+    .about-body .traditions { margin: 22px 0 30px; }
+    .trust-signal { margin: 36px 0; padding: 20px 0; }
+    .gold-rule { margin: 44px 0; }
+    .bio-section-header { font-size: 1.25rem; margin: 56px 0 24px; }
+    .ornament-divider { margin: 32px 0; }
     .bio-block,
     .bio-block-reverse {
       grid-template-columns: 1fr;
-      gap: 32px;
-      margin: 56px auto;
+      gap: 22px;
+      margin: 44px auto;
     }
+    /* Reduce image dominance: portraits become a placed editorial inset
+       rather than edge-to-edge hero imagery. */
     .bio-photo {
       order: -1;
-      max-width: 440px;
+      max-width: 300px;
       margin: 0 auto;
     }
-    .bio-subhead { font-size: 1.8rem; }
+    .bio-subhead { font-size: 1.8rem; margin-bottom: 20px; }
+    .bio-body p { margin-bottom: 18px; }
+    .bio-cta-section { margin-top: 56px; }
     .bio-cta-btn { width: 100%; display: block; }
-    .bio-section-header { font-size: 1.25rem; margin: 64px 0 24px; }
   }
   @media (max-width: 600px) {
-    .about-section { padding: 56px 24px; }
-    .bio-portrait { max-height: 76vh; object-fit: cover; }
+    .about-section { padding: 56px 22px; }
+    .bio-photo { max-width: 250px; }
+    /* Remove latent center-crop: portraits keep natural aspect, fully readable. */
+    .bio-portrait { max-height: none; }
+    .bio-cta-section { margin-top: 48px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1236,14 +1541,15 @@
   <!-- Header -->
   <header class="header">
     <a class="logo" onclick="event.preventDefault(); showPage('home')" href="/" aria-label="Arcane Visions — Home">
-      <img class="logo-mark" src="/images/logo-mark.png" alt="Arcane Visions" width="88" height="82" decoding="async" fetchpriority="high">
+      <img class="logo-mark" src="/images/logo-mark.png" alt="Arcane Visions" width="1495" height="1392" decoding="async" fetchpriority="high">
     </a>
     <nav class="nav" aria-label="Primary">
       <a href="/" onclick="event.preventDefault(); showPage('home')" class="active" data-page="home">Home</a>
       <a href="/the-work" onclick="event.preventDefault(); showPage('the-work')" data-page="the-work">The Work</a>
       <a href="/commissions" onclick="event.preventDefault(); showPage('commissions')" data-page="commissions">Commissions</a>
+      <a href="/private-collections" onclick="event.preventDefault(); showPage('private-collections')" data-page="private-collections">Private Collections</a>
       <a href="/about" onclick="event.preventDefault(); showPage('about')" data-page="about">About</a>
-      <a href="/contact" onclick="event.preventDefault(); showPage('contact')" data-page="contact">Contact</a>
+      <a href="/commissions" onclick="event.preventDefault(); showPage('commissions')" data-page="commissions" class="nav-cta" data-cta="nav">Begin Commission Inquiry</a>
     </nav>
     <button class="mobile-menu-btn"
             aria-label="Open menu"
@@ -1256,8 +1562,9 @@
     <a href="/" onclick="event.preventDefault(); showPage('home')" class="active" data-page="home">Home</a>
     <a href="/the-work" onclick="event.preventDefault(); showPage('the-work')" data-page="the-work">The Work</a>
     <a href="/commissions" onclick="event.preventDefault(); showPage('commissions')" data-page="commissions">Commissions</a>
+    <a href="/private-collections" onclick="event.preventDefault(); showPage('private-collections')" data-page="private-collections">Private Collections</a>
     <a href="/about" onclick="event.preventDefault(); showPage('about')" data-page="about">About</a>
-    <a href="/contact" onclick="event.preventDefault(); showPage('contact')" data-page="contact">Contact</a>
+    <a href="/commissions" onclick="event.preventDefault(); showPage('commissions')" data-page="commissions" class="nav-cta" data-cta="nav-mobile">Begin Commission Inquiry</a>
   </nav>
 
   <main id="main-content">
@@ -1266,7 +1573,7 @@
   <div class="page active" id="page-home">
     <section class="hero">
       <div class="hero-bg-still" aria-hidden="true">
-        <img src="/images/uploads/hero/hero-fallback.jpg" alt="" decoding="async">
+        <img src="/images/uploads/hero/hero-fallback.jpg" alt="" width="2400" height="1600" fetchpriority="high" decoding="async">
       </div>
       <video class="hero-video-bg"
              autoplay muted loop playsinline
@@ -1281,8 +1588,8 @@
         <div class="hero-eyebrow">Ceremonial · Esoteric · Collectible</div>
         <h1 class="hero-title">Arcane Visions</h1>
         <div class="hero-text">
-          <p class="hero-subtitle">Handcrafted Symbolic Art &amp; Collector-Grade Esoteric Works</p>
-          <p class="hero-desc">An atelier producing original symbolic art, bas-relief works, and bespoke commissions for collectors and patrons of the Western Mystery Tradition. Each piece is made by hand, in limited numbers, to museum-grade specification.</p>
+          <p class="hero-subtitle">Handcrafted Ritual Objects &amp; Collector-Grade Esoteric Works</p>
+          <p class="hero-desc">An atelier producing symbolic art, bas-relief works, and portraiture for practitioners and collectors of the Western Mystery Tradition. Each piece is built by hand, in limited numbers, to museum-grade specification.</p>
           <a class="hero-btn" href="/the-work" onclick="event.preventDefault(); showPage('the-work')">View the Work</a>
         </div>
       </div><!-- /.hero-content -->
@@ -1290,10 +1597,11 @@
 
     <section class="traditions">
       <div class="traditions-list">
-        <span>Original Works</span>
-        <span>Collector Editions</span>
-        <span>Bespoke Commissions</span>
-        <span>Private Collections</span>
+        <span>Hermetic Order of the Golden Dawn</span>
+        <span>Rosicrucian</span>
+        <span>Martinist</span>
+        <span>Rectified Scottish Rite</span>
+        <span>Private Collectors</span>
       </div>
     </section>
 
@@ -1301,15 +1609,15 @@
       <div class="conversion-inner">
         <div class="conversion-item">
           <div class="conversion-label">Available Work</div>
-          <p>A focused, slowly built body of original symbolic artworks. Open a work to view materials, specification, and the path to acquisition.</p>
+          <p>A focused, slowly built body of ceremonial and symbolic pieces. Open a work to view materials, specification, and the path to acquisition.</p>
         </div>
         <div class="conversion-item">
           <div class="conversion-label">Private Commissions</div>
-          <p>Bespoke symbolic artworks and portraiture for private collectors and patrons. Each commission is created to the collector's brief.</p>
+          <p>Bespoke symbolic art, bas-relief works, and ceremonial portraiture for lodges, orders, and private collectors. Built to the order's exact specifications.</p>
         </div>
         <div class="conversion-item">
           <div class="conversion-label">Acquisition by Inquiry</div>
-          <p>Every work is acquired by direct inquiry. We confirm materials, timeline, and provenance before a work is reserved or commissioned.</p>
+          <p>Every piece is acquired by direct inquiry. We confirm intent, materials, timeline, and provenance before a piece is reserved or built.</p>
         </div>
       </div>
     </section>
@@ -1318,48 +1626,243 @@
       <h2 class="section-title">Selected Works</h2>
       <div class="product-grid" id="featuredGrid"></div>
     </section>
+
+    <!-- ───────────────────────────────────────────────────────────────────────
+         SOCIAL PROOF SCAFFOLD — LAUNCH BLOCKER (do not ship fabricated content)
+         Structure + styling are ready (see .proof-band / .testimonial CSS).
+         To activate: un-comment and replace every [PLACEHOLDER] with REAL,
+         permitted content. Never invent testimonials, collector or lodge
+         identities, institutional affiliations, or press mentions.
+         ───────────────────────────────────────────────────────────────────────
+    <section class="proof-band" aria-label="From collectors and orders">
+      <div class="proof-eyebrow">From Collectors &amp; Orders</div>
+      <figure class="testimonial">
+        <blockquote class="testimonial-quote">[CLIENT TESTIMONIAL — verbatim, used with permission]</blockquote>
+        <figcaption class="testimonial-attr">[ATTRIBUTION — name, order, or collection, as permitted]</figcaption>
+      </figure>
+      <div class="proof-eyebrow" style="margin-top:48px">As Featured In</div>
+      <div class="proof-logos">
+        <span class="proof-logo">[FEATURED IN]</span>
+        <span class="proof-logo">[FEATURED IN]</span>
+        <span class="proof-logo">[FEATURED IN]</span>
+      </div>
+    </section>
+    -->
+
+    <section class="cta-band" aria-label="Begin a commission">
+      <div class="cta-band-ornament" aria-hidden="true">✦</div>
+      <p class="cta-band-text">Each piece begins with a single conversation — about the work, its symbolism, and how it will be used.</p>
+      <a class="btn cta-band-btn" href="/commissions" onclick="event.preventDefault(); beginCommissionInquiry()" data-cta="home-featured">Begin Commission Inquiry</a>
+    </section>
   </div>
 
   <!-- THE WORK -->
   <div class="page" id="page-the-work">
     <div class="the-work-section">
       <h1 class="page-title">The Work</h1>
-      <p class="the-work-intro">A focused body of original esoteric and occult artworks — bas-relief works, devotional paintings, and portraiture. Open a piece for materials, dimensions, symbolic notes, and the path to acquisition.</p>
+      <p class="the-work-intro">A focused body of symbolic art, bas-relief works, and portraiture. Open a piece for materials, dimensions, symbolic notes, and the path to acquisition.</p>
       <div class="filters" id="filterBar"></div>
       <h2 class="sr-only">Available Works</h2>
       <div class="product-grid" id="catalogueGrid"></div>
+
+      <section class="cta-band" aria-label="Begin a commission">
+        <div class="cta-band-ornament" aria-hidden="true">✦</div>
+        <p class="cta-band-text">Commissions are accepted from lodges, orders, and private collectors — built to your exact specification.</p>
+        <a class="btn cta-band-btn" href="/commissions" onclick="event.preventDefault(); beginCommissionInquiry()" data-cta="the-work-end">Begin Commission Inquiry</a>
+      </section>
     </div>
   </div>
 
   <!-- COMMISSIONS -->
   <div class="page" id="page-commissions">
     <div class="page-content">
-      <h1 class="page-title">Commissions</h1>
-      <div class="page-subtitle">Bespoke Esoteric Commissions</div>
+      <h1 class="page-title">Commission Sacred Work</h1>
+      <div class="page-subtitle">Built to the Order's Specifications</div>
       <div class="ornament" style="margin-bottom:44px">
         <div class="ornament-line-l"></div>
         <span class="ornament-dots" aria-hidden="true">✦ ✦ ✦</span>
         <div class="ornament-line-r"></div>
       </div>
       <div class="prose">
-        <p>Arcane Visions accepts a limited number of private commissions each year. Each piece begins with a single conversation about the subject, the symbolic source material, the intended placement, and the timeline.</p>
-        <p>Commissions are accepted from collectors, patrons, and institutions. Bas-relief works, devotional paintings, portraiture, and one-of-a-kind esoteric art have all been created to the collector's brief.</p>
-        <p>Production is deliberate. The atelier does not work at scale. Materials are chosen for permanence and for the long horizon of a collector's archive — not for visual effect alone.</p>
+        <p>Arcane Visions accepts a limited number of private commissions each year. Each piece begins with a single conversation about the order, the symbolic source material, the intended use, and the timeline.</p>
+        <p>Commissions are accepted from lodges, chapters, working groups, and individual collectors. Bas-relief work, devotional paintings, ceremonial portraiture, heraldic art, and symbolic objects have all been produced to specification.</p>
+        <p>Production is deliberate. The atelier does not work at scale. Materials are chosen for ceremonial life and for the long horizon of a collector's archive — not for visual effect alone.</p>
       </div>
-      <div class="spec-box">
-        <div class="spec-box-title">What to Include in an Inquiry</div>
-        <div class="spec-list">
-          <div>Tradition or collection context</div>
-          <div>Item type and intended use</div>
-          <div>Required dimensions</div>
-          <div>Symbolic elements and source diagrams</div>
-          <div>Material preferences</div>
-          <div>Timeline and delivery window</div>
+
+      <!-- Commission pricing — discreet editorial anchor (no fabricated figures) -->
+      <div class="commission-pricing">
+        <div class="commission-pricing-label">On Commissioning</div>
+        <p>Each commission is priced to its scope — the materials, the scale, and the complexity of the work. Share what you envision, and the first response will include an honest estimate alongside the material proposal and timeline.</p>
+        <!--
+          LAUNCH SCAFFOLD — optional price anchoring. Populate with REAL figures
+          only; never ship fabricated prices. To use, un-comment and replace tokens:
+          <div class="proof-logos" style="margin-top:22px">
+            <span class="proof-logo">Bas-relief from [STARTING PRICE]</span>
+            <span class="proof-logo">Painted panels from [STARTING PRICE]</span>
+            <span class="proof-logo">Portraits from [STARTING PRICE]</span>
+          </div>
+        -->
+      </div>
+
+      <!-- Work available by commission — examples drawn from the catalogue.
+           Grid baked at build time (commissionsGrid); no Stripe checkout here. -->
+      <section class="featured-section" aria-labelledby="commissionsGalleryHeading">
+        <h2 class="section-title" id="commissionsGalleryHeading">Work Available by Commission</h2>
+        <p class="the-work-intro">Examples of work that may be commissioned today. Each is created anew, to the order's symbolism and specification.</p>
+        <div class="product-grid" id="commissionsGrid"></div>
+      </section>
+
+      <!-- Acquisition process -->
+      <section class="process-block" aria-labelledby="processHeading">
+        <h2 class="section-title" id="processHeading">The Acquisition Process</h2>
+        <ol class="process-steps">
+          <li class="process-step">
+            <div class="process-step-num">I</div>
+            <div class="process-step-title">Inquiry</div>
+            <p>You share the work you envision — its symbolism, scale, and intended use.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step-num">II</div>
+            <div class="process-step-title">Consultation</div>
+            <p>We respond personally to discuss scope, materials, provenance, and fit.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step-num">III</div>
+            <div class="process-step-title">Design Planning</div>
+            <p>Source diagrams and a material proposal are prepared and confirmed with you.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step-num">IV</div>
+            <div class="process-step-title">Craftsmanship</div>
+            <p>The piece is built by hand, deliberately, with progress shared along the way.</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step-num">V</div>
+            <div class="process-step-title">Delivery</div>
+            <p>The finished work is documented, carefully prepared, and shipped worldwide.</p>
+          </li>
+        </ol>
+        <p class="process-timeframe">Inquiries receive a personal response within <strong>24&ndash;48 hours</strong> to begin the consultation.</p>
+      </section>
+
+      <!-- Inquiry -->
+      <section class="inquire-block" aria-labelledby="inquireHeading">
+        <h2 class="section-title" id="inquireHeading">Begin Commission Inquiry</h2>
+        <p class="inquire-lead">Tell us what you would like to commission, and how it will be used. A complete first note allows us to answer with a real scope, material proposal, and timeline.</p>
+
+        <!-- Submitting opens the visitor's own email client with the inquiry
+             prefilled (handled by JS below). The mailto action is the no-JS
+             fallback so the form still reaches the atelier without scripts. -->
+        <form class="inquiry-form" id="inquiryForm" action="mailto:info@arcanevisionsstudios.com" method="post" enctype="text/plain" aria-describedby="inquireHeading">
+          <div class="field-row">
+            <div class="field">
+              <label for="if-name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="if-name" name="name" autocomplete="name" required aria-required="true" maxlength="120" aria-describedby="msg-name">
+              <span class="field-msg" id="msg-name"></span>
+            </div>
+            <div class="field">
+              <label for="if-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="if-email" name="email" autocomplete="email" required aria-required="true" maxlength="160" aria-describedby="msg-email">
+              <span class="field-msg" id="msg-email"></span>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="if-type">Commission Type <span class="req" aria-hidden="true">*</span></label>
+              <select id="if-type" name="commission_type" required aria-required="true" aria-describedby="msg-type">
+                <option value="" selected disabled>Select a category…</option>
+                <option>Bas-relief work</option>
+                <option>Painted panel</option>
+                <option>Ceremonial regalia</option>
+                <option>Portrait commission</option>
+                <option>Lodge / Order installation</option>
+                <option>Heraldic / coat of arms</option>
+                <option>Other / undecided</option>
+              </select>
+              <span class="field-msg" id="msg-type"></span>
+            </div>
+            <div class="field">
+              <label for="if-timeline">Timeline <span class="opt">(optional)</span></label>
+              <input type="text" id="if-timeline" name="timeline" maxlength="120" placeholder="e.g. before a spring installation" aria-describedby="msg-timeline">
+              <span class="field-msg" id="msg-timeline"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="if-work">Desired Work <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="if-work" name="desired_work" maxlength="160" required aria-required="true" placeholder="The piece you have in mind" aria-describedby="msg-work">
+            <span class="field-msg" id="msg-work"></span>
+          </div>
+
+          <div class="field">
+            <label for="if-use">Intended Use <span class="opt">(optional)</span></label>
+            <textarea id="if-use" name="intended_use" maxlength="800" placeholder="Ritual use, display, presentation, lodge context…"></textarea>
+            <span class="field-hint">Order, tradition, or collection context; dimensions; where the work will live.</span>
+          </div>
+
+          <div class="field">
+            <label for="if-symbols">Symbolic References <span class="opt">(optional)</span></label>
+            <textarea id="if-symbols" name="symbolic_references" maxlength="2000" placeholder="Symbols, source diagrams, lineage, or imagery to draw from…"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="if-budget">Budget Range <span class="opt">(optional)</span></label>
+            <input type="text" id="if-budget" name="budget_range" maxlength="80" placeholder="Helps us propose appropriate materials and scope">
+          </div>
+
+          <div class="field">
+            <label for="if-notes">Additional Notes <span class="opt">(optional)</span></label>
+            <textarea id="if-notes" name="notes" maxlength="2000" placeholder="Anything else that would help us respond well."></textarea>
+          </div>
+
+          <!-- Honeypot: genuine visitors never see or focus this. -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="if-company">Company website</label>
+            <input type="text" id="if-company" name="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn" id="inquirySubmit">Send Inquiry</button>
+            <p class="form-note">A personal response follows within 24&ndash;48 hours. Or write directly to <a href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a>.</p>
+          </div>
+        </form>
+
+        <!-- Success state (revealed in place on submission) -->
+        <div class="inquiry-success" id="inquirySuccess" role="status" tabindex="-1" hidden>
+          <div class="inquiry-success-mark" aria-hidden="true">✦</div>
+          <h2>Your inquiry is ready to send</h2>
+          <p>We have opened your email with the details prefilled. Review and send it, and Arcane Visions will respond within 24&ndash;48 hours to begin the consultation process.</p>
+          <p style="font-size:15px;color:var(--text-mid)">If your email client did not open, write to us directly at <a href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a>.</p>
         </div>
+      </section>
+
+      <!-- Direct correspondence (merged from Contact) -->
+      <div style="text-align:center;margin-top:64px;padding-top:36px;border-top:1px solid var(--gold-dim)">
+        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-soft);margin-bottom:14px">Direct Correspondence</div>
+        <a href="mailto:info@arcanevisionsstudios.com" style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);text-decoration:none;letter-spacing:1px">info@arcanevisionsstudios.com</a>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--text-soft);margin-top:14px;font-style:italic">Washington, DC region &nbsp;·&nbsp; Ships worldwide</div>
       </div>
-      <div style="text-align:center;margin-top:56px">
-        <a class="btn" href="/contact" onclick="event.preventDefault(); showPage('contact')">Begin an Inquiry</a>
+    </div>
+  </div>
+
+  <!-- WORKS IN PRIVATE COLLECTIONS -->
+  <!-- Prestige archive. No price, no checkout, no inquiry/sales language. The
+       grid is baked at build time (privateCollectionsGrid). -->
+  <div class="page" id="page-private-collections">
+    <div class="the-work-section">
+      <h1 class="page-title">Works in Private Collections</h1>
+      <div class="ornament" style="margin-bottom:36px">
+        <div class="ornament-line-l"></div>
+        <span class="ornament-dots" aria-hidden="true">✦ ✦ ✦</span>
+        <div class="ornament-line-r"></div>
       </div>
+      <div class="prose private-collections-intro" id="private-collections-intro">
+        <p>Certain works leave the atelier permanently.</p>
+        <p>These objects were created as singular expressions and have been placed in private collections. They remain here as part of the artistic record of Arcane Visions.</p>
+      </div>
+      <h2 class="sr-only">Archived Works</h2>
+      <div class="product-grid" id="privateCollectionsGrid"></div>
     </div>
   </div>
 
@@ -1378,55 +1881,6 @@
     </div>
   </div>
 
-  <!-- CONTACT -->
-  <div class="page" id="page-contact">
-    <div class="page-content" style="max-width:640px">
-      <h1 class="page-title">Contact</h1>
-      <div class="ornament" style="margin-bottom:48px">
-        <div class="ornament-line-l"></div>
-        <span class="ornament-dots" aria-hidden="true">✦ ✦ ✦</span>
-        <div class="ornament-line-r"></div>
-      </div>
-      <div class="contact-guidance">
-        <div class="contact-guidance-title">For the clearest reply</div>
-        <p>Tell us what you would like to acquire or commission, and how it will be used. A complete first note allows us to answer with a real scope, material proposal, and timeline.</p>
-        <div class="contact-guidance-list">
-          <div>Tradition or collection context</div>
-          <div>Item type, dimensions, and intended use</div>
-          <div>Symbols, materials, timeline, and shipping country</div>
-        </div>
-      </div>
-      <form id="contactForm" onsubmit="handleSubmit(event)">
-        <input type="hidden" name="_subject" value="Arcane Visions inquiry">
-        <div class="form-group">
-          <label class="form-label" for="contact-name">Name</label>
-          <input id="contact-name" class="form-input" type="text" name="name" autocomplete="name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-email">Email</label>
-          <input id="contact-email" class="form-input" type="email" name="email" autocomplete="email" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-order">Order / Tradition / Context</label>
-          <input id="contact-order" class="form-input" type="text" name="order" placeholder="Order, lodge, collection, or independent practice">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="contact-message">Inquiry</label>
-          <textarea id="contact-message" class="form-textarea" name="message" rows="6" required
-                    placeholder="Tell us the piece or commission, intended use, dimensions, symbolic requirements, materials, timeline, and shipping country."></textarea>
-        </div>
-        <div style="text-align:center;margin-top:36px">
-          <button type="submit" class="btn">Send Inquiry</button>
-        </div>
-      </form>
-      <div style="text-align:center;margin-top:48px;padding-top:36px;border-top:1px solid var(--gold-dim)">
-        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--text-soft);margin-bottom:14px">Direct Correspondence</div>
-        <a href="mailto:info@arcanevisionsstudios.com" style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold);text-decoration:none;letter-spacing:1px">info@arcanevisionsstudios.com</a>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--text-soft);margin-top:14px;font-style:italic">Virginia / Washington DC area &nbsp;·&nbsp; Ships worldwide</div>
-      </div>
-    </div>
-  </div>
-
   <!-- PRODUCT DETAIL -->
   <div class="page" id="page-product">
     <div class="product-detail">
@@ -1439,40 +1893,6 @@
 
   </main>
 
-  <!-- Inquiry Modal -->
-  <div class="modal-overlay" id="inquiryModal"
-       role="dialog" aria-modal="true" aria-labelledby="inquiryModalTitle"
-       onclick="closeModal(event)">
-    <div class="modal" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <div>
-          <div class="modal-label">Inquiry</div>
-          <div class="modal-title" id="inquiryModalTitle"></div>
-        </div>
-        <button class="modal-close" aria-label="Close dialog" onclick="closeInquiryModal()"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <form onsubmit="handleInquirySubmit(event)">
-        <input type="hidden" name="_subject" value="Arcane Visions inquiry">
-        <input type="hidden" name="product" id="modalProductField">
-        <div class="form-group">
-          <label class="form-label" for="inquiry-name">Name</label>
-          <input id="inquiry-name" class="form-input" type="text" name="name" autocomplete="name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="inquiry-email">Email</label>
-          <input id="inquiry-email" class="form-input" type="email" name="email" autocomplete="email" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="inquiry-message">Your inquiry</label>
-          <textarea id="inquiry-message" class="form-textarea" name="message" rows="4" required
-                    placeholder="Intended use, dimensions, tradition or collection context, materials, deadline, shipping country."></textarea>
-        </div>
-        <div style="text-align:center;margin-top:20px">
-          <button type="submit" class="btn btn-sm">Send Inquiry</button>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox"
@@ -1487,17 +1907,23 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <img class="footer-mark" src="/images/arcane-visions-logo.png" alt="Arcane Visions" width="180" height="180" loading="lazy" decoding="async">
+    <img class="footer-mark" src="/images/arcane-visions-logo.png" alt="Arcane Visions" width="1531" height="1435" loading="lazy" decoding="async">
     <div class="footer-brand">Ceremonial &amp; Esoteric Atelier</div>
     <a href="mailto:info@arcanevisionsstudios.com" class="footer-instagram">info@arcanevisionsstudios.com</a>
     <a href="https://www.instagram.com/ArcaneVisionStudios" target="_blank" rel="noopener" class="footer-instagram">Instagram &nbsp;@ArcaneVisionStudios</a>
-    <div class="footer-location">Handcrafted in the Virginia / Washington DC area</div>
+    <div class="footer-location">Handcrafted in the Washington, DC region</div>
     <div class="footer-copyright">
       &copy; 2026 Arcane Visions &nbsp;·&nbsp;
       <a href="/privacy.html">Privacy</a> &nbsp;·&nbsp;
       <a href="/returns.html">Acquisitions &amp; Returns</a>
     </div>
   </footer>
+
+  <!-- Floating CTA — subtle, dismissible, suppressed on the commissions page -->
+  <aside class="floating-cta" id="floatingCta" aria-hidden="true">
+    <a class="floating-cta-link" href="/commissions" data-cta="floating" tabindex="-1">Begin Commission Inquiry</a>
+    <button type="button" class="floating-cta-x" aria-label="Dismiss" tabindex="-1">&times;</button>
+  </aside>
 
 </div>
 
@@ -1527,7 +1953,32 @@
 })();
 
 const products = [];
-let categories = ["All", ...new Set(products.map(p => p.category))];
+
+// ── Availability: the section axis (mirrors build.js) ──────────────────────
+// `availability` decides which section a work appears in; it is orthogonal to
+// `purchase_mode` (the acquisition mechanism). These helpers and the canonical
+// archive status MUST stay in lockstep with build.js or the hydrated view will
+// flash/diverge from the static bake.
+const PRIVATE_COLLECTION_STATUS = 'Placed in a Private Collection';
+function isAvailableWork(p) { return (p.availability || 'available') === 'available'; }
+function isCommissionWork(p) { return p.availability === 'commission'; }
+function isPrivateCollectionWork(p) { return p.availability === 'private_collection' || p.availability === 'private_collection_commissionable'; }
+function sectionInfoFor(p) {
+  if (isCommissionWork(p)) return { pageId: 'commissions', path: '/commissions/', label: 'Commissions' };
+  if (isPrivateCollectionWork(p)) return { pageId: 'private-collections', path: '/private-collections/', label: 'Works in Private Collections' };
+  return { pageId: 'the-work', path: '/the-work/', label: 'The Work' };
+}
+
+// Canonical taxonomy order for the filter bar — mirrors CATEGORY_ORDER in
+// build.js so the static bake and this hydrated bar match exactly (no reorder
+// flash when the CMS fetch resolves). Unlisted categories fall in afterward.
+const CATEGORY_ORDER = ['Symbolic Art', 'Portraiture', 'Wearable Works'];
+function orderCategories(cats) {
+  const known = CATEGORY_ORDER.filter(c => cats.indexOf(c) !== -1);
+  const extra = cats.filter(c => CATEGORY_ORDER.indexOf(c) === -1);
+  return known.concat(extra);
+}
+let categories = ["All", ...orderCategories([...new Set(products.map(p => p.category))])];
 let activeCategory = "All";
 let isInitialLoad = true;
 
@@ -1539,30 +1990,42 @@ function createProductCard(product, showSpecs) {
   card.setAttribute('aria-label', `View details for ${product.name}`);
 
   let visualHTML = '';
-  if (product.images && product.images.length > 0) {
-    const multiClass = product.images.length > 1 ? ' multi' : '';
-    const imagesJson = JSON.stringify(product.images).replace(/"/g, '&quot;');
+  const photos = (product.photos || []).filter(p => p && p.image);
+  if (photos.length > 0) {
+    const multiClass = photos.length > 1 ? ' multi' : '';
+    const imgs = photos.map(p => p.image);
+    const imagesJson = JSON.stringify(imgs).replace(/"/g, '&quot;');
+    const dimAttr = p => (p.width && p.height) ? ` width="${p.width}" height="${p.height}"` : '';
     visualHTML = `<div class="product-images${multiClass}">
-      ${product.images.map((img, i) => `<img src="${img}" alt="${product.name}" loading="lazy" data-lightbox-index="${i}" data-lightbox-images="${imagesJson}">`).join('')}
+      ${photos.map((p, i) => `<img src="${p.image}" alt="${p.alt || product.name}"${dimAttr(p)} loading="lazy" decoding="async" data-lightbox-index="${i}" data-lightbox-images="${imagesJson}">`).join('')}
     </div>`;
   } else {
     visualHTML = `<div class="product-glyph">${product.glyph || '✦'}</div>`;
   }
 
   let specsHTML = '';
-  const ctaLabel = ((product.purchase_links && product.purchase_links.length) || product.purchase_mode === 'retail') ? 'View / Purchase' : 'View / Inquire';
+  const inPrivateCollection = isPrivateCollectionWork(product);
+  const isPurchasable = !!product.stripe_link && isAvailableWork(product);
+  const ctaLabel = inPrivateCollection
+    ? 'View'
+    : (isPurchasable ? 'View / Purchase' : 'View / Inquire');
+  // Private-collection cards show the canonical archive status in place of a
+  // price — an acquired work is not "price on inquiry".
+  const priceLabel = inPrivateCollection
+    ? PRIVATE_COLLECTION_STATUS
+    : (product.price || 'Price on inquiry');
   if (showSpecs) {
     const preview = (product.specs || []).slice(0, 3).join(' · ');
     specsHTML = `<div class="product-card-specs">${preview}</div>
     <div class="product-footer">
-      <span class="product-price">${product.price || 'Price on inquiry'}</span>
+      <span class="product-price">${priceLabel}</span>
       <span class="product-card-cta" aria-hidden="true">${ctaLabel}</span>
     </div>`;
   } else {
     const short = [product.specs[0], product.specs[1]].filter(Boolean).join(' · ');
     specsHTML = `<div style="font-size:14px;color:var(--text-soft);line-height:1.6;margin-bottom:20px">${short}</div>
     <div class="product-footer">
-      <span class="product-price">${product.price || 'Price on inquiry'}</span>
+      <span class="product-price">${priceLabel}</span>
       <span class="product-card-cta" aria-hidden="true">${ctaLabel}</span>
     </div>`;
   }
@@ -1619,7 +2082,7 @@ function enhanceDetailImageA11y() {
     img.setAttribute('tabindex', '0');
     img.setAttribute('role', 'button');
     if (!img.getAttribute('aria-label')) {
-      img.setAttribute('aria-label', (img.getAttribute('alt') || 'Product image') + ' - open image viewer');
+      img.setAttribute('aria-label', (img.getAttribute('alt') || 'Product image') + ' — open image viewer');
     }
   });
 }
@@ -1643,10 +2106,10 @@ function renderFeatured() {
   const grid = document.getElementById('featuredGrid');
   if (!grid) return;
   if (products.length === 0) return;
-  // Honour the build-time `featured` filter so home stays curated.
-  // Fall back to the full set only when nothing is flagged featured.
-  const featured = products.filter(p => p.featured);
-  const list = featured.length ? featured : products;
+  // Home "Selected Works" — featured items only, never a private-collection
+  // piece (mirrors build.js). The empty-set fallback also excludes the archive.
+  const featured = products.filter(p => p.featured && !isPrivateCollectionWork(p));
+  const list = featured.length ? featured : products.filter(p => !isPrivateCollectionWork(p));
   grid.innerHTML = '';
   list.forEach(p => grid.appendChild(createProductCard(p, false)));
 }
@@ -1656,8 +2119,28 @@ function renderCatalogue() {
   if (!grid) return;
   if (products.length === 0) return;
   grid.innerHTML = '';
-  const filtered = activeCategory === "All" ? products : products.filter(p => p.category === activeCategory);
+  // The Work shows only obtainable works, then the active category filter.
+  const available = products.filter(isAvailableWork);
+  const filtered = activeCategory === "All" ? available : available.filter(p => p.category === activeCategory);
   filtered.forEach(p => grid.appendChild(createProductCard(p, true)));
+}
+
+// Commissions gallery + Private Collections archive — section grids that mirror
+// their build-time bakes (no category filter; strict section partition).
+function renderCommissionsGallery() {
+  const grid = document.getElementById('commissionsGrid');
+  if (!grid) return;
+  if (products.length === 0) return;
+  grid.innerHTML = '';
+  products.filter(isCommissionWork).forEach(p => grid.appendChild(createProductCard(p, true)));
+}
+
+function renderPrivateCollections() {
+  const grid = document.getElementById('privateCollectionsGrid');
+  if (!grid) return;
+  if (products.length === 0) return;
+  grid.innerHTML = '';
+  products.filter(isPrivateCollectionWork).forEach(p => grid.appendChild(createProductCard(p, true)));
 }
 
 function renderFilters() {
@@ -1724,19 +2207,18 @@ function releaseFocus() {
 }
 
 function syncBodyModalOpen() {
-  const anyOpen = ['inquiryModal', 'lightbox']
-    .some(id => document.getElementById(id)?.classList.contains('open'));
+  const anyOpen = document.getElementById('lightbox')?.classList.contains('open');
   const body = document.body;
   const isLocked = body.classList.contains('modal-open');
   if (anyOpen && !isLocked) {
     // Remember scroll position, then pin the body so the background cannot
-    // scroll on iOS Safari while a modal is open.
+    // scroll on iOS Safari while the lightbox is open.
     const y = window.scrollY || window.pageYOffset || 0;
     body.dataset.scrollY = String(y);
     body.style.top = (-y) + 'px';
     body.classList.add('modal-open');
   } else if (!anyOpen && isLocked) {
-    // Unpin and restore the exact scroll position - no jump, no position loss.
+    // Unpin and restore the exact scroll position — no jump, no position loss.
     const y = parseInt(body.dataset.scrollY || '0', 10);
     body.classList.remove('modal-open');
     body.style.top = '';
@@ -1748,34 +2230,35 @@ const BASE_ORIGIN = 'https://arcanevisions.art';
 function pagePath(pageId) {
   if (pageId === 'home') return '/';
   if (pageId === 'the-work') return '/the-work/';
+  if (pageId === 'private-collections') return '/private-collections/';
   return '/' + pageId;
 }
 
 const PAGE_META = {
   home: {
-    title: 'Arcane Visions | Esoteric Art Atelier',
-    description: 'Original occult and esoteric artworks, bas-relief works, portraiture, and bespoke commissions from the Arcane Visions atelier. Limited and one-of-one works. Virginia / Washington DC.',
+    title: 'Arcane Visions | Ceremonial & Esoteric Atelier',
+    description: 'Handcrafted symbolic art, bas-relief works, and portraiture from the Arcane Visions atelier. Limited editions and private commissions. Washington, DC region.',
     path: '/'
   },
   'the-work': {
     title: 'The Work | Arcane Visions',
-    description: 'A focused body of original esoteric and occult artworks, bas-relief works, and portraiture for collectors and patrons of the Western Mystery Tradition.',
+    description: 'A focused body of symbolic art, bas-relief works, and portraiture for practitioners and collectors of the Western Mystery Tradition.',
     path: '/the-work/'
   },
   commissions: {
     title: 'Commissions | Arcane Visions',
-    description: 'Bespoke esoteric artistic commissions — original esoteric artworks, bas-relief works, and portraiture created to the collector’s brief.',
+    description: 'Private commissions for symbolic art, bas-relief work, and ceremonial portraiture. Built to the order or tradition’s exact specifications.',
     path: '/commissions'
+  },
+  'private-collections': {
+    title: 'Works in Private Collections | Arcane Visions',
+    description: 'Significant works that have permanently left the Arcane Visions atelier and been placed in private collections — held here as part of the artistic record.',
+    path: '/private-collections/'
   },
   about: {
     title: 'About | Arcane Visions',
-    description: 'Arcane Visions is an esoteric art atelier creating original occult and esoteric artworks and bespoke commissions for the Western Mystery Tradition.',
+    description: 'Arcane Visions is a ceremonial and esoteric atelier producing handcrafted ritual objects and symbolic art for the Western Mystery Tradition.',
     path: '/about'
-  },
-  contact: {
-    title: 'Contact | Arcane Visions',
-    description: 'Begin a commission or inquire about a piece. Direct correspondence at info@arcanevisionsstudios.com.',
-    path: '/contact'
   }
 };
 
@@ -1857,6 +2340,7 @@ function showPage(pageId, noPush) {
 
   setMobileNavOpen(false);
   window.scrollTo(0, 0);
+  if (typeof updateFloatingCta === 'function') updateFloatingCta();
 
   if (!isInitialLoad) {
     const heading = target && target.querySelector('h1');
@@ -1871,6 +2355,8 @@ function showPage(pageId, noPush) {
   }
 
   if (pageId === 'the-work') { renderFilters(); renderCatalogue(); }
+  if (pageId === 'commissions') { renderCommissionsGallery(); }
+  if (pageId === 'private-collections') { renderPrivateCollections(); }
   updateDocumentMeta(pageId);
 
   isInitialLoad = false;
@@ -1892,19 +2378,27 @@ function toggleMobileMenu() {
   setMobileNavOpen(!nav.classList.contains('open'));
 }
 
+// Next-step note for a directly purchasable piece — mirrors readyToAcquireHTML() in build.js.
+function readyToAcquireHTML() {
+  return `<div class="next-step-note">
+      <div class="next-step-title">Ready to Acquire</div>
+      <p>This piece is available for direct acquisition. Checkout opens securely through Stripe.</p>
+    </div>`;
+}
+
 // Tier-aware acquisition copy — kept in sync with build.js's productNextStepHTML()
 // so the JS-rendered detail view matches the build-time static rendering.
 function productNextStepHTML(purchaseMode) {
-  if (purchaseMode === 'retail') {
+  if (purchaseMode === 'private_collection_commissionable') {
     return `<div class="next-step-note">
-      <div class="next-step-title">Available Now</div>
-      <p>This work is available now at the fixed prices shown. Acquire a single panel or the complete set through Arcane Visions Studios.</p>
+      <div class="next-step-title">Available by Commission</div>
+      <p>This original has been placed in a private collection. A similar work can be created as a new commission — distinct in materials and execution. Share what you envision to begin.</p>
     </div>`;
   }
   if (purchaseMode === 'direct') {
     return `<div class="next-step-note">
       <div class="next-step-title">Direct Acquisition</div>
-      <p>This piece is a completed limited edition. Direct purchase integration is forthcoming; in the meantime, reserve a piece by inquiry — pricing, current edition status, and shipping window confirmed on response.</p>
+      <p>This piece is a completed limited edition. Available by inquiry — pricing, current edition status, and shipping window confirmed on response.</p>
     </div>`;
   }
   if (purchaseMode === 'commission') {
@@ -1918,13 +2412,6 @@ function productNextStepHTML(purchaseMode) {
     <p>This piece is built to a particular order, grade, or collector context. Include intended use, dimensions, tradition or lineage, material preferences, deadline, and shipping country.</p>
   </div>`;
 }
-function productCTALabel(purchaseMode) {
-  if (purchaseMode === 'retail') return 'Acquire This Work';
-  if (purchaseMode === 'direct') return 'Reserve via Inquiry';
-  if (purchaseMode === 'commission') return 'Begin a Commission Inquiry';
-  return 'Send an Inquiry';
-}
-
 function showProduct(product, noPush) {
   const layout = document.getElementById('productDetailLayout');
   const descEl = document.getElementById('productDetailDescription');
@@ -1935,53 +2422,108 @@ function showProduct(product, noPush) {
   }
 
   let visualHTML = '';
-  if (product.images && product.images.length) {
-    window._detailImages = product.images;
+  const detailPhotos = (product.photos || []).filter(p => p && p.image);
+  if (detailPhotos.length) {
+    const detailImgs = detailPhotos.map(p => p.image);
+    window._detailImages = detailImgs;
+    const dimAttr = p => (p.width && p.height) ? ` width="${p.width}" height="${p.height}"` : '';
     visualHTML = `<div class="product-detail-images">
       <div class="zoom-hint">Click to zoom</div>
-      ${product.images.map((img, i) => `<img src="${img}" alt="${product.name}" loading="lazy" onclick="openLightbox(window._detailImages,${i})">`).join('')}
+      ${detailPhotos.map((p, i) => `<img src="${p.image}" alt="${p.alt || product.name}"${dimAttr(p)} loading="lazy" decoding="async" onclick="openLightbox(window._detailImages,${i})">`).join('')}
     </div>`;
   } else {
     visualHTML = `<div class="product-detail-glyph">${product.glyph || '✦'}</div>`;
   }
 
-  const purchaseLinks = (product.purchase_links || []).filter(l => l && l.url);
-  const isPurchasable = purchaseLinks.length > 0;
-  const specsArr = Array.isArray(product.specs) ? product.specs : (product.specs || '').split('\n').filter(Boolean);
-  if (!isPurchasable && (product.purchase_mode || 'inquiry') !== 'retail' && !specsArr.some(s => /timeline/i.test(s))) {
+  const mode = product.purchase_mode || 'inquiry';
+  const availability = product.availability || 'available';
+  const inPrivateCollection = isPrivateCollectionWork(product);
+  const commissionable = availability === 'private_collection_commissionable';
+  // Stripe checkout applies only to obtainable works in The Work — never a
+  // commission example and never a work in a private collection.
+  const isPurchasable = !!product.stripe_link && availability === 'available';
+
+  // Slice so the timeline append never mutates the cached product object.
+  const specsArr = Array.isArray(product.specs) ? product.specs.slice() : (product.specs || '').split('\n').filter(Boolean);
+  if (!isPurchasable && !inPrivateCollection && !specsArr.some(s => /timeline/i.test(s))) {
     specsArr.push('Timeline: confirmed at commission inquiry');
   }
   const specsHTML = specsArr.length
     ? `<div class="product-detail-specs">${specsArr.map(s => `<div>${s}</div>`).join('')}</div>`
     : '';
 
-  const priceHTML = product.price
-    ? `<div class="product-detail-price">${product.price}</div>`
-    : `<div class="product-detail-price" style="color:var(--text-soft)">Price on Inquiry</div>`;
+  // Private-collection works carry no price; everything else shows its price or
+  // "Price on Inquiry".
+  const priceHTML = inPrivateCollection
+    ? ''
+    : (product.price
+        ? `<div class="product-detail-price">${product.price}</div>`
+        : `<div class="product-detail-price" style="color:var(--text-soft)">Price on Inquiry</div>`);
 
-  const safeName = (product.name || '').replace(/'/g, "\\'");
-  const mode = product.purchase_mode || 'inquiry';
-  const nextStepHTML = isPurchasable ? '' : productNextStepHTML(mode);
-  const ctaLabel = productCTALabel(mode);
+  // In a private collection the canonical section line is the status and
+  // supersedes any per-work acquisition_status (no "Acquired/Sold" wording);
+  // elsewhere the per-work acquisition_status renders verbatim.
+  const statusHTML = inPrivateCollection
+    ? `<div class="acquisition-status">${PRIVATE_COLLECTION_STATUS}</div>`
+    : (product.acquisition_status
+        ? `<div class="acquisition-status">${product.acquisition_status}</div>`
+        : '');
+  // private_collection_commissionable: original stays in the collection, but
+  // similar works may be commissioned. Plain private_collection shows nothing here.
+  const similarWorksHTML = commissionable
+    ? `<div class="acquisition-note">Similar Works Available by Commission</div>`
+    : '';
+  const noteHTML = product.acquisition_note
+    ? `<div class="acquisition-note">${product.acquisition_note}</div>`
+    : '';
+
+  const safeName = (product.name || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  // Next-step note: purchasable → "Ready to Acquire"; private collection → none
+  // (_commissionable gets the "available by commission" note); otherwise the
+  // tier-aware inquiry note keyed on purchase_mode.
+  let nextStepHTML;
+  if (isPurchasable) nextStepHTML = readyToAcquireHTML();
+  else if (availability === 'private_collection') nextStepHTML = '';
+  else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable');
+  else nextStepHTML = productNextStepHTML(mode);
 
   layout.innerHTML = `
     <div>${visualHTML}</div>
     <div>
       <div class="product-detail-tradition">${product.order || product.tradition || ''}</div>
-      <div class="product-detail-name">${product.name}</div>
+      <h1 class="product-detail-name">${product.name}</h1>
       ${priceHTML}
+      ${statusHTML}
+      ${similarWorksHTML}
+      ${noteHTML}
       ${specsHTML}
       ${nextStepHTML}
     </div>
   `;
 
+  // Section-accurate back-link (the detail URL itself stays /the-work/{slug}/).
+  const backEl = document.querySelector('#page-product .product-detail-back');
+  if (backEl) {
+    const sec = sectionInfoFor(product);
+    backEl.setAttribute('href', sec.path);
+    backEl.setAttribute('onclick', `event.preventDefault(); showPage('${sec.pageId}')`);
+    backEl.textContent = `← Back to ${sec.label}`;
+  }
+
   descEl.innerHTML = product.description || '';
-  // TODO(stripe): When direct purchase ships, swap this button for a Stripe/Link
-  // checkout when mode === 'direct'. Until then, all three modes use the inquiry
-  // modal as a single unified entry point.
-  inquireEl.innerHTML = isPurchasable
-    ? purchaseLinks.map(l => `<a class="btn" href="${l.url}" data-cta="product-purchase">${l.label || 'Purchase'}</a>`).join('')
-    : `<button class="btn" onclick="openInquiry('${safeName}')">${ctaLabel}</button>`;
+  // Purchasable pieces (carrying a Stripe link) open hosted checkout; a work in
+  // a private collection carries no acquisition CTA (unless _commissionable,
+  // which routes a commission inquiry for similar works); everything else routes
+  // to the on-site inquiry form. Kept in sync with build.js's static rendering.
+  const workQuery = encodeURIComponent(product.name || '');
+  if (isPurchasable) {
+    const buyLabel = product.price ? `Purchase — ${product.price}` : 'Purchase';
+    inquireEl.innerHTML = `<a class="btn" href="${product.stripe_link}" data-cta="product-purchase" data-work="${product.name || ''}">${buyLabel}</a>`;
+  } else if (availability === 'private_collection') {
+    inquireEl.innerHTML = '';
+  } else {
+    inquireEl.innerHTML = `<a class="btn" href="/commissions/?work=${workQuery}" onclick="event.preventDefault(); beginCommissionInquiry('', '${safeName}')" data-cta="product">Begin Commission Inquiry</a>`;
+  }
 
   window._currentProduct = product;
 
@@ -1994,108 +2536,205 @@ function showProduct(product, noPush) {
   updateDocumentMeta('product', product);
 }
 
-function openInquiry(productName) {
-  document.getElementById('inquiryModalTitle').textContent = productName;
-  document.getElementById('modalProductField').value = productName;
-  const modal = document.getElementById('inquiryModal');
-  const form = modal.querySelector('form');
-  const submit = form && form.querySelector('button[type=submit]');
-  if (form) form.reset();
-  document.getElementById('modalProductField').value = productName;
-  if (submit) {
-    submit.disabled = false;
-    submit.textContent = 'Send Inquiry';
+// ── Commission inquiry: routing + form behavior ────────────────────────────
+const INQUIRY_EMAIL = 'info@arcanevisionsstudios.com';
+
+// True only when the commissions page (and its inquiry form) is the one on
+// screen — distinguishes the live SPA view from the inert in-DOM page block.
+function isCommissionsActive() {
+  const block = document.getElementById('page-commissions');
+  if (block) return block.classList.contains('active');
+  // Pruned build: a lone page means we're on it only if the form is present.
+  return !!document.getElementById('inquiryForm');
+}
+
+// True only when the Works in Private Collections archive is on screen — used to
+// suppress the floating commission CTA there (no sales language on the archive).
+function isPrivateCollectionsActive() {
+  const block = document.getElementById('page-private-collections');
+  return !!(block && block.classList.contains('active'));
+}
+
+// Entry point for every "Begin Commission Inquiry" CTA. In order:
+//  1. Already viewing the form → prefill + scroll to it.
+//  2. SPA with the commissions block in the DOM → switch to it, then prefill.
+//  3. Pruned page elsewhere → navigate to /commissions/, carrying the work as a
+//     query string so the prefill survives the full page load.
+function beginCommissionInquiry(type, work) {
+  if (isCommissionsActive()) {
+    prefillInquiry(type, work);
+    focusInquiry();
+    return;
   }
-  modal.classList.add('open');
-  syncBodyModalOpen();
-  trapFocus(modal, '#inquiry-name');
+
+  const block = document.getElementById('page-commissions');
+  if (block && typeof showPage === 'function') {
+    showPage('commissions');
+    prefillInquiry(type, work);
+    focusInquiry();
+    return;
+  }
+
+  const qs = [];
+  if (type) qs.push('type=' + encodeURIComponent(type));
+  if (work) qs.push('work=' + encodeURIComponent(work));
+  window.location.href = '/commissions/' + (qs.length ? '?' + qs.join('&') : '');
 }
 
-function closeInquiryModal() {
-  document.getElementById('inquiryModal').classList.remove('open');
-  syncBodyModalOpen();
-  releaseFocus();
+function focusInquiry() {
+  trackEvent('inquiry_open', { via: 'cta' });
+  const form = document.getElementById('inquiryForm');
+  const anchor = document.getElementById('inquireHeading') || form;
+  if (anchor && anchor.scrollIntoView) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const firstField = document.getElementById('if-name');
+  if (firstField) setTimeout(function () { firstField.focus({ preventScroll: true }); }, 420);
 }
 
-function closeModal(e) {
-  if (e.target === e.currentTarget) closeInquiryModal();
-}
-
-function announceFormStatus(text) {
-  const node = document.getElementById('form-status');
-  if (!node) return;
-  node.textContent = text;
-  if (text) setTimeout(() => { if (node.textContent === text) node.textContent = ''; }, 5000);
-}
-
-// Formspree endpoint — replace `YOUR_FORM_ID` with the live endpoint once provisioned.
-const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
-
-function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type=submit]');
-  const orig = btn.textContent;
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-  announceFormStatus('');
-  fetch(FORM_ENDPOINT, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(r => {
-    if (r.ok) {
-      btn.textContent = 'Sent — we will be in touch';
-      announceFormStatus('Sent — we will be in touch');
-      form.reset();
-      setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 4000);
-    } else {
-      btn.textContent = 'Error — please try again';
-      announceFormStatus('Error — please try again');
-      btn.disabled = false;
+function prefillInquiry(type, work) {
+  const typeEl = document.getElementById('if-type');
+  const workEl = document.getElementById('if-work');
+  if (type && typeEl) {
+    let matched = false;
+    for (let i = 0; i < typeEl.options.length; i++) {
+      const opt = typeEl.options[i];
+      if (opt.value && opt.text.toLowerCase().indexOf(String(type).toLowerCase()) !== -1) {
+        typeEl.selectedIndex = i; matched = true; break;
+      }
     }
-  }).catch(() => {
-    btn.textContent = 'Error — please try again';
-    announceFormStatus('Error — please try again');
-    btn.disabled = false;
+    if (!matched) {
+      for (let j = 0; j < typeEl.options.length; j++) {
+        if (/other/i.test(typeEl.options[j].text)) { typeEl.selectedIndex = j; break; }
+      }
+    }
+  }
+  if (work && workEl && !workEl.value) workEl.value = work;
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function setupInquiryForm() {
+  const form = document.getElementById('inquiryForm');
+  if (!form || form.dataset.wired) return;
+  form.dataset.wired = '1';
+
+  // JS owns validation messaging; native attributes remain for the no-JS path.
+  form.setAttribute('novalidate', '');
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('type') || params.get('work')) {
+      prefillInquiry(params.get('type') || '', params.get('work') || '');
+    }
+  } catch (e) { /* no query support — ignore */ }
+
+  // Direct landing on the commissions page is itself a "form open".
+  if (isCommissionsActive()) trackEvent('inquiry_open', { via: 'page_load' });
+
+  const successBox = document.getElementById('inquirySuccess');
+
+  function msgEl(input) {
+    const id = input && input.getAttribute('aria-describedby');
+    const el = id && document.getElementById(id);
+    return el && el.classList.contains('field-msg') ? el : null;
+  }
+  function clearErrors() {
+    form.querySelectorAll('.field-msg').forEach(m => { m.textContent = ''; });
+    form.querySelectorAll('[aria-invalid]').forEach(el => el.removeAttribute('aria-invalid'));
+  }
+  function fieldError(name, message) {
+    const input = form.querySelector('[name="' + name + '"]');
+    if (!input) return null;
+    input.setAttribute('aria-invalid', 'true');
+    const m = msgEl(input);
+    if (m) m.textContent = message;
+    return input;
+  }
+
+  function validateClient() {
+    const errs = [];
+    const v = n => (form.querySelector('[name="' + n + '"]') || {}).value || '';
+    if (!v('name').trim()) errs.push(['name', 'Please include a name.']);
+    const email = v('email').trim();
+    if (!email) errs.push(['email', 'Please include an email address.']);
+    else if (!EMAIL_RE.test(email)) errs.push(['email', 'That email address looks incomplete.']);
+    if (!v('commission_type')) errs.push(['commission_type', 'Please choose a commission type.']);
+    if (!v('desired_work').trim()) errs.push(['desired_work', 'Tell us a little about the work you have in mind.']);
+    return errs;
+  }
+
+  function showSuccess() {
+    form.hidden = true;
+    const lead = document.querySelector('.inquire-lead');
+    if (lead) lead.hidden = true;
+    if (successBox) {
+      successBox.hidden = false;
+      successBox.focus();
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    trackEvent('inquiry_success');
+  }
+
+  // Compose a prefilled mailto: link to the atelier from the inquiry fields.
+  // Multi-line fields (use, references, notes) get their own labelled blocks.
+  function buildInquiryMailto(fields) {
+    const get = k => (typeof fields[k] === 'string' ? fields[k].trim() : '');
+    const subject = 'Commission Inquiry' + (get('commission_type') ? ' — ' + get('commission_type') : '');
+
+    const lines = [];
+    const single = (label, key) => { const val = get(key); if (val) lines.push(label + ': ' + val); };
+    single('Name', 'name');
+    single('Email', 'email');
+    single('Commission Type', 'commission_type');
+    single('Desired Work', 'desired_work');
+    single('Budget Range', 'budget_range');
+    single('Timeline', 'timeline');
+
+    const block = (label, key) => { const val = get(key); if (val) lines.push('', label + ':', val); };
+    block('Intended Use', 'intended_use');
+    block('Symbolic References', 'symbolic_references');
+    block('Additional Notes', 'notes');
+
+    return 'mailto:' + INQUIRY_EMAIL +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(lines.join('\r\n'));
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearErrors();
+
+    const errs = validateClient();
+    if (errs.length) {
+      errs.forEach(([n, m]) => fieldError(n, m));
+      const first = form.querySelector('[aria-invalid="true"]');
+      if (first) first.focus();
+      trackEvent('inquiry_error', { kind: 'client_validation' });
+      return;
+    }
+
+    // Honeypot: a hidden field real visitors never fill. If populated, show the
+    // confirmation but open no email client — the submission goes nowhere.
+    const hp = form.querySelector('[name="company_url"]');
+    if (hp && hp.value.trim()) { showSuccess(); return; }
+
+    const fields = {};
+    new FormData(form).forEach((val, key) => { fields[key] = typeof val === 'string' ? val : ''; });
+
+    trackEvent('inquiry_submit');
+
+    // Hand the inquiry to the visitor's own email client, prefilled and
+    // addressed to the atelier. Nothing leaves the page until they press send.
+    window.location.href = buildInquiryMailto(fields);
+
+    showSuccess();
   });
 }
 
-function handleInquirySubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type=submit]');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-  announceFormStatus('');
-  fetch(FORM_ENDPOINT, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(r => {
-    if (r.ok) {
-      announceFormStatus('Inquiry sent — we will be in touch shortly.');
-      closeInquiryModal();
-      form.reset();
-    } else {
-      btn.textContent = 'Error — please try again';
-      announceFormStatus('Error — please try again');
-      btn.disabled = false;
-    }
-  }).catch(() => {
-    btn.textContent = 'Error — please try again';
-    announceFormStatus('Error — please try again');
-    btn.disabled = false;
-  });
-}
-
-// Unified Escape handler: close the topmost open modal
+// Escape closes the lightbox (the only remaining modal-shaped UI).
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
-  if (document.getElementById('lightbox').classList.contains('open')) {
+  if (document.getElementById('lightbox')?.classList.contains('open')) {
     closeLightbox();
-  } else if (document.getElementById('inquiryModal').classList.contains('open')) {
-    closeInquiryModal();
   }
 });
 
@@ -2109,7 +2748,7 @@ function openLightbox(images, index) {
   lightboxIndex = index;
   const img = document.getElementById('lightboxImg');
   img.style.opacity = 0;
-  // Reveal on load OR error - never leave the viewer blank/transparent if an
+  // Reveal on load OR error — never leave the viewer blank/transparent if an
   // image fails (e.g. a 404 or an HTML response from a cache-poisoned URL).
   img.onload = () => { img.style.opacity = 1; };
   img.onerror = () => { img.style.opacity = 1; };
@@ -2190,7 +2829,7 @@ renderFeatured();
     isInitialLoad = false;
     return;
   }
-  const validPages = ['home', 'the-work', 'commissions', 'about', 'contact'];
+  const validPages = ['home', 'the-work', 'commissions', 'private-collections', 'about'];
   const path = rawPath || 'home';
   const startPage = validPages.includes(path) ? path : 'home';
   if (startPage === 'home') {
@@ -2198,6 +2837,80 @@ renderFeatured();
   }
   showPage(startPage, true);
 })();
+
+// Analytics event shim. No-ops until a provider assigns window.avAnalytics
+// (see the analytics block near </body>). Safe to call from any CTA/handler.
+function trackEvent(name, params) {
+  try { if (typeof window.avAnalytics === 'function') window.avAnalytics(name, params || {}); } catch (e) { /* never break UX on analytics */ }
+}
+
+// ── Floating CTA: reveals after a little scroll, hidden on the commissions
+// page and once dismissed for the session ──────────────────────────────────
+function updateFloatingCta() {
+  const cta = document.getElementById('floatingCta');
+  if (!cta) return;
+  let dismissed = false;
+  try { dismissed = sessionStorage.getItem('av_cta_dismissed') === '1'; } catch (e) { /* private mode */ }
+  const show = !dismissed && !isCommissionsActive() && !isPrivateCollectionsActive() && window.scrollY > 520;
+  cta.classList.toggle('visible', show);
+  cta.setAttribute('aria-hidden', show ? 'false' : 'true');
+  const link = cta.querySelector('.floating-cta-link');
+  const x = cta.querySelector('.floating-cta-x');
+  if (link) link.tabIndex = show ? 0 : -1;
+  if (x) x.tabIndex = show ? 0 : -1;
+}
+
+function dismissFloatingCta() {
+  try { sessionStorage.setItem('av_cta_dismissed', '1'); } catch (e) { /* private mode */ }
+  const cta = document.getElementById('floatingCta');
+  if (cta) { cta.classList.remove('visible'); cta.setAttribute('aria-hidden', 'true'); }
+  trackEvent('cta_floating_dismiss');
+}
+
+function setupFloatingCta() {
+  const cta = document.getElementById('floatingCta');
+  if (!cta || cta.dataset.wired) return;
+  cta.dataset.wired = '1';
+
+  const link = cta.querySelector('.floating-cta-link');
+  if (link) link.addEventListener('click', function (e) {
+    e.preventDefault();
+    beginCommissionInquiry('', '');
+  });
+
+  const x = cta.querySelector('.floating-cta-x');
+  if (x) x.addEventListener('click', function (e) { e.preventDefault(); dismissFloatingCta(); });
+
+  let ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { updateFloatingCta(); ticking = false; });
+  }, { passive: true });
+
+  updateFloatingCta();
+}
+
+// Uniform CTA-click tracking. Every standardized CTA carries data-cta; one
+// delegated listener reports the click source without coupling to routing.
+function setupCtaTracking() {
+  document.addEventListener('click', function (e) {
+    const el = e.target && e.target.closest ? e.target.closest('[data-cta]') : null;
+    if (!el) return;
+    const source = el.getAttribute('data-cta') || 'unknown';
+    trackEvent('cta_click', { source: source });
+    // A Purchase CTA click is the start of Stripe-hosted checkout. Success and
+    // cancellation happen on Stripe's domain (no webhook here, matching the
+    // Theurgic Arts pattern), so checkout_start is the observable conversion step.
+    if (source === 'product-purchase') {
+      trackEvent('checkout_start', { work: el.getAttribute('data-work') || '' });
+    }
+  }, true);
+}
+
+setupInquiryForm();
+setupFloatingCta();
+setupCtaTracking();
 </script>
 
 <!-- JSON-LD: LocalBusiness / Atelier -->
@@ -2207,7 +2920,7 @@ renderFeatured();
   "@type": ["LocalBusiness", "ArtGallery"],
   "@id": "https://arcanevisions.art/#localbusiness",
   "name": "Arcane Visions",
-  "description": "Esoteric art atelier creating original occult and esoteric artworks, bas-relief works, portraiture, and bespoke commissions.",
+  "description": "Ceremonial and esoteric atelier producing handcrafted symbolic art, bas-relief works, and portraiture.",
   "url": "https://arcanevisions.art",
   "image": "https://arcanevisions.art/images/og-default.jpg",
   "email": "info@arcanevisionsstudios.com",
@@ -2217,8 +2930,7 @@ renderFeatured();
     "addressCountry": "US"
   },
   "areaServed": [
-    { "@type": "AdministrativeArea", "name": "Virginia" },
-    { "@type": "AdministrativeArea", "name": "Washington DC" },
+    { "@type": "AdministrativeArea", "name": "Washington, DC region" },
     "Worldwide"
   ],
   "priceRange": "$$$",
@@ -2234,7 +2946,11 @@ renderFeatured();
     .then(function(data) {
       if (data.catalogue && data.catalogue.length) {
         data.catalogue.forEach(function(p) {
-          var imgs = (p.photos || []).map(function(ph) { return ph.image; });
+          // Carry the full photo objects (image url + alt + intrinsic w/h) so
+          // the JS-side renderer can emit width/height attributes matching the
+          // build-time static output. CLS budget is identical either path.
+          var photos = (p.photos || []).filter(function(ph) { return ph && ph.image; });
+          var imgs = photos.map(function(ph) { return ph.image; });
           products.push({
             id: 900 + products.length,
             slug: p.slug || '',
@@ -2242,31 +2958,41 @@ renderFeatured();
             order: p.tradition || '',
             specs: p.specs ? p.specs.split('\n').filter(Boolean) : [],
             glyph: '✦',
-            category: p.category || 'Ceremonial Art',
+            category: p.category || 'Symbolic Art',
             images: imgs.length ? imgs : undefined,
+            photos: photos,
             featured: p.featured || false,
             price: p.price || '',
+            stripe_link: p.stripe_link || '',
             purchase_mode: p.purchase_mode || 'inquiry',
+            availability: p.availability || 'available',
+            acquisition_status: p.acquisition_status || '',
+            acquisition_note: p.acquisition_note || '',
             description: p.description || ''
           });
         });
-        var cats = ["All"];
-        products.forEach(function(p) {
-          if (cats.indexOf(p.category) === -1) cats.push(p.category);
+        // Filter-bar categories reflect The Work's contents (available works
+        // only) so the bar matches the grid — same subset build.js bakes.
+        var cats = [];
+        products.filter(isAvailableWork).forEach(function(p) {
+          if (p.category && cats.indexOf(p.category) === -1) cats.push(p.category);
         });
-        // Explicit filter order by medium; categories not listed fall in afterward, in encounter order.
-        var CATEGORY_ORDER = ['Stained Glass', 'Bas-Reliefs', 'Paintings & Panels', 'Portraiture', 'Wearable Works', 'Heraldic Works'];
-        var presentCats = cats.filter(function(c) { return c !== 'All'; });
-        cats = ['All']
-          .concat(CATEGORY_ORDER.filter(function(c) { return presentCats.indexOf(c) !== -1; }))
-          .concat(presentCats.filter(function(c) { return CATEGORY_ORDER.indexOf(c) === -1; }));
         categories.length = 0;
-        cats.forEach(function(c) { categories.push(c); });
+        categories.push("All");
+        orderCategories(cats).forEach(function(c) { categories.push(c); });
         renderFeatured();
         var theWorkPage = document.getElementById('page-the-work');
         if (theWorkPage && theWorkPage.classList.contains('active')) {
           renderFilters();
           renderCatalogue();
+        }
+        var commissionsPage = document.getElementById('page-commissions');
+        if (commissionsPage && commissionsPage.classList.contains('active')) {
+          renderCommissionsGallery();
+        }
+        var pcPage = document.getElementById('page-private-collections');
+        if (pcPage && pcPage.classList.contains('active')) {
+          renderPrivateCollections();
         }
 
         if (window._pendingSlug) {
@@ -2297,6 +3023,58 @@ renderFeatured();
 })();
 </script>
 
-<div id="form-status" role="status" aria-live="polite" class="sr-only"></div>
+<!-- ───────────────────────────────────────────────────────────────────────
+     ANALYTICS WIRING POINT  ·  conversion tracking
+     ─────────────────────────────────────────────────────────────────────
+     trackEvent(name, params) (defined in the main script) forwards every
+     conversion signal to window.avAnalytics. Until a provider assigns that
+     function in the block below, all events are silently dropped — the UI
+     never breaks.
+
+     LAUNCH BLOCKER — Analytics Provider Required:
+     No analytics platform is connected. To capture conversions: (a) add the
+     provider's loader tag to <head>, then (b) uncomment ONE assignment block
+     below and replace the placeholder id/domain. Do not commit real
+     measurement ids if this repo is public.
+
+     Provider loader tags to place inside <head> (markup kept here, not in the
+     script element below, because a literal closing-script sequence would end
+     that element early):
+       Google Analytics 4 (gtag.js):
+         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+       Plausible (privacy-friendly, cookieless):
+         <script defer data-domain="your-domain.com" src="https://plausible.io/js/script.js"></script>
+
+     Events emitted by this site:
+       cta_click       { source }   every [data-cta] element (nav, floating,
+                                     cta-band, product, etc.)
+       inquiry_open    { via }      commissions form revealed (cta|page_load)
+       inquiry_submit  {}           client validation passed, request sent
+       inquiry_success {}           server accepted the inquiry
+       inquiry_error   { kind }     client_validation|validation|server|network
+─────────────────────────────────────────────────────────────────────── -->
+<script>
+(function () {
+  // Assign window.avAnalytics to forward events to your platform; the shim
+  // calls it as avAnalytics(name, params). Leave undefined to no-op. Add the
+  // matching provider loader tag to the document head (see the comment above).
+
+  // ── Google Analytics 4 (after the gtag.js loader is in the head) ──────
+  // window.dataLayer = window.dataLayer || [];
+  // function gtag(){ dataLayer.push(arguments); }
+  // gtag('js', new Date());
+  // gtag('config', 'G-XXXXXXXXXX');
+  // window.avAnalytics = function (name, params) { gtag('event', name, params); };
+
+  // ── Plausible (after the Plausible loader is in the head) ─────────────
+  // window.avAnalytics = function (name, params) {
+  //   if (window.plausible) window.plausible(name, { props: params });
+  // };
+
+  // ── Local debugging (optional) ────────────────────────────────────────
+  // window.avAnalytics = function (name, params) { console.debug('[analytics]', name, params); };
+})();
+</script>
+
 </body>
 </html>

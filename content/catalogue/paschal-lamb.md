@@ -3,65 +3,44 @@ name: Paschal Lamb
 tradition: Christian
 category: Symbolic Art
 featured: true
-featured_order: 3
-price: "$1,200"
-purchase_mode: direct
+price: ""
+purchase_mode: inquiry
+availability: private_collection
 specs: |-
-  Original handcrafted work — hand-leaded stained glass with hand-painted glass detail
-  12″ × 12″
-  Agnus Dei (Paschal Lamb) with triumphal banner and golden nimbus
-  Dark gunmetal shadow box with integrated LED backlighting · ready to display
-  Symbolic lineages: Masonic, Rosicrucian, Royal Arch, Scottish Rite, Christian Hermetic
-  Ships within 2 business days of completion
+  The Agnus Dei with banner and triumphant cross
+  Sculptural bas-relief construction
+  Hand-finished surface in restrained gold and dark ground
+  Symbolism: Christian, with Rosicrucian resonance
+  Handcrafted in the Washington, DC region
 photos:
   - image: /images/uploads/products/paschal-lamb/primary.jpg
-    alt: Paschal Lamb — Agnus Dei, hand-leaded stained glass, Arcane Visions
+    alt: Paschal Lamb — bas-relief, full composition
   - image: /images/uploads/products/paschal-lamb/gallery-1.jpg
-    alt: Paschal Lamb — horizontal detail
+    alt: Paschal Lamb — horizontal study showing the Lamb and banner
   - image: /images/uploads/products/paschal-lamb/gallery-2.jpg
-    alt: Paschal Lamb — second horizontal detail
+    alt: Paschal Lamb — alternate horizontal study of the cross of victory
   - image: /images/uploads/products/paschal-lamb/gallery-3.jpg
-    alt: Paschal Lamb — figural detail
+    alt: Paschal Lamb — vertical detail of the Lamb at the centre
   - image: /images/uploads/products/paschal-lamb/gallery-4.jpg
-    alt: Paschal Lamb — close detail
+    alt: Paschal Lamb — vertical close detail of relief surface
 ---
 
-The Lamb Triumphant
+The Paschal Lamb — the Agnus Dei standing with the banner of the Resurrection and the triumphant cross — is one of the oldest sacred figures of the Western tradition. The work renders this figure as a bas-relief object, built in restrained material so the symbol carries its weight without ornament.
 
-It does not announce itself. It waits to be seen. At twelve inches square, this hand-leaded work carries the weight of initiatory tradition in glass and light.
+## Symbolism
 
-The Symbol
+The Lamb is first a Christian figure — the slain and risen Christ, the sacrificial offering at Passover and the victor over death. The same image was carried into Rosicrucian iconography through the Christian lineage that gives the Rosy Cross its context, where the Lamb upon the Book of Seven Seals belongs to the imagery of the Rose Croix.
 
-The Agnus Dei — Lamb of God bearing the triumphal banner — is one of the most enduring figures in the Western Mystery Tradition. It appears in Freemasonry, Rosicrucianism, and Christian Hermeticism not merely as a devotional image but as a living sign: the Paschal Lamb represents sacrifice, resurrection, illumination, and the triumphant return of Light over Darkness. It is the emblem carried by John the Baptist; the central figure of the Royal Arch; a silent witness at the heart of the 17th Degree of the Scottish Rite. To live with this image is to keep a living symbol of the Great Work within daily space.
+The figure here is the canonical figure: the Lamb standing, the banner of the cross of victory unfurled, the head turned in the traditional posture.
 
-The Work
+## Materials and Finish
 
-The lamb stands in luminous white upon a three-lobed heraldic mount, bearing the triumphal banner on a gilded staff. The banner trails diagonally from the staff — each alternating stripe of white and ruby red an independently cut piece of glass.
+The piece is built in materials chosen for long-form display: a stable substrate, hand-finished relief surface, and restrained gilding on the principal symbolic elements. The composition is centred and bordered cleanly; the work is intended to read at altar or wall distance.
 
-Working directly onto glass, Debbi Cohilas renders the lamb's face in fine-line brushwork at a scale that allows no correction: the eye, the expression, each stroke resolved and final. Across the neck and body, painted texture implies the density of wool — layered, slightly mottled, worked rather than filled. The golden nimbus arcs behind the head in true leaded glass, each piece individually hand-cut.
+## Placement
 
-The lamb is enclosed within a deep crimson mandorla — the vesica of divine radiance — bounded by a gold ring with hand-painted botanical detail. The four corners are worked in blue and iridescent glass, each panel bearing scrolled vine motifs. The shadow box frame is dark gunmetal: minimal, presenting no competition to what it contains.
+Suited to a private collection, library, study, or gallery wall. Sized for long-form display.
 
-When the integrated backlighting is engaged, the composition transforms. The golden halo ignites. The crimson mandorla takes on the quality of sacred fire. The effect carries the same quality of light — and the same quality of silence — that fills a stained glass interior at dusk.
+## Provenance
 
-Piece Details
-
-Dimensions: 12″ × 12″
-
-Medium: Hand-leaded stained glass with hand-painted glass detail
-
-Artist: Debbi Cohilas
-
-Presentation: Dark gunmetal shadow box with integrated LED backlighting — ready to display, no installation required
-
-Subject: Agnus Dei (Paschal Lamb) with triumphal banner and golden nimbus
-
-Symbolic lineages: Masonic, Rosicrucian, Royal Arch, Scottish Rite, Christian Hermetic
-
-Edition: Original handcrafted work
-
-Ships within 2 business days of completion
-
-Price: $1,200
-
-True hand-leaded stained glass at this level of painted detail is rare. This piece enters the collection as an original devotional work — handcrafted, singular, and made to endure.
+This work has been placed in a private collection.

@@ -54,12 +54,6 @@ collections:
         widget: "boolean"
         default: false
         hint: "Toggle ON to display this work on the home page."
-      - label: "Featured Order"
-        name: "featured_order"
-        widget: "number"
-        required: false
-        value_type: "int"
-        hint: "Optional. Lower numbers appear first in the home 'Selected Works' row; blank falls to the end."
       - label: "Photos"
         name: "photos"
         widget: "list"
@@ -80,22 +74,44 @@ collections:
         widget: "string"
         required: false
         hint: "Leave blank for Price on Inquiry."
-      - label: "Purchase Links"
-        name: "purchase_links"
-        widget: "list"
+      - label: "Stripe Payment Link"
+        name: "stripe_link"
+        widget: "string"
         required: false
-        label_singular: "Purchase Link"
-        summary: "{{fields.label}}"
-        hint: "Add a Stripe Payment Link to make this piece directly purchasable. Each link renders a purchase button; leave empty for inquiry/commission pieces."
-        fields:
-          - label: "Button Label"
-            name: "label"
-            widget: "string"
-            hint: 'e.g. "Purchase — $1,500"'
-          - label: "Stripe Payment Link URL"
-            name: "url"
-            widget: "string"
-            pattern: ['^https://buy\.stripe\.com/.+$', "Must be a Stripe Payment Link (https://buy.stripe.com/...)"]
+        pattern: ['^(https://buy\.stripe\.com/.+)?$', "Must be a Stripe Payment Link (https://buy.stripe.com/...) or blank."]
+        hint: "Paste a Stripe-hosted Payment Link (https://buy.stripe.com/...) to make this piece directly purchasable — the page shows a Purchase button instead of the inquiry CTA. Leave blank to keep it inquiry-only."
+      - label: "Acquisition Mode"
+        name: "purchase_mode"
+        widget: "select"
+        default: "inquiry"
+        options:
+          - { label: "Inquiry — available, acquired by inquiry", value: "inquiry" }
+          - { label: "Direct — completed work for direct acquisition", value: "direct" }
+          - { label: "Commission — bespoke, built to order", value: "commission" }
+          - { label: "Archival — acquired one-of-one, portfolio only (no purchase or inquiry button)", value: "archival" }
+        hint: "How this piece is acquired (the acquisition mechanism). For most works, leave 'Section / Placement' below on Auto — it follows this field. A Stripe Payment Link (above) turns Inquiry/Direct/Commission pieces into a Purchase button; it never overrides Archival."
+      - label: "Section / Placement"
+        name: "availability"
+        widget: "select"
+        required: false
+        default: ""
+        options:
+          - { label: "Auto — place from Acquisition Mode", value: "" }
+          - { label: "The Work — available / obtainable now", value: "available" }
+          - { label: "Commissions — example available by commission", value: "commission" }
+          - { label: "Private Collections — placed, unavailable", value: "private_collection" }
+          - { label: "Private Collections — placed; similar works by commission", value: "private_collection_commissionable" }
+        hint: "Where this work appears on the site. Leave on 'Auto' to place it from Acquisition Mode (direct/inquiry → The Work, commission → Commissions, archival → Private Collections). Set explicitly only to override — e.g. an acquired work whose similar pieces remain commissionable."
+      - label: "Acquisition Status"
+        name: "acquisition_status"
+        widget: "string"
+        required: false
+        hint: "Optional short status line shown with the price, e.g. 'Edition of 4', 'Available by Inquiry', or 'Acquired · One-of-One Work'. Leave blank for none."
+      - label: "Acquisition Note"
+        name: "acquisition_note"
+        widget: "string"
+        required: false
+        hint: "Optional secondary line under the status — availability or reinterpretation wording, e.g. 'Currently in transit and available for fulfillment upon return.' Leave blank for none."
       - label: "Specifications"
         name: "specs"
         widget: "text"
@@ -154,3 +170,17 @@ collections:
               label: "Item"
               name: "item"
               widget: "string"
+  - name: "private-collections"
+    label: "Private Collections Page"
+    files:
+      - name: "private-collections"
+        label: "Private Collections Content"
+        file: "content/private-collections.md"
+        fields:
+          - label: "Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+            hint: "Intro shown at the top of the Works in Private Collections page."
