@@ -10,6 +10,13 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-02
 
+### Bespoke Masonic Lodge Coat of Arms — Hi-Res Image Replacement — 2026-06-02
+
+- Replaced the low-resolution placeholder `images/uploads/products/bespoke-masonic-lodge-coat-of-arms/primary.jpg` (300×388, 42 KB — was being upscaled by `width:100%` → blurry) with the supplied high-resolution artwork.
+- Source: `~/Desktop/Coat of Arms.png` (1280×1230, sRGB, no alpha — the RESTITUTIO / ADHUC STAT heraldic device). Exported to **JPEG quality 90, sRGB, 1280×1230, 431 KB**. A quality-90 export was compared against a max-quality ("best", 939 KB) export — no visible degradation, so the smaller file was used.
+- No upscale, no crop, no AI enhancement; native aspect preserved (note: new art is ~square 1280×1230 vs old portrait 300×388 — the artwork's true shape; `width:100%/height:auto` renders it without distortion on desktop and mobile).
+- build.js auto-baked the new intrinsic dims onto the `<img>` (`width="1280" height="1230"`). Single file changed; no code/template/frontmatter changes.
+
 ### Homepage Positioning Correction — Order List → Offering-Based — 2026-06-02
 
 Corrected a homepage content regression. The hero-area list under the title had reverted to an older audience/order segmentation — *Hermetic Order of the Golden Dawn · Rosicrucian · Martinist · Rectified Scottish Rite · Private Collectors* — and now reads the approved offering-based positioning, aligned with the catalogue architecture: **Original Works · Bespoke Commissions · Private Collections**.
