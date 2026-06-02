@@ -10,6 +10,17 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-02
 
+### Low-Res Image Replacements — Portraits + Magical Shoes — 2026-06-02
+
+- Replaced the three remaining low-resolution catalogue image sets with supplied high-resolution masters from `~/Desktop/Arcane Visions/` (sRGB JPEG, quality 90, long edge capped at 2048px, native aspect preserved — downsize only, no upscale, no crop):
+  - `bespoke-mixed-media-portrait/primary.jpg` — 300×388 → **1590×2048** (699 KB) ← "Mixed Media Portrait.png"
+  - `black-and-white-pencil-portrait/primary.jpg` — 300×388 → **1554×2048** (791 KB) ← "Black and White Pencil Portrait.png"
+  - `bespoke-magical-shoes/primary.jpg` — 600×800 → **1536×2048** (897 KB) ← "Magical Shoes 4.png" (both shoes: Tree of Life + Rose Cross / INRI / Seal of Solomon)
+  - `bespoke-magical-shoes/gallery-1.jpg` — 600×800 → **1536×2048** (847 KB) ← "Magical Shoes 5.png" (angled pair)
+  - `bespoke-magical-shoes/gallery-2.jpg` — 600×800 → **1536×2048** (968 KB) ← "Magical Shoes 2.png" (heel — "Ad Altiora Tendo")
+- Image files only; same paths/slots, no frontmatter or code changes. (Two extra shoe source photos remain available if more gallery slots are wanted later — a separate frontmatter change.)
+- Note: `/images/uploads/*` is `immutable`-cached on stable filenames, so the canonical URLs need a Cloudflare cache purge after deploy for returning visitors to see the new images (same as the Coat of Arms).
+
 ### Pelican Battle Jacket — Resolved Status Contradiction → Directly Purchasable (Option A) — 2026-06-02
 
 - The finished, available one-of-one ($2,200, "Available · One-of-One Work") was rendering commission-style ("This piece is built to a particular order…" note + "Begin Commission Inquiry" CTA) because it had `purchase_mode: inquiry` and **no** purchase link — so `isPurchasable` was false and the CTA fell to the commission fallback.
