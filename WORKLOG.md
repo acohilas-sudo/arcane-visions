@@ -10,6 +10,12 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-04
 
+### About Page — Wider Desktop Content Column — 2026-06-04
+
+- The About content read too narrow on desktop: the readable column was ~600px (and the team-bio text column only ~328px) inside a 760px wrapper, leaving the text cramped with wide empty margins. Widened it on desktop while leaving mobile untouched.
+- Two About-scoped CSS changes: (1) removed the redundant inner horizontal padding on `.about-section` — the `.page-content` wrapper already supplies a 40px gutter, so the column was double-inset; (2) widened the About wrapper with `#page-about .page-content { max-width: 820px; }`. Net result on desktop: readable column ~740px and bio text column ~418px, centered.
+- Mobile is unchanged: `.about-section`'s mobile padding (via the existing `max-width:768/600` overrides) and the wrapper's mobile padding are preserved, and the new max-width sits above mobile viewport widths — measured widths are identical before/after. Other pages (Commissions, The Work) are unaffected (`.about-section` is About-only; the wrapper rule is `#page-about`-scoped).
+
 ### Commission Inquiry — Cold-Load Scroll Robustness — 2026-06-04
 
 - Follow-up to the direct-to-form flow. On a cold cache (first-time visitor), the inquiry form could shift downward *after* the initial scroll — the commission gallery above it hydrates via JS and the display fonts load after first paint — so the scroll landed short and the visitor ended up mid-catalogue. Warm/returning visitors were unaffected.

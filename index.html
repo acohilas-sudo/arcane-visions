@@ -1353,8 +1353,15 @@
   .about-section {
     max-width: 960px;
     margin: 0 auto;
-    padding: 96px 40px;
+    /* Desktop: drop the redundant inner horizontal padding so the column is not
+       double-inset — the .page-content wrapper already supplies a 40px gutter.
+       Mobile keeps its padding via the max-width:768/600 overrides below. */
+    padding: 96px 0;
   }
+  /* About reads too narrow on desktop: widen its content wrapper into the
+     700–820px target. Scoped to #page-about so no other page is affected; on
+     mobile the viewport is below this max-width, so mobile is unchanged. */
+  #page-about .page-content { max-width: 820px; }
   .section-label {
     font-family: 'Cinzel', serif;
     font-size: 11px;
