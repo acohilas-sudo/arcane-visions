@@ -540,6 +540,20 @@
     padding: 22px;
   }
   .next-step-note { margin: 0 0 28px; }
+  /* Upper inquiry panel made into a functional CTA (same destination as the bottom
+     button). Restraint: cursor + subtle border/background brightening on hover only. */
+  a.next-step-cta {
+    display: block; text-decoration: none; color: inherit; cursor: pointer;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  a.next-step-cta:hover { border-color: var(--gold-line); background: var(--gold-ghost); }
+  .next-step-cta-line {
+    display: block; margin-top: 16px;
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+    transition: color 0.3s ease;
+  }
+  a.next-step-cta:hover .next-step-cta-line { color: var(--gold-bright); }
   .contact-guidance { margin-bottom: 32px; }
   .contact-guidance-list {
     display: grid;
@@ -2554,29 +2568,32 @@ function readyToAcquireHTML() {
 
 // Tier-aware acquisition copy — kept in sync with build.js's productNextStepHTML()
 // so the JS-rendered detail view matches the build-time static rendering.
-function productNextStepHTML(purchaseMode) {
+function productNextStepHTML(purchaseMode, ctaHref, ctaOnclick) {
+  let title, body;
   if (purchaseMode === 'private_collection_commissionable') {
-    return `<div class="next-step-note">
-      <div class="next-step-title">Available by Commission</div>
-      <p>This original has been placed in a private collection. A similar work can be created as a new commission — distinct in materials and execution. Share what you envision to begin.</p>
-    </div>`;
+    title = 'Available by Commission';
+    body = 'This original has been placed in a private collection. A similar work can be created as a new commission — distinct in materials and execution. Share what you envision to begin.';
+  } else if (purchaseMode === 'direct') {
+    title = 'Direct Acquisition';
+    body = 'This piece is a completed limited edition. Available by inquiry — pricing, current edition status, and shipping window confirmed on response.';
+  } else if (purchaseMode === 'commission') {
+    title = 'Commission Inquiry';
+    body = 'This piece is built to commission. Send the subject, scale, reference handling, materials, and timeline. We respond and confirm scope before work begins.';
+  } else {
+    title = 'Inquiry Details';
+    body = 'This piece is built to a particular order, grade, or collector context. Include intended use, dimensions, tradition or lineage, material preferences, deadline, and shipping country.';
   }
-  if (purchaseMode === 'direct') {
-    return `<div class="next-step-note">
-      <div class="next-step-title">Direct Acquisition</div>
-      <p>This piece is a completed limited edition. Available by inquiry — pricing, current edition status, and shipping window confirmed on response.</p>
-    </div>`;
-  }
-  if (purchaseMode === 'commission') {
-    return `<div class="next-step-note">
-      <div class="next-step-title">Commission Inquiry</div>
-      <p>This piece is built to commission. Send the subject, scale, reference handling, materials, and timeline. We respond and confirm scope before work begins.</p>
-    </div>`;
+  if (ctaHref) {
+    return `<a class="next-step-note next-step-cta" href="${ctaHref}" onclick="${ctaOnclick}" data-cta="product-panel" aria-label="Begin a commission inquiry">
+      <div class="next-step-title">${title}</div>
+      <p>${body}</p>
+      <span class="next-step-cta-line">Begin Commission Inquiry →</span>
+    </a>`;
   }
   return `<div class="next-step-note">
-    <div class="next-step-title">Inquiry Details</div>
-    <p>This piece is built to a particular order, grade, or collector context. Include intended use, dimensions, tradition or lineage, material preferences, deadline, and shipping country.</p>
-  </div>`;
+      <div class="next-step-title">${title}</div>
+      <p>${body}</p>
+    </div>`;
 }
 function showProduct(product, noPush) {
   const layout = document.getElementById('productDetailLayout');
@@ -2645,14 +2662,18 @@ function showProduct(product, noPush) {
     : '';
 
   const safeName = (product.name || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  const workQuery = encodeURIComponent(product.name || '');
+  // The upper inquiry panel is also a CTA to the SAME destination as the bottom button.
+  const panelCtaHref = `/commissions/?work=${workQuery}`;
+  const panelCtaOnclick = `event.preventDefault(); beginCommissionInquiry('', '${safeName}')`;
   // Next-step note: purchasable → "Ready to Acquire"; private collection → none
   // (_commissionable gets the "available by commission" note); otherwise the
   // tier-aware inquiry note keyed on purchase_mode.
   let nextStepHTML;
   if (isPurchasable) nextStepHTML = readyToAcquireHTML();
   else if (availability === 'private_collection') nextStepHTML = '';
-  else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable');
-  else nextStepHTML = productNextStepHTML(mode);
+  else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable', panelCtaHref, panelCtaOnclick);
+  else nextStepHTML = productNextStepHTML(mode, panelCtaHref, panelCtaOnclick);
 
   layout.innerHTML = `
     <div>${visualHTML}</div>
@@ -2682,7 +2703,6 @@ function showProduct(product, noPush) {
   // a private collection carries no acquisition CTA (unless _commissionable,
   // which routes a commission inquiry for similar works); everything else routes
   // to the on-site inquiry form. Kept in sync with build.js's static rendering.
-  const workQuery = encodeURIComponent(product.name || '');
   if (isPurchasable) {
     if (purchaseLinks.length) {
       inquireEl.innerHTML = purchaseLinks.map(l => `<a class="btn" href="${l.url}" data-cta="product-purchase" data-work="${product.name || ''}">${l.label || 'Purchase'}</a>`).join('');

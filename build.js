@@ -400,29 +400,34 @@ function readyToAcquireHTML() {
 
 // Three tiers of acquisition copy. The next-step note differs by tier; the CTA
 // button is standardized to "Begin Commission Inquiry" and routes to the form.
-function productNextStepHTML(purchaseMode) {
+function productNextStepHTML(purchaseMode, ctaHref, ctaOnclick) {
+  let title, body;
   if (purchaseMode === 'private_collection_commissionable') {
-    return `<div class="next-step-note">
-        <div class="next-step-title">Available by Commission</div>
-        <p>This original has been placed in a private collection. A similar work can be created as a new commission — distinct in materials and execution. Share what you envision to begin.</p>
-      </div>`;
+    title = 'Available by Commission';
+    body = 'This original has been placed in a private collection. A similar work can be created as a new commission — distinct in materials and execution. Share what you envision to begin.';
+  } else if (purchaseMode === 'direct') {
+    title = 'Direct Acquisition';
+    body = 'This piece is a completed limited edition. Available by inquiry — pricing, current edition status, and shipping window confirmed on response.';
+  } else if (purchaseMode === 'commission') {
+    title = 'Commission Inquiry';
+    body = 'This piece is built to commission. Send the subject, scale, reference handling, materials, and timeline. We respond and confirm scope before work begins.';
+  } else {
+    // 'inquiry' — one-of-one collector pieces and made-to-specification regalia
+    title = 'Inquiry Details';
+    body = 'This piece is built to a particular order, grade, or collector context. Include intended use, dimensions, tradition or lineage, material preferences, deadline, and shipping country.';
   }
-  if (purchaseMode === 'direct') {
-    return `<div class="next-step-note">
-        <div class="next-step-title">Direct Acquisition</div>
-        <p>This piece is a completed limited edition. Available by inquiry — pricing, current edition status, and shipping window confirmed on response.</p>
-      </div>`;
+  // When a CTA destination is provided, the whole panel becomes one link to the
+  // SAME place as the bottom "Begin Commission Inquiry" button. Copy is unchanged.
+  if (ctaHref) {
+    return `<a class="next-step-note next-step-cta" href="${ctaHref}" onclick="${escapeAttr(ctaOnclick)}" data-cta="product-panel" aria-label="Begin a commission inquiry">
+        <div class="next-step-title">${title}</div>
+        <p>${body}</p>
+        <span class="next-step-cta-line">Begin Commission Inquiry →</span>
+      </a>`;
   }
-  if (purchaseMode === 'commission') {
-    return `<div class="next-step-note">
-        <div class="next-step-title">Commission Inquiry</div>
-        <p>This piece is built to commission. Send the subject, scale, reference handling, materials, and timeline. We respond and confirm scope before work begins.</p>
-      </div>`;
-  }
-  // 'inquiry' — one-of-one collector pieces and made-to-specification regalia
   return `<div class="next-step-note">
-        <div class="next-step-title">Inquiry Details</div>
-        <p>This piece is built to a particular order, grade, or collector context. Include intended use, dimensions, tradition or lineage, material preferences, deadline, and shipping country.</p>
+        <div class="next-step-title">${title}</div>
+        <p>${body}</p>
       </div>`;
 }
 
@@ -490,19 +495,22 @@ function renderProductDetailHTML(product) {
   // Next-step note: purchasable → "Ready to Acquire"; private collection → none
   // (the status line says everything); _commissionable → the "available by
   // commission" note; otherwise the tier-aware inquiry note keyed on purchase_mode.
-  let nextStepHTML;
-  if (isPurchasable) nextStepHTML = readyToAcquireHTML();
-  else if (availability === 'private_collection') nextStepHTML = '';
-  else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable');
-  else nextStepHTML = productNextStepHTML(mode);
   // Acquisition CTA. A static product page is a pruned standalone page with no
   // inquiry form, so the inquiry button links to /commissions/?work=… — the query
   // prefills the desired-work field after navigation (works with JS disabled);
   // with JS, beginCommissionInquiry() intercepts and carries the same prefill.
+  // The upper inquiry panel is also made clickable to the SAME destination.
   // A work in a private collection carries no CTA — unless it is _commissionable,
   // which routes a commission inquiry for similar (new) works.
   const workQuery = encodeURIComponent(product.name || '');
   const jsName = (product.name || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  const panelCtaHref = `/commissions/?work=${workQuery}`;
+  const panelCtaOnclick = `event.preventDefault(); beginCommissionInquiry('', '${jsName}')`;
+  let nextStepHTML;
+  if (isPurchasable) nextStepHTML = readyToAcquireHTML();
+  else if (availability === 'private_collection') nextStepHTML = '';
+  else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable', panelCtaHref, panelCtaOnclick);
+  else nextStepHTML = productNextStepHTML(mode, panelCtaHref, panelCtaOnclick);
   let inquireButtonHTML;
   if (isPurchasable) {
     // Direct acquisition via Stripe-hosted checkout — a top-level navigation,

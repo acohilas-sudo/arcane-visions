@@ -8,6 +8,14 @@ Git history remains the authoritative technical record.
 
 ---
 
+## 2026-06-04
+
+### Commission Inquiry Panel — Now a Functional CTA — 2026-06-04
+
+- On commission and inquiry product pages, the upper acquisition panel (e.g. "Commission Inquiry" / "Inquiry Details") previously looked actionable but was plain text. The entire panel is now a single link to the SAME destination as the existing bottom "Begin Commission Inquiry" button (`/commissions/?work=…`, which prefills the inquiry), with a visible "Begin Commission Inquiry →" line added inside it.
+- Restraint by design: cursor pointer plus a subtle border/background brightening on hover (gold-dim → gold-line); no shadows, transforms, or animations. The bottom button, panel copy, pricing, typography, navigation, homepage, and Private Collections are all unchanged. Purchasable and private-collection pages are unaffected (no inquiry CTA is added there).
+- Applied identically in both render paths — `build.js` (static product pages) and `index.html` (in-page app) — so the panel is the same whether rendered server-side or client-side.
+
 ## 2026-06-03
 
 ### Acquisition Process — Roman Numerals Only — 2026-06-03
