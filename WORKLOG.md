@@ -10,6 +10,11 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-03
 
+### Acquisition Process — Roman Numerals Only — 2026-06-03
+
+- Fixed duplicated step numbering in the commissions page "The Acquisition Process" section. The ordered list was rendering its browser-default Arabic markers (1–5) alongside the intended Roman numerals (I–V), so each step read "1 I", "2 II", etc.
+- Suppressed the list's Arabic markers with CSS only — `list-style: none; padding: 0` on `.process-steps` — so each step now shows only its Roman numeral. No markup, section title, step titles, body copy, or other sections were changed; the `<ol>` is kept for correct semantics.
+
 ### Collector Statements — Private Collections + Homepage — 2026-06-03
 
 - Added approved collector statements to the site as an atelier / collector record (not testimonials or reviews):
