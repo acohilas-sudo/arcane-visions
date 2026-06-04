@@ -10,6 +10,14 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-04
 
+### Commission Inquiry — Direct-to-Form Flow (removed catalogue loop) — 2026-06-04
+
+- Removed the circular commission workflow. Clicking "Commission Inquiry" (either the upper panel or the bottom button) on a commission product page used to land the visitor at the top of the commission catalogue, forcing them to scroll all the way down to the inquiry form. It now lands directly on the inquiry form with the work already filled in.
+- Cause: the CTAs already routed to `/commissions/?work=<name>` carrying the chosen work, and the form already prefilled its "Desired Work" field from that parameter — but the commissions page did not scroll to the form on arrival, so the visitor landed atop the catalogue.
+- Fix (one place, JS only, in `setupInquiryForm`): when the commissions page loads with a `work`/`type` query parameter — i.e. the visitor arrived from a product's CTA — it now scrolls straight to the inquiry form and focuses the first empty field, reusing the existing scroll/focus pattern. Direct visits to `/commissions/` with no parameter are unchanged (still land at the top of the catalogue).
+- The CTAs, `build.js`, copy, pricing, navigation, Stripe flows, homepage, and Private Collections were not touched. Both CTAs now behave identically. Verified across commission products on desktop and mobile.
+- Note: the form's required "Commission Type" dropdown (bas-relief / painted panel / regalia / portrait / installation / heraldic) is a different taxonomy than the catalogue categories (Portraiture / Symbolic Art / Wearable Works), so it is intentionally left for the visitor to choose — auto-mapping the category onto it would mis-file most works as "Other." The precise selection is carried by the prefilled "Desired Work" field.
+
 ### Commission Inquiry Panel — Now a Functional CTA — 2026-06-04
 
 - On commission and inquiry product pages, the upper acquisition panel (e.g. "Commission Inquiry" / "Inquiry Details") previously looked actionable but was plain text. The entire panel is now a single link to the SAME destination as the existing bottom "Begin Commission Inquiry" button (`/commissions/?work=…`, which prefills the inquiry), with a visible "Begin Commission Inquiry →" line added inside it.

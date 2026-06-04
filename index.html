@@ -2815,6 +2815,16 @@ function setupInquiryForm() {
     const params = new URLSearchParams(window.location.search);
     if (params.get('type') || params.get('work')) {
       prefillInquiry(params.get('type') || '', params.get('work') || '');
+      // Arrived from a product's "Begin Commission Inquiry" CTA with the work
+      // already chosen — land directly on the inquiry form, skipping the scroll
+      // through the commission catalogue. Direct visits to /commissions/ with no
+      // work/type param keep the existing top-of-page landing (unchanged).
+      const jumpAnchor = document.getElementById('inquireHeading') || form;
+      if (jumpAnchor && jumpAnchor.scrollIntoView) {
+        requestAnimationFrame(function () { jumpAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      }
+      const firstField = document.getElementById('if-name');
+      if (firstField) setTimeout(function () { firstField.focus({ preventScroll: true }); }, 480);
     }
   } catch (e) { /* no query support — ignore */ }
 
