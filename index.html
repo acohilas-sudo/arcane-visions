@@ -997,6 +997,105 @@
     .proof-logos { gap: 24px; }
   }
 
+  /* ── From the Collection (home) + Collector Statements (Private Collections) ──
+     Editorial, archive-led presentation of real, permitted collector statements.
+     Artwork dominates; reference photographs are secondary / archival. Namespaced
+     so it never collides with the dormant .testimonial-quote rules above. ─────── */
+  .from-collection {
+    max-width: 880px; margin: 0 auto; padding: 84px 40px 92px;
+    border-top: 1px solid var(--gold-dim); text-align: center;
+  }
+  .fc-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: 6px;
+    text-transform: uppercase; color: var(--gold); margin: 0 0 40px;
+  }
+  .fc-plate { width: 244px; margin: 0 auto 38px; }
+  .fc-plate img { width: 100%; height: auto; display: block; border: 1px solid var(--gold-faint); }
+  .fc-quote {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(22px, 2.5vw, 27px); line-height: 1.5;
+    color: var(--text-bright); max-width: 620px; margin: 0 auto;
+  }
+  .fc-attr {
+    display: block; font-family: 'Cinzel', serif; font-style: normal; font-size: 11px;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-top: 22px;
+  }
+  .fc-link {
+    display: inline-block; margin-top: 42px; font-family: 'Cinzel', serif;
+    font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold);
+    text-decoration: none; padding-bottom: 5px; border-bottom: 1px solid var(--gold-line);
+    transition: color .3s, border-color .3s;
+  }
+  .fc-link:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
+
+  .collection-statements { margin: 0 auto; }
+  .cs-head {
+    text-align: center; max-width: 640px; margin: 0 auto 64px;
+    padding-top: 72px; border-top: 1px solid var(--gold-dim);
+  }
+  .cs-eyebrow {
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: 5px;
+    text-transform: uppercase; color: var(--gold); margin: 0 0 18px;
+  }
+  .cs-dek {
+    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px;
+    line-height: 1.6; color: var(--text-soft); margin: 0;
+  }
+  .statement {
+    display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 56px; align-items: start; max-width: 1060px; margin: 0 auto 88px;
+  }
+  .statement:last-child { margin-bottom: 0; }
+  .statement-plate { margin: 0; }
+  .statement-artwork { margin: 0; }
+  .statement-artwork img { width: 100%; height: auto; display: block; border: 1px solid var(--gold-faint); }
+  .statement-reference { margin: 22px 0 0; width: 168px; }
+  .statement-reference img { width: 100%; height: auto; display: block; border: 1px solid var(--gold-faint); }
+  .statement-reference figcaption {
+    font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--text-mid); margin-top: 10px;
+  }
+  .statement-text { padding-top: 2px; }
+  .statement-text blockquote { margin: 0; padding: 0; }
+  .statement-text p {
+    font-family: 'Cormorant Garamond', serif; font-size: 19px; line-height: 1.72;
+    color: var(--text); margin: 0 0 15px;
+  }
+  .statement-text blockquote p:last-child { margin-bottom: 24px; }
+  .statement-attr {
+    display: block; font-family: 'Cinzel', serif; font-style: normal; font-size: 11px;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold);
+  }
+  .statement-attr .role { color: var(--text-mid); letter-spacing: 2px; }
+
+  .statement--anchor { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; margin-bottom: 100px; }
+  .statement--anchor .statement-text p { font-size: 21px; line-height: 1.74; color: var(--text-bright); }
+  .statement--anchor .statement-reference { width: 196px; }
+
+  .statement--secondary { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); }
+  .statement--secondary .statement-plate { order: 2; }
+  .statement--secondary .statement-text { order: 1; }
+
+  .statement--supporting { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); }
+
+  @media (max-width: 820px) {
+    .statement, .statement--anchor, .statement--secondary, .statement--supporting {
+      grid-template-columns: 1fr; gap: 26px; margin-bottom: 60px;
+    }
+    .statement--secondary .statement-plate { order: 0; }
+    .statement--secondary .statement-text { order: 0; }
+    .statement-plate { max-width: 440px; margin-left: auto; margin-right: auto; }
+    .statement--supporting .statement-plate { max-width: 360px; }
+    .statement-reference { margin-left: auto; margin-right: auto; }
+  }
+  @media (max-width: 600px) {
+    .from-collection { padding: 56px 24px 64px; }
+    .fc-plate { width: 198px; }
+    .cs-head { padding-top: 56px; margin-bottom: 48px; }
+    .statement--anchor .statement-text p { font-size: 19px; }
+    .statement-text p { font-size: 18px; }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .product-card:hover .product-images img { transform: none; }
   }
@@ -1625,27 +1724,18 @@
       <div class="product-grid" id="featuredGrid"></div>
     </section>
 
-    <!-- ───────────────────────────────────────────────────────────────────────
-         SOCIAL PROOF SCAFFOLD — LAUNCH BLOCKER (do not ship fabricated content)
-         Structure + styling are ready (see .proof-band / .testimonial CSS).
-         To activate: un-comment and replace every [PLACEHOLDER] with REAL,
-         permitted content. Never invent testimonials, collector or lodge
-         identities, institutional affiliations, or press mentions.
-         ───────────────────────────────────────────────────────────────────────
-    <section class="proof-band" aria-label="From collectors and orders">
-      <div class="proof-eyebrow">From Collectors &amp; Orders</div>
-      <figure class="testimonial">
-        <blockquote class="testimonial-quote">[CLIENT TESTIMONIAL — verbatim, used with permission]</blockquote>
-        <figcaption class="testimonial-attr">[ATTRIBUTION — name, order, or collection, as permitted]</figcaption>
-      </figure>
-      <div class="proof-eyebrow" style="margin-top:48px">As Featured In</div>
-      <div class="proof-logos">
-        <span class="proof-logo">[FEATURED IN]</span>
-        <span class="proof-logo">[FEATURED IN]</span>
-        <span class="proof-logo">[FEATURED IN]</span>
+        <!-- FROM THE COLLECTION — one permitted collector statement; the full record lives on Private Collections -->
+    <section class="from-collection" aria-labelledby="fromCollectionHeading">
+      <h2 class="fc-eyebrow" id="fromCollectionHeading">From the Collection</h2>
+      <div class="fc-plate">
+        <img src="/images/uploads/collection/lorri-davis-portrait.jpg" width="1395" height="1800" loading="lazy" decoding="async" alt="Portrait of Lorri Davis holding a framed photograph in a field — original artwork by Arcane Visions">
+      </div>
+      <blockquote class="fc-quote">This isn’t just a likeness—it’s a bridge between art, memory, and relationship.</blockquote>
+      <cite class="fc-attr">— Damien Echols</cite>
+      <div>
+        <a class="fc-link" href="/private-collections/" onclick="event.preventDefault(); showPage('private-collections')">Private Collections →</a>
       </div>
     </section>
-    -->
 
     <section class="cta-band" aria-label="Begin a commission">
       <div class="cta-band-ornament" aria-hidden="true">✦</div>
@@ -1861,6 +1951,83 @@
       </div>
       <h2 class="sr-only">Archived Works</h2>
       <div class="product-grid" id="privateCollectionsGrid"></div>
+
+      <!-- Collector statements — real, permitted; artwork dominant, reference photographs archival -->
+      <section class="collection-statements" aria-labelledby="collectorStatementsHeading">
+        <div class="cs-head">
+          <h2 class="cs-eyebrow" id="collectorStatementsHeading">Collector Statements</h2>
+          <p class="cs-dek">In the words of those who have lived with the work.</p>
+        </div>
+
+        <article class="statement statement--anchor">
+          <div class="statement-plate">
+            <figure class="statement-artwork">
+              <img src="/images/uploads/collection/lorri-davis-portrait.jpg" width="1395" height="1800" loading="lazy" decoding="async" alt="Portrait of Lorri Davis holding a framed photograph in a field — original artwork by Arcane Visions">
+            </figure>
+            <figure class="statement-reference">
+              <img src="/images/uploads/collection/lorri-davis-reference.jpg" width="747" height="1000" loading="lazy" decoding="async" alt="Reference photograph of Lorri Davis">
+              <figcaption>Reference photograph</figcaption>
+            </figure>
+          </div>
+          <div class="statement-text">
+            <blockquote>
+              <p>What immediately struck me about this portrait is how alive it feels. It’s unmistakably my wife—her features are rendered with incredible accuracy—but beyond that, it captures her essence.</p>
+              <p>There’s a presence to it that goes deeper than realism, something intuitive and felt rather than just seen.</p>
+              <p>To have a portrait that is both deeply personal and quietly intertwined with something meaningful from our everyday world is extraordinary.</p>
+              <p>This isn’t just a likeness—it’s a bridge between art, memory, and relationship.</p>
+              <p>This is the sort of thing you’d want to pass down from generation to generation.</p>
+            </blockquote>
+            <cite class="statement-attr">— Damien Echols<span class="role">, Author</span></cite>
+          </div>
+        </article>
+
+        <article class="statement statement--secondary">
+          <div class="statement-plate">
+            <figure class="statement-artwork">
+              <img src="/images/uploads/collection/mike-livschitz-portrait.jpg" width="1164" height="1500" loading="lazy" decoding="async" alt="Mixed-media portrait of Mike Livschitz — original artwork by Arcane Visions">
+            </figure>
+            <figure class="statement-reference">
+              <img src="/images/uploads/collection/mike-livschitz-reference.jpg" width="545" height="1000" loading="lazy" decoding="async" alt="Reference photograph of Mike Livschitz">
+              <figcaption>Reference photograph</figcaption>
+            </figure>
+          </div>
+          <div class="statement-text">
+            <blockquote>
+              <p>The portrait far exceeded my expectations.</p>
+              <p>The artist is exceptionally skilled at realism.</p>
+              <p>The depth, detail, and presence of the portrait are difficult to appreciate fully in photographs.</p>
+              <p>You really need to see it in person.</p>
+              <p>It’s one thing to create an accurate likeness.</p>
+              <p>It’s another thing entirely to create something that feels alive and immediately recognizable.</p>
+              <p>I couldn’t be happier with the final result.</p>
+            </blockquote>
+            <cite class="statement-attr">— Mike Livschitz<span class="role">, World Karate Hall of Fame Inductee</span></cite>
+          </div>
+        </article>
+
+        <article class="statement statement--supporting">
+          <div class="statement-plate">
+            <figure class="statement-artwork">
+              <img src="/images/uploads/collection/alex-c-portrait.jpg" width="1138" height="1500" loading="lazy" decoding="async" alt="Pencil portrait commissioned by Alex C. — original artwork by Arcane Visions">
+            </figure>
+            <figure class="statement-reference">
+              <img src="/images/uploads/collection/alex-c-reference.jpg" width="720" height="960" loading="lazy" decoding="async" alt="Reference photograph used for the commissioned portrait">
+              <figcaption>Reference photograph</figcaption>
+            </figure>
+          </div>
+          <div class="statement-text">
+            <blockquote>
+              <p>My wife selected her favorite picture of me and commissioned a pencil sketch.</p>
+              <p>The resulting artwork is incredible in every way.</p>
+              <p>The accuracy and lifelike nature of the portrait is uncanny.</p>
+              <p>There is something about owning a piece like this that is hard to describe.</p>
+              <p>A photo is a moment in time captured by a technological device.</p>
+              <p>A portrait is a moment in time recreated by a human hand gifted with remarkable talent.</p>
+            </blockquote>
+            <cite class="statement-attr">— Alex C.<span class="role">, County Manager</span></cite>
+          </div>
+        </article>
+      </section>
     </div>
   </div>
 

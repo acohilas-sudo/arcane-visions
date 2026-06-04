@@ -8,6 +8,20 @@ Git history remains the authoritative technical record.
 
 ---
 
+## 2026-06-03
+
+### Collector Statements — Private Collections + Homepage — 2026-06-03
+
+- Added approved collector statements to the site as an atelier / collector record (not testimonials or reviews):
+  - **Private Collections page** — a new "Collector Statements" section beneath the existing archive-works grid, with an intentional editorial hierarchy: **Damien Echols** (anchor, most visual weight), **Mike Livschitz** (secondary), **Alex C.** (supporting). Each entry leads with the artwork; the source/reference photograph sits small and archival beneath it.
+  - **Homepage** — a restrained "From the Collection" section between Selected Works and the commission call-to-action: the Lorri Davis portrait, a single approved Damien Echols excerpt, and a quiet "Private Collections →" link. This replaced the dormant placeholder "From Collectors & Orders / As Featured In" scaffold that had never shipped.
+- Artwork dominates throughout; reference photographs are deliberately secondary. Statements read as editorial body text with a small-caps attribution — no star ratings, review styling, logos, counts, or marketing language.
+- Approved imagery (from `~/Desktop/Arcane Visions/Social Proof/`) was optimized into `images/uploads/collection/` (sRGB JPEG): Lorri Davis painting + reference, Mike Livschitz portrait + reference, Alex C. pencil portrait + reference. No placeholders, stock, or AI imagery; all artwork mapped to the correct collector by inspection.
+- Built as static editorial markup in `index.html` (rendered by the in-page app and baked into the static `/` and `/private-collections/` pages by `build.js`) — one source of truth, so the live and app views match. New CSS is namespaced (`.from-collection`, `.collection-statements`, `.statement*`) and does not touch other components.
+- Statement text matches the approved copy verbatim; no internal design terminology is exposed to visitors. Rebuilt cleanly (13 works, 5 section pages); verified on desktop and mobile with no regressions to other pages.
+- Note for review: there was no file literally named "MikeL.Painting"; Mike's portrait artwork was identified as `Mixed Media Portrait.png` from the approved folder (the only unassigned male portrait there, consistent with his reference photo). Please confirm.
+- Work done on branch `feature/private-collections-statements`. Not deployed — production deployment is handled separately.
+
 ## 2026-06-02
 
 ### Low-Res Image Replacements — Portraits + Magical Shoes — 2026-06-02
