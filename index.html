@@ -2819,12 +2819,28 @@ function setupInquiryForm() {
       // already chosen — land directly on the inquiry form, skipping the scroll
       // through the commission catalogue. Direct visits to /commissions/ with no
       // work/type param keep the existing top-of-page landing (unchanged).
-      const jumpAnchor = document.getElementById('inquireHeading') || form;
-      if (jumpAnchor && jumpAnchor.scrollIntoView) {
-        requestAnimationFrame(function () { jumpAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      //
+      // The gallery above the form hydrates via JS and the display fonts load
+      // after first paint; on a cold cache both settle AFTER an immediate scroll,
+      // shifting the form down and leaving the scroll short. So re-assert the jump
+      // as layout settles — now, after fonts are ready, and once after full load
+      // (gallery + images). scrollIntoView to the same anchor is idempotent, so a
+      // warm cache simply lands once and the later calls are no-ops.
+      const jumpToForm = function () {
+        const anchor = document.getElementById('inquireHeading') || form;
+        if (anchor && anchor.scrollIntoView) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      requestAnimationFrame(jumpToForm);
+      if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+        document.fonts.ready.then(function () { requestAnimationFrame(jumpToForm); });
+      }
+      if (document.readyState === 'complete') {
+        requestAnimationFrame(jumpToForm);
+      } else {
+        window.addEventListener('load', function () { setTimeout(jumpToForm, 80); }, { once: true });
       }
       const firstField = document.getElementById('if-name');
-      if (firstField) setTimeout(function () { firstField.focus({ preventScroll: true }); }, 480);
+      if (firstField) setTimeout(function () { firstField.focus({ preventScroll: true }); }, 700);
     }
   } catch (e) { /* no query support — ignore */ }
 

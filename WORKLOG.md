@@ -10,6 +10,12 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-04
 
+### Commission Inquiry — Cold-Load Scroll Robustness — 2026-06-04
+
+- Follow-up to the direct-to-form flow. On a cold cache (first-time visitor), the inquiry form could shift downward *after* the initial scroll — the commission gallery above it hydrates via JS and the display fonts load after first paint — so the scroll landed short and the visitor ended up mid-catalogue. Warm/returning visitors were unaffected.
+- Fix (scroll timing only, in `setupInquiryForm`): re-assert the jump to the form as layout settles — immediately, after `document.fonts.ready`, and once on `window` `load` (gallery + images). `scrollIntoView` to the same anchor is idempotent, so a warm load lands once and the later calls are no-ops.
+- No change to the workflow, the Desired Work prefill, form fields, CTA destinations, copy, or layout. Verified under a forced cold cache (HTTP cache disabled + latency throttling): all commission products and mobile now land directly on the form with Desired Work prefilled; all previously passing (warm) cases unchanged.
+
 ### Commission Inquiry — Direct-to-Form Flow (removed catalogue loop) — 2026-06-04
 
 - Removed the circular commission workflow. Clicking "Commission Inquiry" (either the upper panel or the bottom button) on a commission product page used to land the visitor at the top of the commission catalogue, forcing them to scroll all the way down to the inquiry form. It now lands directly on the inquiry form with the work already filled in.
