@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Hero Video — Mobile Glyph-Flash Polish — 2026-06-09
+
+- Removed the brief iOS native play-glyph flash during mobile hero init: on `max-width:768px` only, the video is held at `opacity:0` (with the always-on `.hero-bg-still` poster image showing behind it) and fades in via an `.is-playing` class added by JS on the `playing` event. Desktop is untouched — it keeps the existing `heroVideoFade` animation and never receives the class. No autoplay logic, controls, or layout changed.
+
 ### Battle Jacket Pricing — $2,200 → $800 — 2026-06-09
 
 - Repriced both battle jackets from $2,200 to $800: the finished, purchasable **Pelican Battle Jacket** is now listed at $800 (price, purchase-button label, and body copy), and the **Bespoke Rosicrucian Battle Jacket** commission now reads "Commissions from $800" (price, acquisition note, and body copy). No other product pricing changed. Note: the Pelican's Stripe checkout link still charges the old amount and must be updated separately.

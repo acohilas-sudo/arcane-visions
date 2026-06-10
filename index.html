@@ -401,6 +401,20 @@
   @media (prefers-reduced-motion: reduce) {
     .hero-content { animation: none; }
   }
+  /* Mobile only: hold the video invisible through initialization so iOS's
+     native play-glyph never flashes over the poster. The always-on
+     .hero-bg-still (identical image, z-index 0) shows behind it the whole
+     time, so the hero looks unchanged. JS adds .is-playing on the `playing`
+     event (mobile branch only) to fade the footage in. Desktop is untouched:
+     it keeps the heroVideoFade animation and never receives .is-playing. */
+  @media (max-width: 768px) {
+    .hero-video-bg {
+      animation: none;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    .hero-video-bg.is-playing { opacity: 1; }
+  }
   .hero-eyebrow {
     font-family: 'Cinzel', serif;
     font-size: 11px;
@@ -2156,6 +2170,13 @@
     vid.addEventListener('loadedmetadata', tryPlay);
     vid.addEventListener('loadeddata', tryPlay);
     vid.addEventListener('canplay', tryPlay);
+
+    // Mobile-only polish: the video is held at opacity:0 by the
+    // max-width:768px CSS until it is actually playing, so iOS's native
+    // play-glyph never flashes over the poster during init. Reveal (fade in)
+    // the footage the moment it enters the playing state. The .hero-bg-still
+    // fallback image covers the hero until then; desktop never gets this class.
+    vid.addEventListener('playing', () => { vid.classList.add('is-playing'); }, { once: true });
 
     // Manual fallback: if autoplay cannot be granted, a tap anywhere on the
     // hero starts playback (a real user gesture always satisfies the policy).
