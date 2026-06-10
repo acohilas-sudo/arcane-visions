@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Pelican Battle Jacket — Stripe Checkout URL Swap — 2026-06-09
+
+- Replaced the Pelican Battle Jacket purchase link with the new $800 Stripe checkout (`buy.stripe.com/5kQcN795FeBAaeIfZU4sE0e`), so the button now charges the approved $800 instead of the retired $2,200 link. Frontmatter `url` only — no pricing text, copy, or other product changed.
+
 ### Hero Video — Mobile Glyph-Flash Polish — 2026-06-09
 
 - Removed the brief iOS native play-glyph flash during mobile hero init: on `max-width:768px` only, the video is held at `opacity:0` (with the always-on `.hero-bg-still` poster image showing behind it) and fades in via an `.is-playing` class added by JS on the `playing` event. Desktop is untouched — it keeps the existing `heroVideoFade` animation and never receives the class. No autoplay logic, controls, or layout changed.

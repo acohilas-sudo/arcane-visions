@@ -8,7 +8,7 @@ price: "$800"
 purchase_mode: inquiry
 purchase_links:
   - label: "Purchase — $800"
-    url: "https://buy.stripe.com/5kQeVf2Hh0KKdqU9Bw4sE07"
+    url: "https://buy.stripe.com/5kQcN795FeBAaeIfZU4sE0e"
 acquisition_status: "Available · One-of-One Work"
 acquisition_note: "A single original work — not reproduced and not editioned. Available to one collector."
 specs: |-
