@@ -809,7 +809,7 @@ function buildProductPage(template, product) {
 function buildTheWorkPage(template, catalogue) {
   const canonical = `${BASE_ORIGIN}/the-work/`;
   const title = `The Work | ${BRAND_NAME}`;
-  const metaDesc = 'Handcrafted symbolic art, bas-relief works, and portraiture from the Arcane Visions atelier — limited editions for practitioners and collectors of the Western Mystery Tradition.';
+  const metaDesc = 'Handcrafted symbolic art, bas-relief works, and portraiture from the Arcane Visions atelier — limited editions for collectors of the Western Mystery Tradition.';
   const ogImage = OG_IMAGE_FALLBACK;
 
   // ItemList mirrors the visible page — the obtainable works only — so the
@@ -869,7 +869,7 @@ function buildPrivateCollectionsPage(template) {
 function buildAboutPage(template, about) {
   const canonical = `${BASE_ORIGIN}/about/`;
   const title = `About | ${BRAND_NAME}`;
-  const metaDesc = 'Arcane Visions is a ceremonial and esoteric atelier producing handcrafted ritual objects, symbolic art, and collector-grade occult works in the Washington, DC region.';
+  const metaDesc = 'Arcane Visions is a ceremonial and esoteric atelier producing original artworks, symbolic art, and collector-grade occult works in the Washington, DC region.';
   const ogImage = OG_IMAGE_FALLBACK;
 
   let html = rewriteHead(template, {

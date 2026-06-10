@@ -38,7 +38,7 @@ Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe,
 
 The jacket is the work of Debbi Cohilas. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
 
-The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not. The back panel was built by hand from the centre outward, as the process photographs attest.
+The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not. The back panel was created by hand from the centre outward, as the process photographs attest.
 
 ## Symbolism & Meaning
 

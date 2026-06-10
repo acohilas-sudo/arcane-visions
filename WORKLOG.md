@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Language Pass — Art-Focused Positioning (away from ritual-object framing) — 2026-06-09
+
+- Aligned Arcane Visions copy to its art/collector identity (vs. Theurgic Arts' ritual-object framing): hero subtitle "Handcrafted Ritual Objects" → "Bespoke Commissions"; all "handcrafted ritual objects" in og/twitter/SPA/build.js home meta → "original artworks"; "for practitioners and collectors of the Western Mystery Tradition" → "for collectors of…" (4 spots: hero, JSON-LD, the-work SPA + build meta); "built by hand" → "created by hand" (hero, process step, battle-jacket). Left unchanged & reported: three non-enumerated "practitioner" mentions (hogd-adept-lamen, privacy, returns) and the "ceremonial … atelier" descriptor. No pricing/Stripe/hero-video/workflow changes.
+
 ### Hero Video — Fix Glyph-Flash Regression (poster cover, not opacity:0) — 2026-06-09
 
 - Fixed the d090413 regression where the mobile video was hidden with `opacity:0` until `playing` — iOS treats a transparent video as not-visible and withholds muted autoplay, so the video only started when a scroll's `touchstart` supplied user activation. Now the `<video>` stays fully visible/autoplay-eligible and a separate mobile-only `.hero-video-cover` (the hero fallback image, above the video / below the scrim) masks the native play-glyph during init, fading out via an `.is-hidden` class added on the `playing` event. Desktop unchanged (cover is `display:none`); robust autoplay logic, source swap, and tap fallback preserved.
