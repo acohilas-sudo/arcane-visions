@@ -2127,6 +2127,15 @@
   if (src && window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
     src.src = '/images/uploads/hero/hero-video-mobile.mp4';
     vid.load();
+    // A programmatic load() discards the parse-time autoplay grant on mobile
+    // Safari, so the swapped source must be (re)started explicitly once it is
+    // ready. muted + playsinline keep this inside the autoplay policy; any
+    // residual policy rejection is expected and safely ignored (poster stays).
+    const startPlayback = () => {
+      const p = vid.play();
+      if (p && typeof p.catch === 'function') p.catch(() => { /* autoplay blocked — poster remains */ });
+    };
+    vid.addEventListener('canplay', startPlayback, { once: true });
   }
   const HERO_PLAYBACK_RATE = 0.78;
   const applyRate = () => { try { vid.playbackRate = HERO_PLAYBACK_RATE; } catch (e) { /* noop */ } };

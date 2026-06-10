@@ -8,6 +8,12 @@ Git history remains the authoritative technical record.
 
 ---
 
+## 2026-06-09
+
+### Hero Video — Mobile Autoplay Fix — 2026-06-09
+
+- Fixed the homepage hero video not autoplaying on mobile: after the phone-sized source is swapped in and `vid.load()` runs, playback is now explicitly restarted on the `canplay` event with `vid.play()` (promise-safe, autoplay-policy rejections caught and ignored). Desktop, layout, copy, and the video files are unchanged.
+
 ## 2026-06-04
 
 ### About Page — Wider Desktop Content Column — 2026-06-04
