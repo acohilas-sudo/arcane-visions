@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Product Pages — Upper "Ready to Acquire" Panel Is Now a Real Purchase CTA — 2026-06-09
+
+- The framed "Ready to Acquire" box on purchasable product pages looked clickable but only held descriptive text. It now embeds the SAME purchase button(s) as the bottom CTA — identical Stripe URL(s), label(s), and price — so the upper panel is a real checkout action. Single-link works (Pelican $800, HOGD $1,500, Rosy Cross bas-relief $1,500) show one "Purchase — <price>" button; the Alchemical Quadriptych shows both "Purchase the Complete Set — $950" and "Purchase a Single Panel — $250". Applied via the shared `readyToAcquireHTML()` in both build.js (static) and index.html (SPA), so it covers all four purchasable works consistently (per scope decision). No new Stripe links, no pricing/checkout changes; commission/inquiry and private-collection panels untouched.
+
 ### HOGD Adept Lamen — Art/Collector Language Refinement — 2026-06-09
 
 - Follow-up to the language pass: replaced the practitioner-focused sentence on the HOGD Adept Lamen page ("a handcrafted devotional piece for the serious practitioner, the dedicated collector, or the initiate…") with the approved art/collector framing — "A collector-grade devotional artwork inspired by the symbolic tradition of the Hermetic Order of the Golden Dawn." Surrounding copy preserved; no pricing/Stripe/other-product changes.

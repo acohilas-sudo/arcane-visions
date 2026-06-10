@@ -391,10 +391,25 @@ function buildBreadcrumbJsonLD(crumbs) {
 // ── Pre-rendered product detail body ──────────────────────────────────────
 // Next-step note for a directly purchasable piece (one carrying a Stripe link).
 // Kept in sync with the same helper in index.html.
-function readyToAcquireHTML() {
-  return `<div class="next-step-note">
+// The upper acquisition panel is a real purchase CTA: it embeds the SAME
+// purchase button(s) — identical Stripe URL(s), label(s), and price — as the
+// bottom purchase button, so the framed box is actionable rather than a
+// look-alike. Multi-link works (e.g. set + single panel) render one button per
+// link; single-stripe_link works render one "Purchase — <price>" button.
+function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName) {
+  const work = escapeAttr(productName || '');
+  let buttonsHTML;
+  if (purchaseLinks && purchaseLinks.length) {
+    buttonsHTML = purchaseLinks
+      .map(l => `<a class="btn" href="${escapeAttr(l.url)}" data-cta="product-purchase-panel" data-work="${work}">${escapeHtml(l.label || 'Purchase')}</a>`)
+      .join('\n          ');
+  } else {
+    const buyLabel = price ? `Purchase — ${escapeHtml(price)}` : 'Purchase';
+    buttonsHTML = `<a class="btn" href="${escapeAttr(stripeLink || '')}" data-cta="product-purchase-panel" data-work="${work}">${buyLabel}</a>`;
+  }
+  return `<div class="next-step-note next-step-purchase">
         <div class="next-step-title">Ready to Acquire</div>
-        <p>This piece is available for direct acquisition. Checkout opens securely through Stripe.</p>
+        <div class="next-step-purchase-actions">${buttonsHTML}</div>
       </div>`;
 }
 
@@ -507,7 +522,7 @@ function renderProductDetailHTML(product) {
   const panelCtaHref = `/commissions/?work=${workQuery}`;
   const panelCtaOnclick = `event.preventDefault(); beginCommissionInquiry('', '${jsName}')`;
   let nextStepHTML;
-  if (isPurchasable) nextStepHTML = readyToAcquireHTML();
+  if (isPurchasable) nextStepHTML = readyToAcquireHTML(purchaseLinks, product.stripe_link, product.price, product.name);
   else if (availability === 'private_collection') nextStepHTML = '';
   else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable', panelCtaHref, panelCtaOnclick);
   else nextStepHTML = productNextStepHTML(mode, panelCtaHref, panelCtaOnclick);

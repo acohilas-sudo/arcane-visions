@@ -552,6 +552,17 @@
     transition: color 0.3s ease;
   }
   a.next-step-cta:hover .next-step-cta-line { color: var(--gold-bright); }
+  /* Upper acquisition panel rendered as real purchase CTA(s): the same
+     Stripe link(s) and label(s) as the bottom purchase button, embedded in the
+     panel so it is actionable rather than a look-alike. Buttons stack full-width
+     so long labels wrap cleanly on both mobile and desktop. */
+  .next-step-purchase-actions {
+    display: flex; flex-direction: column; gap: 12px; margin-top: 4px;
+  }
+  .next-step-purchase-actions .btn {
+    display: block; width: 100%; box-sizing: border-box; text-align: center;
+    padding-left: 20px; padding-right: 20px; letter-spacing: 3px;
+  }
   .contact-guidance { margin-bottom: 32px; }
   .contact-guidance-list {
     display: grid;
@@ -2611,11 +2622,21 @@ function toggleMobileMenu() {
   setMobileNavOpen(!nav.classList.contains('open'));
 }
 
-// Next-step note for a directly purchasable piece — mirrors readyToAcquireHTML() in build.js.
-function readyToAcquireHTML() {
-  return `<div class="next-step-note">
+// Upper acquisition panel as a real purchase CTA — mirrors readyToAcquireHTML()
+// in build.js. Embeds the SAME purchase button(s) (identical Stripe URL(s),
+// label(s), and price) as the bottom purchase button.
+function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName) {
+  const work = productName || '';
+  let buttonsHTML;
+  if (purchaseLinks && purchaseLinks.length) {
+    buttonsHTML = purchaseLinks.map(l => `<a class="btn" href="${l.url}" data-cta="product-purchase-panel" data-work="${work}">${l.label || 'Purchase'}</a>`).join('');
+  } else {
+    const buyLabel = price ? `Purchase — ${price}` : 'Purchase';
+    buttonsHTML = `<a class="btn" href="${stripeLink || ''}" data-cta="product-purchase-panel" data-work="${work}">${buyLabel}</a>`;
+  }
+  return `<div class="next-step-note next-step-purchase">
       <div class="next-step-title">Ready to Acquire</div>
-      <p>This piece is available for direct acquisition. Checkout opens securely through Stripe.</p>
+      <div class="next-step-purchase-actions">${buttonsHTML}</div>
     </div>`;
 }
 
@@ -2723,7 +2744,7 @@ function showProduct(product, noPush) {
   // (_commissionable gets the "available by commission" note); otherwise the
   // tier-aware inquiry note keyed on purchase_mode.
   let nextStepHTML;
-  if (isPurchasable) nextStepHTML = readyToAcquireHTML();
+  if (isPurchasable) nextStepHTML = readyToAcquireHTML(purchaseLinks, product.stripe_link, product.price, product.name);
   else if (availability === 'private_collection') nextStepHTML = '';
   else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable', panelCtaHref, panelCtaOnclick);
   else nextStepHTML = productNextStepHTML(mode, panelCtaHref, panelCtaOnclick);
