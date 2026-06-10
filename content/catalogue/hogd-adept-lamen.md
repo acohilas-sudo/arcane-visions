@@ -31,7 +31,7 @@ Every detail is faithful and intentional. The cross is divided into its four ele
 
 The integrated LED lighting illuminates the piece from within, transforming the opalescent background into something that genuinely glows — the way a rose window glows in a cathedral, from the inside out.
 
-This piece honors the teachings preserved by Israel Regardie and the tradition that shaped the modern Western esoteric revival. It is not reproduction merchandise. It is a handcrafted devotional piece for the serious practitioner, the dedicated collector, or the initiate who wants the central symbol of their Work on their wall — rendered as it deserves to be rendered.
+This piece honors the teachings preserved by Israel Regardie and the tradition that shaped the modern Western esoteric revival. It is not reproduction merchandise. A collector-grade devotional artwork inspired by the symbolic tradition of the Hermetic Order of the Golden Dawn.
 
 This edition is limited to 5 pieces worldwide. One has already found its home. Four remain.
 

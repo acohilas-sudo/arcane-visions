@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### HOGD Adept Lamen — Art/Collector Language Refinement — 2026-06-09
+
+- Follow-up to the language pass: replaced the practitioner-focused sentence on the HOGD Adept Lamen page ("a handcrafted devotional piece for the serious practitioner, the dedicated collector, or the initiate…") with the approved art/collector framing — "A collector-grade devotional artwork inspired by the symbolic tradition of the Hermetic Order of the Golden Dawn." Surrounding copy preserved; no pricing/Stripe/other-product changes.
+
 ### Hero Video — Remove Fade-In (kill static-image phase, desktop + mobile) — 2026-06-09
 
 - Eliminated the "static pelican → ~0.5–1.0s → video" phase seen on BOTH desktop and mobile. Root cause was the original `heroVideoFade` animation (from the initial build `fa92a3b`): it ramped the video's opacity 0→1 over 1.6s, so the always-on `.hero-bg-still` poster showed through while the video — held lazy by `preload="metadata"` — buffered. Removed the `heroVideoFade` animation + keyframes (video is now full-opacity from first paint) and switched the video to `preload="auto"` so frames buffer eagerly and play immediately. Same fix for desktop and mobile (both were the base rule/attribute); autoplay logic, source swap, tap fallback, and the still fallback all preserved. Not a regression from d090413/309370f — those never touched this; removing the cover (898aa2d) re-exposed the long-standing fade on mobile.
