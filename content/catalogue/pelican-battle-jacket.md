@@ -4,10 +4,10 @@ tradition: Rosicrucian
 category: Wearable Works
 featured: true
 featured_order: 7
-price: "$2,200"
+price: "$800"
 purchase_mode: inquiry
 purchase_links:
-  - label: "Purchase — $2,200"
+  - label: "Purchase — $800"
     url: "https://buy.stripe.com/5kQeVf2Hh0KKdqU9Bw4sE07"
 acquisition_status: "Available · One-of-One Work"
 acquisition_note: "A single original work — not reproduced and not editioned. Available to one collector."
@@ -60,8 +60,8 @@ The **Pelican in Her Piety** is among the oldest emblems of the tradition — se
 
 ## Pricing & Acquisition
 
-Offered at **$2,200**. This is the finished work — already made, already singular — acquired as one acquires a painting: for its authorship, its symbolic literacy, and its permanence. The collector who keeps it owns the only one in existence.
+Offered at **$800**. This is the finished work — already made, already singular — acquired as one acquires a painting: for its authorship, its symbolic literacy, and its permanence. The collector who keeps it owns the only one in existence.
 
 This work is available to a single collector. Acquisition is by private inquiry; a closer viewing of its details can be arranged on request.
 
-**$2,200** · Available · One-of-one · Inquire to acquire.
+**$800** · Available · One-of-one · Inquire to acquire.

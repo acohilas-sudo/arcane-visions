@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Battle Jacket Pricing — $2,200 → $800 — 2026-06-09
+
+- Repriced both battle jackets from $2,200 to $800: the finished, purchasable **Pelican Battle Jacket** is now listed at $800 (price, purchase-button label, and body copy), and the **Bespoke Rosicrucian Battle Jacket** commission now reads "Commissions from $800" (price, acquisition note, and body copy). No other product pricing changed. Note: the Pelican's Stripe checkout link still charges the old amount and must be updated separately.
+
 ### Hero Video — Robust Mobile Autoplay — 2026-06-09
 
 - Hardened the mobile hero autoplay after real-iPhone testing showed the `canplay`-only retry still left iOS's native play glyph stuck (and untappable, since the video has `pointer-events:none`): now set `muted`/`defaultMuted`/`playsInline` as JS properties before playing, attempt an idempotent `play()` across `load()`/`loadedmetadata`/`loadeddata`/`canplay` (promise-safe), and add a tap-anywhere-on-hero fallback wired to the `.hero` container so a user tap starts playback — no visible controls, no design/layout/copy/video-file changes, desktop untouched.

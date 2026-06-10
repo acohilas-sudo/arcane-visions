@@ -3,9 +3,9 @@ name: Bespoke Rosicrucian Battle Jacket
 tradition: Rosicrucian
 category: Wearable Works
 featured: false
-price: "Commissions from $2,200"
+price: "Commissions from $800"
 purchase_mode: commission
-acquisition_note: "Created to commission. Final price varies with symbolism, complexity, materials, and customization; $2,200 is the starting point."
+acquisition_note: "Created to commission. Final price varies with symbolism, complexity, materials, and customization; $800 is the starting point."
 specs: |-
   Created to commission — each jacket unique to its wearer
   Hand-painted on a premium black Levi's denim trucker jacket
@@ -59,8 +59,8 @@ Above it all stands the motto. *Dum Spiro Spero* is a maxim of perseverance: hop
 
 ## Pricing & Acquisition
 
-Each jacket is created to commission. The work shown here is one such piece; yours would be painted to your own symbolism, tradition, and specification. Final pricing varies with the complexity of the imagery, the materials and customization involved, and the scope agreed — **commissions begin at $2,200**, and a consultation is required to confirm scope.
+Each jacket is created to commission. The work shown here is one such piece; yours would be painted to your own symbolism, tradition, and specification. Final pricing varies with the complexity of the imagery, the materials and customization involved, and the scope agreed — **commissions begin at $800**, and a consultation is required to confirm scope.
 
 A commission begins with a conversation: we confirm the symbolic field, source garment, sizing, materials, and timeline in writing before any work begins.
 
-**Commissions from $2,200** · Created to commission · Begin a commission inquiry.
+**Commissions from $800** · Created to commission · Begin a commission inquiry.
