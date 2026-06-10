@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Hero Video — Fix Glyph-Flash Regression (poster cover, not opacity:0) — 2026-06-09
+
+- Fixed the d090413 regression where the mobile video was hidden with `opacity:0` until `playing` — iOS treats a transparent video as not-visible and withholds muted autoplay, so the video only started when a scroll's `touchstart` supplied user activation. Now the `<video>` stays fully visible/autoplay-eligible and a separate mobile-only `.hero-video-cover` (the hero fallback image, above the video / below the scrim) masks the native play-glyph during init, fading out via an `.is-hidden` class added on the `playing` event. Desktop unchanged (cover is `display:none`); robust autoplay logic, source swap, and tap fallback preserved.
+
 ### Pelican Battle Jacket — Stripe Checkout URL Swap — 2026-06-09
 
 - Replaced the Pelican Battle Jacket purchase link with the new $800 Stripe checkout (`buy.stripe.com/5kQcN795FeBAaeIfZU4sE0e`), so the button now charges the approved $800 instead of the retired $2,200 link. Frontmatter `url` only — no pricing text, copy, or other product changed.
