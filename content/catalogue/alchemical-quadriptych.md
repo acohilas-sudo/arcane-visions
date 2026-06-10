@@ -6,6 +6,7 @@ featured: true
 featured_order: 4
 price: "$250 per panel · $950 complete set"
 purchase_mode: retail
+acquire_heading: "Acquire the Work"
 purchase_links:
   - label: "Purchase the Complete Set — $950"
     url: "https://buy.stripe.com/3cI7sNbdNfFE5Ys6pk4sE0d"
@@ -22,9 +23,8 @@ specs: |-
   Original watercolor with gold accents on archival paper
   12″ × 16″ per panel (framed)
   Archival white mat · black frame with gold inner fillet
-  Individually signed by Debbi Cohilas
+  Individually signed by Debbi and accompanied by a Certificate of Authenticity
   Certificate of Authenticity for the complete quadriptych
-  Individual panels $250 · complete quadriptych $950
 photos:
   - image: /images/uploads/products/alchemical-quadriptych/primary.jpg
     alt: "Alchemical Quadriptych — the complete set of four panels: Nigredo, Albedo, Citrinitas, Rubedo"
@@ -34,7 +34,7 @@ photos:
 
 The Great Work
 
-The Magnum Opus cannot be captured in a single image. It must be walked through — stage by stage. These four original watercolors by Debbi Cohilas trace the complete alchemical journey: from the dissolution of base matter to the perfection of the Philosopher's Stone.
+The Magnum Opus cannot be captured in a single image. It must be walked through — stage by stage. These four original watercolors by Debbi trace the complete alchemical journey: from the dissolution of base matter to the perfection of the Philosopher's Stone.
 
 The Four Stages
 
@@ -56,7 +56,7 @@ A rich crimson rose unfurls beside the word RUBEDO, enclosed within the alchemic
 
 Craftsmanship & Presentation
 
-Each panel is an original watercolor on archival paper, painted with luminous pigments and hand-applied gold accents, individually signed by Debbi Cohilas. The four works are presented as a matched set: archivally matted in white and framed in black with a gold inner fillet. Designed to be read in sequence, they function as a single sustained initiatic work.
+Each panel is an original watercolor on archival paper, painted with luminous pigments and hand-applied gold accents, individually signed by Debbi. The four works are presented as a matched set: archivally matted in white and framed in black with a gold inner fillet. Designed to be read in sequence, they function as a single sustained initiatic work.
 
 Piece Details
 
@@ -66,7 +66,7 @@ Dimensions: 12″ × 16″ per panel (framed)
 
 Presentation: Archival white mat, black frame with gold inner fillet
 
-Artist: Debbi Cohilas — individually signed
+Artist: Debbi — individually signed
 
 Includes: Certificate of Authenticity for the complete quadriptych
 

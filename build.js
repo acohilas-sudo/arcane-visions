@@ -151,6 +151,10 @@ function readCatalogue() {
       // "Acquired · One-of-One Work") and a secondary availability/reinterpretation note.
       acquisition_status: data.acquisition_status || '',
       acquisition_note: data.acquisition_note || '',
+      // Optional per-work override for the purchase-panel heading (defaults to
+      // "Ready to Acquire" when blank). Lets one work read differently without
+      // touching the shared readyToAcquireHTML default for every other work.
+      acquire_heading: data.acquire_heading || '',
       body: content || '',
       description: marked.parse(content || '')
     };
@@ -396,8 +400,9 @@ function buildBreadcrumbJsonLD(crumbs) {
 // bottom purchase button, so the framed box is actionable rather than a
 // look-alike. Multi-link works (e.g. set + single panel) render one button per
 // link; single-stripe_link works render one "Purchase — <price>" button.
-function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName) {
+function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName, heading) {
   const work = escapeAttr(productName || '');
+  const title = escapeHtml(heading || 'Ready to Acquire');
   let buttonsHTML;
   if (purchaseLinks && purchaseLinks.length) {
     buttonsHTML = purchaseLinks
@@ -408,7 +413,7 @@ function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName) {
     buttonsHTML = `<a class="btn" href="${escapeAttr(stripeLink || '')}" data-cta="product-purchase-panel" data-work="${work}">${buyLabel}</a>`;
   }
   return `<div class="next-step-note next-step-purchase">
-        <div class="next-step-title">Ready to Acquire</div>
+        <div class="next-step-title">${title}</div>
         <div class="next-step-purchase-actions">${buttonsHTML}</div>
       </div>`;
 }
@@ -522,7 +527,7 @@ function renderProductDetailHTML(product) {
   const panelCtaHref = `/commissions/?work=${workQuery}`;
   const panelCtaOnclick = `event.preventDefault(); beginCommissionInquiry('', '${jsName}')`;
   let nextStepHTML;
-  if (isPurchasable) nextStepHTML = readyToAcquireHTML(purchaseLinks, product.stripe_link, product.price, product.name);
+  if (isPurchasable) nextStepHTML = readyToAcquireHTML(purchaseLinks, product.stripe_link, product.price, product.name, product.acquire_heading);
   else if (availability === 'private_collection') nextStepHTML = '';
   else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable', panelCtaHref, panelCtaOnclick);
   else nextStepHTML = productNextStepHTML(mode, panelCtaHref, panelCtaOnclick);
@@ -1003,6 +1008,7 @@ fs.writeFileSync(
       availability: p.availability,
       acquisition_status: p.acquisition_status || '',
       acquisition_note: p.acquisition_note || '',
+      acquire_heading: p.acquire_heading || '',
       description: p.description
     })),
     home,

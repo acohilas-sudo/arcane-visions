@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Alchemical Quadriptych — Copy Refinement & Attribution Cleanup — 2026-06-09
+
+- Quadriptych-only copy pass: (1) signature spec line now reads "Individually signed by Debbi and accompanied by a Certificate of Authenticity"; (2) the acquisition-panel heading reads "Acquire the Work" instead of "Ready to Acquire" — done via a new optional `acquire_heading` frontmatter field threaded through the shared `readyToAcquireHTML()` (build.js + index.html, defaulting to "Ready to Acquire"), so the other three purchasable works are untouched; (3) removed the redundant "Individual panels $250 · complete quadriptych $950" spec line (price already shown by the title). Per decision, also dropped the surname from the three description-prose references ("Debbi Cohilas" → "Debbi"). The site-wide JSON-LD artist name ("name": "Debbi Cohilas") was intentionally left — it is protected metadata shared across all pages. No pricing, Stripe URLs, button labels, layout, styling, CTA behavior, or analytics changed.
+
 ### Alchemical Quadriptych — Individual Stage Purchases — 2026-06-09
 
 - Replaced the generic "Purchase a Single Panel — $250" checkout (one ambiguous link) with four explicit per-stage purchase links so collectors can buy the specific panel they want: Nigredo, Albedo, Citrinitas, and Rubedo (each $250), alongside the unchanged "Purchase the Complete Set — $950". Frontmatter `purchase_links` only — the existing render logic surfaces all five identically in both the upper acquisition panel and the lower purchase section, on both static and SPA paths. Old generic link (`…cNieVf4Pp1OOaeIeVQ4sE0c`) fully removed. No pricing, copy, styling, or other-product changes.

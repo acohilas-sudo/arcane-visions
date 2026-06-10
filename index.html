@@ -2625,8 +2625,9 @@ function toggleMobileMenu() {
 // Upper acquisition panel as a real purchase CTA — mirrors readyToAcquireHTML()
 // in build.js. Embeds the SAME purchase button(s) (identical Stripe URL(s),
 // label(s), and price) as the bottom purchase button.
-function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName) {
+function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName, heading) {
   const work = productName || '';
+  const title = heading || 'Ready to Acquire';
   let buttonsHTML;
   if (purchaseLinks && purchaseLinks.length) {
     buttonsHTML = purchaseLinks.map(l => `<a class="btn" href="${l.url}" data-cta="product-purchase-panel" data-work="${work}">${l.label || 'Purchase'}</a>`).join('');
@@ -2635,7 +2636,7 @@ function readyToAcquireHTML(purchaseLinks, stripeLink, price, productName) {
     buttonsHTML = `<a class="btn" href="${stripeLink || ''}" data-cta="product-purchase-panel" data-work="${work}">${buyLabel}</a>`;
   }
   return `<div class="next-step-note next-step-purchase">
-      <div class="next-step-title">Ready to Acquire</div>
+      <div class="next-step-title">${title}</div>
       <div class="next-step-purchase-actions">${buttonsHTML}</div>
     </div>`;
 }
@@ -2744,7 +2745,7 @@ function showProduct(product, noPush) {
   // (_commissionable gets the "available by commission" note); otherwise the
   // tier-aware inquiry note keyed on purchase_mode.
   let nextStepHTML;
-  if (isPurchasable) nextStepHTML = readyToAcquireHTML(purchaseLinks, product.stripe_link, product.price, product.name);
+  if (isPurchasable) nextStepHTML = readyToAcquireHTML(purchaseLinks, product.stripe_link, product.price, product.name, product.acquire_heading);
   else if (availability === 'private_collection') nextStepHTML = '';
   else if (commissionable) nextStepHTML = productNextStepHTML('private_collection_commissionable', panelCtaHref, panelCtaOnclick);
   else nextStepHTML = productNextStepHTML(mode, panelCtaHref, panelCtaOnclick);
@@ -3259,6 +3260,7 @@ setupCtaTracking();
             availability: p.availability || 'available',
             acquisition_status: p.acquisition_status || '',
             acquisition_note: p.acquisition_note || '',
+            acquire_heading: p.acquire_heading || '',
             description: p.description || ''
           });
         });
