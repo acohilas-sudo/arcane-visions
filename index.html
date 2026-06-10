@@ -2125,17 +2125,56 @@
   if (!vid) return;
   const src = vid.querySelector('source');
   if (src && window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+    // ── Mobile: lighter 720p source + robust autoplay ──────────────────────
+    // iOS/WebKit only grants muted autoplay when `muted` is set as a JS
+    // *property* (the HTML attribute alone is unreliable), and a programmatic
+    // load() drops the parse-time autoplay grant. Set the gating properties in
+    // script, then attempt playback across several readiness events — not just
+    // `canplay`, which can fail to fire under preload="metadata" on iOS.
+    vid.muted = true;
+    vid.defaultMuted = true;
+    vid.playsInline = true;
+
     src.src = '/images/uploads/hero/hero-video-mobile.mp4';
     vid.load();
-    // A programmatic load() discards the parse-time autoplay grant on mobile
-    // Safari, so the swapped source must be (re)started explicitly once it is
-    // ready. muted + playsinline keep this inside the autoplay policy; any
-    // residual policy rejection is expected and safely ignored (poster stays).
-    const startPlayback = () => {
+
+    // Idempotent play attempt: safe to call repeatedly. A rejected promise
+    // (autoplay policy / Low Power Mode) is caught so it never surfaces as an
+    // unhandled rejection — no visible UI is added; the poster simply remains
+    // and the tap fallback below stays armed.
+    let heroPlaying = false;
+    const tryPlay = () => {
+      if (heroPlaying) return;
+      vid.muted = true; // re-assert in case the property was reset
       const p = vid.play();
-      if (p && typeof p.catch === 'function') p.catch(() => { /* autoplay blocked — poster remains */ });
+      if (p && typeof p.then === 'function') {
+        p.then(() => { heroPlaying = true; }).catch(() => { /* blocked — poster stays, tap fallback armed */ });
+      }
     };
-    vid.addEventListener('canplay', startPlayback, { once: true });
+
+    tryPlay();                                      // immediately after load()
+    vid.addEventListener('loadedmetadata', tryPlay);
+    vid.addEventListener('loadeddata', tryPlay);
+    vid.addEventListener('canplay', tryPlay);
+
+    // Manual fallback: if autoplay cannot be granted, a tap anywhere on the
+    // hero starts playback (a real user gesture always satisfies the policy).
+    // The handler is attached to the .hero CONTAINER, not the video, so
+    // .hero-video-bg keeps pointer-events:none and the visual layering / hero
+    // design are unchanged. It adds no visible control and is removed once the
+    // video is actually playing. It never preventDefaults, so the "View the
+    // Work" CTA and all other hero interactions keep working.
+    const hero = vid.closest('.hero');
+    if (hero) {
+      const onTap = () => { vid.muted = true; tryPlay(); };
+      hero.addEventListener('click', onTap);
+      hero.addEventListener('touchstart', onTap, { passive: true });
+      vid.addEventListener('playing', () => {
+        heroPlaying = true;
+        hero.removeEventListener('click', onTap);
+        hero.removeEventListener('touchstart', onTap);
+      }, { once: true });
+    }
   }
   const HERO_PLAYBACK_RATE = 0.78;
   const applyRate = () => { try { vid.playbackRate = HERO_PLAYBACK_RATE; } catch (e) { /* noop */ } };

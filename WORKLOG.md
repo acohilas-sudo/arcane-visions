@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Hero Video — Robust Mobile Autoplay — 2026-06-09
+
+- Hardened the mobile hero autoplay after real-iPhone testing showed the `canplay`-only retry still left iOS's native play glyph stuck (and untappable, since the video has `pointer-events:none`): now set `muted`/`defaultMuted`/`playsInline` as JS properties before playing, attempt an idempotent `play()` across `load()`/`loadedmetadata`/`loadeddata`/`canplay` (promise-safe), and add a tap-anywhere-on-hero fallback wired to the `.hero` container so a user tap starts playback — no visible controls, no design/layout/copy/video-file changes, desktop untouched.
+
 ### Hero Video — Mobile Autoplay Fix — 2026-06-09
 
 - Fixed the homepage hero video not autoplaying on mobile: after the phone-sized source is swapped in and `vid.load()` runs, playback is now explicitly restarted on the `canplay` event with `vid.play()` (promise-safe, autoplay-policy rejections caught and ignored). Desktop, layout, copy, and the video files are unchanged.
