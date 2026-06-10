@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Hero Video — Remove Poster Cover (restore immediate-video) — 2026-06-09
+
+- Removed the `.hero-video-cover` layer added in 309370f: on iPhone it held a static pelican still over the video for ~0.5–1.0s (until `playing` + an 0.8s fade), which read as a frozen-then-play phase. Deleted the cover HTML element, its CSS (base rule + mobile media query), and the JS `playing`→`is-hidden` listener — restoring the original immediate-video behavior (video visible and autoplaying at once, no cover/poster phase). Robust autoplay logic, source swap, tap fallback, and the original `heroVideoFade` are all preserved; desktop unaffected (the cover was `display:none` there).
+
 ### Language Pass — Art-Focused Positioning (away from ritual-object framing) — 2026-06-09
 
 - Aligned Arcane Visions copy to its art/collector identity (vs. Theurgic Arts' ritual-object framing): hero subtitle "Handcrafted Ritual Objects" → "Bespoke Commissions"; all "handcrafted ritual objects" in og/twitter/SPA/build.js home meta → "original artworks"; "for practitioners and collectors of the Western Mystery Tradition" → "for collectors of…" (4 spots: hero, JSON-LD, the-work SPA + build meta); "built by hand" → "created by hand" (hero, process step, battle-jacket). Left unchanged & reported: three non-enumerated "practitioner" mentions (hogd-adept-lamen, privacy, returns) and the "ceremonial … atelier" descriptor. No pricing/Stripe/hero-video/workflow changes.

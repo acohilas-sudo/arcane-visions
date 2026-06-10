@@ -361,20 +361,6 @@
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-  /* Mobile-only poster cover: an opaque copy of the hero still, painted OVER
-     the video during initialization to mask iOS's native play-glyph, then
-     faded out once the footage is actually playing. It never touches the
-     video's own opacity, so the <video> stays fully visible and eligible for
-     iOS muted autoplay. Sits above the video (z-index 1, after it in the DOM)
-     and below the scrim (z-index 2). display:none on desktop, where the video
-     plays normally and no cover is needed. */
-  .hero-video-cover {
-    display: none;
-    position: absolute; inset: 0; z-index: 1;
-    background: var(--bg) url('/images/uploads/hero/hero-fallback.jpg') center / cover no-repeat;
-    filter: brightness(0.72) contrast(1.06) saturate(0.92);
-    pointer-events: none;
-  }
   /* Dark scrim — gradient that holds ~52% mid-frame and deepens at top/bottom.
      The mid-band is tightened a notch from 0.45 → 0.52 to absorb bright Pelican
      highlights without obscuring the footage. */
@@ -414,20 +400,6 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-content { animation: none; }
-  }
-  /* Mobile only: reveal the poster cover over the (fully visible) video so the
-     native iOS play-glyph never flashes during init. JS adds .is-hidden on the
-     `playing` event to fade the cover out. The video keeps its normal
-     heroVideoFade and full opacity, so autoplay eligibility is preserved.
-     Desktop is untouched — the cover is display:none there and never receives
-     .is-hidden. */
-  @media (max-width: 768px) {
-    .hero-video-cover {
-      display: block;
-      opacity: 1;
-      transition: opacity 0.8s ease;
-    }
-    .hero-video-cover.is-hidden { opacity: 0; }
   }
   .hero-eyebrow {
     font-family: 'Cinzel', serif;
@@ -1731,10 +1703,6 @@
              aria-hidden="true">
         <source src="/images/uploads/hero/hero-video.mp4" type="video/mp4">
       </video>
-      <!-- Mobile-only poster cover: masks iOS's native play-glyph over the
-           still-initializing video; JS fades it out on the video's `playing`
-           event. display:none on desktop. -->
-      <div class="hero-video-cover" aria-hidden="true"></div>
       <div class="hero-scrim" aria-hidden="true"></div>
 
       <div class="hero-content">
@@ -2188,14 +2156,6 @@
     vid.addEventListener('loadedmetadata', tryPlay);
     vid.addEventListener('loadeddata', tryPlay);
     vid.addEventListener('canplay', tryPlay);
-
-    // Mobile-only polish: a poster cover (.hero-video-cover) sits OVER the
-    // fully-visible video to mask iOS's native play-glyph during init. The
-    // video's own opacity is never touched, so muted autoplay stays eligible.
-    // Fade the cover out the moment the footage actually plays. Desktop has the
-    // cover at display:none, so this is a harmless no-op there.
-    const heroCover = (vid.closest('.hero') || document).querySelector('.hero-video-cover');
-    vid.addEventListener('playing', () => { if (heroCover) heroCover.classList.add('is-hidden'); }, { once: true });
 
     // Manual fallback: if autoplay cannot be granted, a tap anywhere on the
     // hero starts playback (a real user gesture always satisfies the policy).
