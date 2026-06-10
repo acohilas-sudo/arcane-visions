@@ -10,6 +10,10 @@ Git history remains the authoritative technical record.
 
 ## 2026-06-09
 
+### Hero Video — Remove Fade-In (kill static-image phase, desktop + mobile) — 2026-06-09
+
+- Eliminated the "static pelican → ~0.5–1.0s → video" phase seen on BOTH desktop and mobile. Root cause was the original `heroVideoFade` animation (from the initial build `fa92a3b`): it ramped the video's opacity 0→1 over 1.6s, so the always-on `.hero-bg-still` poster showed through while the video — held lazy by `preload="metadata"` — buffered. Removed the `heroVideoFade` animation + keyframes (video is now full-opacity from first paint) and switched the video to `preload="auto"` so frames buffer eagerly and play immediately. Same fix for desktop and mobile (both were the base rule/attribute); autoplay logic, source swap, tap fallback, and the still fallback all preserved. Not a regression from d090413/309370f — those never touched this; removing the cover (898aa2d) re-exposed the long-standing fade on mobile.
+
 ### Hero Video — Remove Poster Cover (restore immediate-video) — 2026-06-09
 
 - Removed the `.hero-video-cover` layer added in 309370f: on iPhone it held a static pelican still over the video for ~0.5–1.0s (until `playing` + an 0.8s fade), which read as a frozen-then-play phase. Deleted the cover HTML element, its CSS (base rule + mobile media query), and the JS `playing`→`is-hidden` listener — restoring the original immediate-video behavior (video visible and autoplaying at once, no cover/poster phase). Robust autoplay logic, source swap, tap fallback, and the original `heroVideoFade` are all preserved; desktop unaffected (the cover was `display:none` there).

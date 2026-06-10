@@ -23,9 +23,9 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/images/uploads/favicon/favicon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/images/uploads/favicon/apple-touch-icon.png">
 
-<!-- Hero fallback still — preloaded so the home above-the-fold paints without delay,
-     ahead of the (lazier, preload=metadata) hero video. Hero-page only; other routes
-     can skip this without penalty since the still doesn't appear there. -->
+<!-- Hero fallback still — preloaded so the home above-the-fold paints without delay
+     and serves as the poster/instant frame while the hero video buffers. Hero-page
+     only; other routes can skip this without penalty since the still doesn't appear there. -->
 <link rel="preload" as="image" href="/images/uploads/hero/hero-fallback.jpg" fetchpriority="high">
 
 <meta property="og:type" content="website">
@@ -347,19 +347,17 @@
     /* Quiet darken so the medallion reads — no blur, no glow. */
     filter: brightness(0.62);
   }
-  /* Video covers the still on desktop; hidden only on save-data / reduced-motion.
+  /* Video covers the still; hidden only on save-data / reduced-motion.
      Restrained brightness/contrast/saturate trim brings out cinematic darkness and
-     quiets bright highlights so the typography breathes. No blur — keeps motion crisp. */
+     quiets bright highlights so the typography breathes. No blur — keeps motion crisp.
+     The video is full-opacity from first paint (no fade-in): combined with
+     preload="auto" and autoplay, the footage shows and plays immediately instead
+     of holding the static still visible behind a 1.6s opacity ramp. */
   .hero-video-bg {
     position: absolute; inset: 0; z-index: 1;
     width: 100%; height: 100%; object-fit: cover; display: block;
     pointer-events: none;
     filter: brightness(0.72) contrast(1.06) saturate(0.92);
-    animation: heroVideoFade 1.6s ease both;
-  }
-  @keyframes heroVideoFade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
   }
   /* Dark scrim — gradient that holds ~52% mid-frame and deepens at top/bottom.
      The mid-band is tightened a notch from 0.45 → 0.52 to absorb bright Pelican
@@ -1698,7 +1696,7 @@
       </div>
       <video class="hero-video-bg"
              autoplay muted loop playsinline
-             preload="metadata"
+             preload="auto"
              poster="/images/uploads/hero/hero-fallback.jpg"
              aria-hidden="true">
         <source src="/images/uploads/hero/hero-video.mp4" type="video/mp4">
