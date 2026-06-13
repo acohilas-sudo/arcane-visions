@@ -2,6 +2,8 @@
 name: Bespoke Magical Shoes
 tradition: Independent / Custom
 category: Wearable Works
+artform: "Wearable artwork"
+artMedium: "Hand-painted acrylic on canvas high-top sneakers"
 featured: false
 price: "Starting at $500"
 purchase_mode: commission

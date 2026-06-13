@@ -2,6 +2,8 @@
 name: Alchemical Quadriptych
 tradition: Alchemical
 category: Symbolic Art
+artform: "Watercolor painting"
+artMedium: "Watercolor and gold accents on archival paper"
 featured: true
 featured_order: 4
 price: "$250 per panel · $950 complete set"

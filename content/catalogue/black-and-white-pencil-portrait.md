@@ -2,6 +2,8 @@
 name: Black and White Pencil Portrait
 tradition: Independent / Custom
 category: Portraiture
+artform: "Portrait"
+artMedium: "Graphite on paper"
 featured: false
 price: ""
 purchase_mode: commission

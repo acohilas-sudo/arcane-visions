@@ -2,6 +2,8 @@
 name: Bespoke Rosicrucian Battle Jacket
 tradition: Rosicrucian
 category: Wearable Works
+artform: "Wearable artwork"
+artMedium: "Hand-painted acrylic, heat-applied vinyl, and rhinestone on black denim"
 featured: false
 price: "Commissions from $800"
 purchase_mode: commission

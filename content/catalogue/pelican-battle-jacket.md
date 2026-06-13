@@ -2,6 +2,8 @@
 name: Pelican Battle Jacket
 tradition: Rosicrucian
 category: Wearable Works
+artform: "Wearable artwork"
+artMedium: "Hand-painted acrylic, heat-applied vinyl, and rhinestone on black denim"
 featured: true
 featured_order: 7
 price: "$800"

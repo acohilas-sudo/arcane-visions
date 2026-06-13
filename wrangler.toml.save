@@ -1,6 +1,4 @@
-name = "arcane-visions"
-account_id = "d82b44925438cd879407e73ac3105ca5"
-compatibility_date = "2026-05-27"
+compatibility_date = "202
 
 [assets]
 directory = "dist"

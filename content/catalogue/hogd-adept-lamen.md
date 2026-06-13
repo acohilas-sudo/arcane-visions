@@ -2,6 +2,8 @@
 name: HOGD Adept Lamen
 tradition: Hermetic Order of the Golden Dawn
 category: Symbolic Art
+artform: "Stained glass"
+artMedium: "Leaded stained glass with integrated warm LED lighting"
 featured: true
 featured_order: 5
 price: "$1,500"

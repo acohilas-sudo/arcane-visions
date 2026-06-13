@@ -38,6 +38,29 @@ function dimAttrs(refPath) {
   return d ? ` width="${d.width}" height="${d.height}"` : '';
 }
 
+// Rewrite og:image:width/height so they match the og:image actually declared in
+// `html`, measured from disk. The template ships a placeholder 1200×1200; this
+// replaces it with the real pixel size of the served image (the ~1200×630 default
+// or a portrait/landscape product image — none are square). Shared by rewriteHead
+// (section + product pages) and the home-page write (which keeps the template head
+// rather than going through rewriteHead). If the file can't be measured, the
+// placeholder is left untouched rather than faked.
+function applyOgImageDims(html) {
+  const m = html.match(/<meta\s+property="og:image"\s+content="([^"]*)"/);
+  if (!m) return html;
+  const d = imgDims(m[1].replace(BASE_ORIGIN, ''));
+  if (!d) return html;
+  return html
+    .replace(
+      /<meta\s+property="og:image:width"\s+content="[^"]*"\s*\/?>/,
+      `<meta property="og:image:width" content="${d.width}">`
+    )
+    .replace(
+      /<meta\s+property="og:image:height"\s+content="[^"]*"\s*\/?>/,
+      `<meta property="og:image:height" content="${d.height}">`
+    );
+}
+
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 }
@@ -127,6 +150,11 @@ function readCatalogue() {
       name: data.name || '',
       tradition: data.tradition || '',
       category: data.category || '',
+      // Physical form and material of the work, surfaced in VisualArtwork schema.
+      // Read verbatim from frontmatter; buildProductJsonLD falls back to a derived
+      // value only when these are absent. Never availability/edition language.
+      artform: data.artform || '',
+      artMedium: data.artMedium || '',
       featured: data.featured || false,
       photos: data.photos || [],
       specs: data.specs || '',
@@ -333,8 +361,12 @@ function buildProductJsonLD(product, canonical) {
     category: product.category || 'Symbolic Art',
     brand: { '@type': 'Brand', name: BRAND_NAME },
     // VisualArtwork-specific fields — honest values only, undefined skipped below.
-    artform: product.category === 'Portraiture' ? 'Portraiture' : 'Symbolic art',
-    artMedium: firstSpec || undefined,
+    // artform/artMedium come from frontmatter (the work's actual form and
+    // material); the legacy derivations remain only as a fallback for works that
+    // have not yet declared them. artMedium must describe material, never
+    // availability or edition language.
+    artform: product.artform || (product.category === 'Portraiture' ? 'Portraiture' : 'Symbolic art'),
+    artMedium: product.artMedium || firstSpec || undefined,
     artworkSurface,
     genre,
     keywords: buildKeywords(product),
@@ -342,16 +374,27 @@ function buildProductJsonLD(product, canonical) {
     inLanguage: 'en-US'
   };
 
-  // Offer: tier-aware. Direct-tier pieces with a real $ price ship a fixed-price
-  // Offer; everything else ships an inquiry-compatible Offer with a textual
-  // PriceSpecification. No fabricated prices, no PreOrder gate-keeping.
-  // Works in a private collection are acquired, not a commerce listing — they
-  // ship no Offer at all (avoids implying availability or any "sold out" framing).
+  // Offer: keyed on whether the piece is actually purchasable — i.e. it has a
+  // live purchase link (a Stripe Payment Link or one or more purchase_links) AND
+  // is in the available section. This mirrors the site's own isPurchasable test
+  // so the schema never contradicts the page's CTA.
+  //   • Purchasable + a real $ price  → fixed-price Offer (numeric price, InStock).
+  //   • Purchasable but price private → inquiry Offer (InStock, no fabricated price).
+  //   • Commission / made-to-order / inquiry-only with NO live purchase link
+  //     → NO Offer at all. These are not in stock and not directly purchasable;
+  //     omitting the Offer is more honest than a false InStock claim.
+  //   • Works in a private collection are acquired, not a commerce listing — they
+  //     ship no Offer at all (avoids implying availability or any "sold out" framing).
   if (product.availability !== 'private_collection' && product.availability !== 'private_collection_commissionable') {
     const prices = extractPrices(product);
-    ld.offers = ((product.purchase_mode === 'direct' || product.stripe_link) && prices)
-      ? buildOffer(product, canonical, prices.low)
-      : buildInquiryOffer(product, canonical);
+    const purchaseLinks = (product.purchase_links || []).filter(l => l && l.url);
+    const isPurchasable = (purchaseLinks.length > 0 || !!product.stripe_link) && product.availability === 'available';
+    if (isPurchasable && prices) {
+      ld.offers = buildOffer(product, canonical, prices.low);
+    } else if (isPurchasable) {
+      ld.offers = buildInquiryOffer(product, canonical);
+    }
+    // else: not purchasable → no Offer emitted.
   }
 
   // Drop undefined values so the JSON stays clean
@@ -703,6 +746,8 @@ function rewriteHead(template, { title, description, canonical, ogType, ogImage,
     /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/,
     `<meta property="og:image" content="${escapeAttr(ogImage)}">`
   );
+  // og:image:width/height must match the ACTUAL file served on this page.
+  html = applyOgImageDims(html);
   html = html.replace(
     /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/,
     `<meta name="twitter:title" content="${escapeAttr(title)}">`
@@ -1020,7 +1065,9 @@ fs.writeFileSync(
 
 let template = fs.readFileSync(path.join(DEST, 'index.html'), 'utf-8');
 template = bakeProductGridsIntoTemplate(template, catalogue);
-fs.writeFileSync(path.join(DEST, 'index.html'), keepOnlyPage(template, 'page-home'));
+// The home page keeps the template head (it does not pass through rewriteHead),
+// so correct its og:image:width/height to the served default image here too.
+fs.writeFileSync(path.join(DEST, 'index.html'), applyOgImageDims(keepOnlyPage(template, 'page-home')));
 
 // Per-product static pages → /the-work/{slug}/index.html
 for (const product of catalogue) {

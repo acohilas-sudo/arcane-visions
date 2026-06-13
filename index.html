@@ -1950,9 +1950,9 @@
         <!-- Success state (revealed in place on submission) -->
         <div class="inquiry-success" id="inquirySuccess" role="status" tabindex="-1" hidden>
           <div class="inquiry-success-mark" aria-hidden="true">✦</div>
-          <h2>Your inquiry is ready to send</h2>
-          <p>We have opened your email with the details prefilled. Review and send it, and Arcane Visions will respond within 24&ndash;48 hours to begin the consultation process.</p>
-          <p style="font-size:15px;color:var(--text-mid)">If your email client did not open, write to us directly at <a href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a>.</p>
+          <h2>Your inquiry draft is opening in your email client.</h2>
+          <p>Press send to reach us.</p>
+          <p style="font-size:15px;color:var(--text-mid)">If your mail client did not open, write to us directly at <a href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a></p>
         </div>
       </section>
 
@@ -2963,7 +2963,10 @@ function setupInquiryForm() {
       successBox.focus();
       successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-    trackEvent('inquiry_success');
+    // A mailto: draft was handed to the visitor's email client — this is NOT a
+    // confirmed send (no reliable browser signal exists for that), so the event
+    // is named for what actually happened, not for success.
+    trackEvent('inquiry_draft_opened');
   }
 
   // Compose a prefilled mailto: link to the atelier from the inquiry fields.
@@ -3343,7 +3346,7 @@ setupCtaTracking();
                                      cta-band, product, etc.)
        inquiry_open    { via }      commissions form revealed (cta|page_load)
        inquiry_submit  {}           client validation passed, request sent
-       inquiry_success {}           server accepted the inquiry
+       inquiry_draft_opened {}      mailto draft handed to the visitor's email client (not a confirmed send)
        inquiry_error   { kind }     client_validation|validation|server|network
 ─────────────────────────────────────────────────────────────────────── -->
 <script>

@@ -2,6 +2,8 @@
 name: Rosicrucian Rosy Cross Bas-Relief
 tradition: Rosicrucian
 category: Symbolic Art
+artform: "Bas-relief sculpture"
+artMedium: "Plasticine bas-relief with 24k gold leaf and red gemstone inlays"
 featured: true
 featured_order: 2
 price: "$1,500"

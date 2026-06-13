@@ -2,6 +2,8 @@
 name: Paschal Lamb
 tradition: Christian
 category: Symbolic Art
+artform: "Bas-relief sculpture"
+artMedium: "Sculptural bas-relief with restrained gold finish on dark ground"
 featured: true
 price: ""
 purchase_mode: inquiry

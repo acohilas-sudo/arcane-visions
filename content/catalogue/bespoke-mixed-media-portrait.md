@@ -2,6 +2,8 @@
 name: Bespoke Mixed Media Portrait
 tradition: Independent / Custom
 category: Portraiture
+artform: "Portrait"
+artMedium: "Colored pencil and watercolor on paper"
 featured: false
 price: ""
 purchase_mode: commission

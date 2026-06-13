@@ -2,6 +2,8 @@
 name: The Rosy Cross
 tradition: Rosicrucian
 category: Symbolic Art
+artform: "Painting"
+artMedium: "Paint on prepared ground"
 featured: false
 price: ""
 purchase_mode: direct
