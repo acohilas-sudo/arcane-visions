@@ -996,6 +996,7 @@ ensureDir(DEST);
 // Explicit allowlist — public assets that ship to the deploy output.
 const ASSET_FILES = [
   'index.html',
+  '404.html',
   'privacy.html',
   'returns.html',
   'robots.txt',

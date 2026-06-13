@@ -8,3 +8,8 @@
 # finished one-of-one Pelican Battle Jacket. Preserve the old live URL.
 /the-work/custom-hand-painted-rosicrucian-battle-jacket   /the-work/pelican-battle-jacket/   301
 /the-work/custom-hand-painted-rosicrucian-battle-jacket/  /the-work/pelican-battle-jacket/   301
+
+# Soft-404 correction is handled by the presence of /404.html in the output:
+# Cloudflare Pages automatically serves it with an HTTP 404 status for any path
+# that matches no static asset and no rule above. (A `/* /404.html 404` rule is
+# NOT used — Pages _redirects only permits 200/301/302/303/307/308 statuses.)

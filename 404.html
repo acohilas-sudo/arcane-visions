@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Arcane Visions</title>
+<meta name="description" content="The page you were looking for could not be found at the Arcane Visions atelier.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/uploads/favicon/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/uploads/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080808;
+    --gold: #C9A052;
+    --gold-bright: #E1C079;
+    --gold-line: rgba(201,160,82,0.38);
+    --gold-dim: rgba(201,160,82,0.22);
+    --text: #F0E6D0;
+    --text-bright: #F8F0D8;
+    --text-soft: #BFB6A4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: var(--bg); }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header — quiet, architectural (static, no SPA chrome) ── */
+  .header {
+    border-bottom: 1px solid var(--gold-dim);
+    padding: 18px 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg);
+  }
+  .logo { display: block; line-height: 0; }
+  .logo-mark { display: block; height: 44px; width: auto; object-fit: contain; }
+  .nav { display: flex; gap: 36px; align-items: center; }
+  .nav a {
+    font-family: 'Cinzel', serif; font-size: 12px; font-weight: 500;
+    letter-spacing: 3.2px; text-transform: uppercase;
+    color: var(--text); text-decoration: none; transition: color 0.3s;
+  }
+  .nav a:hover { color: var(--gold); }
+
+  /* ── Centred 404 composition ── */
+  .nf {
+    flex: 1 0 auto;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 40px 130px;
+  }
+  .nf-code {
+    font-family: 'Cinzel', serif; font-size: 12px; font-weight: 600;
+    letter-spacing: 7px; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 18px; margin: 26px 0 30px; opacity: 0.7;
+  }
+  .ornament-line-l { width: 72px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); }
+  .ornament-line-r { width: 72px; height: 1px; background: linear-gradient(to left, transparent, var(--gold)); }
+  .ornament-dots { color: var(--gold); letter-spacing: 8px; font-size: 12px; }
+  .nf-title {
+    font-family: 'Cinzel Decorative', serif; font-size: clamp(30px, 4.6vw, 44px); font-weight: 500;
+    color: var(--text-bright); letter-spacing: 6px; text-transform: uppercase; line-height: 1.15;
+  }
+  .nf-message {
+    font-family: 'Cormorant Garamond', serif; font-size: 19px; color: var(--text-soft);
+    max-width: 540px; margin: 26px auto 0; line-height: 1.7;
+  }
+  .nf-actions {
+    display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+    margin-top: 46px;
+  }
+  .btn {
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600;
+    letter-spacing: 4.5px; text-transform: uppercase; padding: 17px 54px;
+    background: transparent; border: 1px solid var(--gold); color: var(--gold);
+    text-decoration: none; display: inline-block; transition: all 0.3s;
+  }
+  .btn:hover { background: var(--gold); color: var(--bg); }
+
+  /* ── Footer (mirrors the site footer) ── */
+  .footer {
+    border-top: 1px solid var(--gold-dim);
+    padding: 64px 40px 56px;
+    text-align: center;
+    background: var(--bg);
+    flex-shrink: 0;
+  }
+  .footer-mark { display: inline-block; height: 88px; width: auto; object-fit: contain; opacity: 0.95; }
+  .footer-brand {
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 500; letter-spacing: 5px;
+    color: var(--text); margin-top: 22px; text-transform: uppercase;
+  }
+  .footer-instagram {
+    font-family: 'Cinzel', serif; font-size: 11px; font-weight: 500; letter-spacing: 3.5px;
+    color: var(--gold); text-decoration: none; text-transform: uppercase;
+    display: block; margin-top: 20px; transition: color 0.3s;
+  }
+  .footer-instagram:hover { color: var(--gold-bright); }
+  .footer-location {
+    font-family: 'Cormorant Garamond', serif; font-size: 14px; font-style: italic;
+    color: var(--text-soft); margin-top: 12px; letter-spacing: 0.5px;
+  }
+  .footer-copyright { font-size: 11px; color: var(--text-soft); margin-top: 14px; letter-spacing: 0.04em; }
+  .footer-copyright a { color: var(--text-soft); text-decoration: none; }
+  .footer-copyright a:hover { color: var(--gold); }
+
+  @media (max-width: 640px) {
+    .header { padding: 14px 22px; }
+    .nav { display: none; }
+    .nf { padding: 84px 26px 92px; }
+    .btn { padding: 16px 38px; }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="/" aria-label="Arcane Visions — Home">
+      <img class="logo-mark" src="/images/logo-mark.png" alt="Arcane Visions" width="1495" height="1392" decoding="async">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/the-work">The Work</a>
+      <a href="/commissions">Commissions</a>
+      <a href="/private-collections">Private Collections</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main class="nf">
+    <div class="nf-code">Error 404</div>
+    <div class="ornament" aria-hidden="true">
+      <div class="ornament-line-l"></div>
+      <span class="ornament-dots">✦ ✦ ✦</span>
+      <div class="ornament-line-r"></div>
+    </div>
+    <h1 class="nf-title">Page Not Found</h1>
+    <p class="nf-message">The page you are seeking is not part of the atelier &mdash; it may have been moved, retired, or never existed. Return to the entrance, or step into the collected work.</p>
+    <div class="nf-actions">
+      <a class="btn" href="/">Return Home</a>
+      <a class="btn" href="/the-work">Enter The Work</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <img class="footer-mark" src="/images/arcane-visions-logo.png" alt="Arcane Visions" width="1531" height="1435" loading="lazy" decoding="async">
+    <div class="footer-brand">Ceremonial &amp; Esoteric Atelier</div>
+    <a href="mailto:info@arcanevisionsstudios.com" class="footer-instagram">info@arcanevisionsstudios.com</a>
+    <a href="https://www.instagram.com/ArcaneVisionStudios" target="_blank" rel="noopener" class="footer-instagram">Instagram &nbsp;@ArcaneVisionStudios</a>
+    <div class="footer-location">Handcrafted in the Washington, DC region</div>
+    <div class="footer-copyright">
+      &copy; 2026 Arcane Visions &nbsp;&middot;&nbsp;
+      <a href="/privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+      <a href="/returns.html">Acquisitions &amp; Returns</a>
+    </div>
+  </footer>
+</body>
+</html>
