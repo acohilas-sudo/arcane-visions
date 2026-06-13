@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
-    "deploy": "npx wrangler deploy --assets dist/"
+    "deploy": "npx wrangler pages deploy dist/ --project-name=arcane-visions --branch=main"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
