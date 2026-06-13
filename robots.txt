@@ -1,3 +1,18 @@
+# Arcane Visions — crawler policy
+#
+# Decision (2026-06-12): AI crawlers are ALLOWED. Arcane Visions deliberately
+# opts INTO AI-search discovery and citation (ClaudeBot, GPTBot, PerplexityBot,
+# CCBot, Google-Extended, etc.) as a brand/business choice — it is a meaningful
+# discovery channel for collectors and practitioners who use AI search tools.
+#
+# OPERATIVE NOTE: Cloudflare's "AI Crawl Control" managed-robots feature injects
+# a block that DISALLOWS these same agents ahead of this file at the edge. That
+# injected block — not this file — is the source of the Allow/Disallow conflict
+# seen in the served robots.txt. For this allow-policy to actually take effect,
+# Cloudflare AI Crawl Control must remain DISABLED in the dashboard
+# (zone arcanevisions.art -> Security/Bots -> AI Crawl Control / managed robots).
+# Deploying this file does not change that edge setting.
+
 User-agent: *
 Allow: /
 
