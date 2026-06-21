@@ -21,7 +21,7 @@ photos:
   - image: /images/uploads/products/bespoke-rosicrucian-battle-jacket/gallery-1.jpg
     alt: The jacket on display — full back composition, the Rosy Cross beneath Dum Spiro Spero
   - image: /images/uploads/products/bespoke-rosicrucian-battle-jacket/gallery-2.jpg
-    alt: Debbi Cohilas hand-painting the back panel of the jacket in the atelier
+    alt: Debbi hand-painting the back panel of the jacket in the atelier
   - image: /images/uploads/products/bespoke-rosicrucian-battle-jacket/gallery-3.jpg
     alt: Painting-process detail — the central Rosy Cross motif being hand-painted
   - image: /images/uploads/products/bespoke-rosicrucian-battle-jacket/gallery-4.jpg
@@ -38,7 +38,7 @@ Across the shoulders runs a single line: *Dum Spiro Spero* — "while I breathe,
 
 ## Artist & Craftsmanship
 
-The jacket is the work of Debbi Cohilas. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
+The jacket is the work of Debbi. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
 
 The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not. The back panel was created by hand from the centre outward, as the process photographs attest.
 

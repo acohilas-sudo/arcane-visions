@@ -25,11 +25,11 @@ photos:
 
 The Tree and the Rose
 
-The initiatory path is walked, not displayed. These high-tops by Debbi Cohilas carry the symbolic vocabulary of the Western Mystery Tradition — Kabbalah and Rosicrucianism, the Tree and the Rose — into the world.
+The initiatory path is walked, not displayed. These high-tops by Debbi carry the symbolic vocabulary of the Western Mystery Tradition — Kabbalah and Rosicrucianism, the Tree and the Rose — into the world.
 
 The Artwork
 
-Each shoe is a canvas hand-painted by Debbi Cohilas, whose career spans Hollywood production and esoteric fine art.
+Each shoe is a canvas hand-painted by Debbi, whose career spans Hollywood production and esoteric fine art.
 
 The left shoe renders the Kabbalistic Tree of Life. The ten Sephiroth appear as jewel-toned apples, each in correct color correspondence — from the luminous white of Kether at the crown through the descent of the middle pillar to the verdant green of Malkuth at the base. A coral snake — banded red, black, and white — coils through the spheres, invoking the serpent of the Garden, the Nehushtan of Moses, and the caduceus of Hermes in a single gesture. The Mars glyph presides above. The ground shifts from rose to aquamarine: a wash of alchemical transition.
 

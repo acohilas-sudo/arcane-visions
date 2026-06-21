@@ -8,6 +8,17 @@ Git history remains the authoritative technical record.
 
 ---
 
+## 2026-06-20
+
+### Surname scrub — removed "Cohilas" from remaining site copy and JSON-LD — 2026-06-20
+
+- Completed the site-wide removal of the "Cohilas" surname that the 2026-06-09 quadriptych pass had only begun (that pass dropped the surname from the quadriptych prose and *deliberately preserved* the JSON-LD name). Enumerated every occurrence first (`grep -rni cohilas`, whole repo minus `.git`/`node_modules`/`.wrangler`) before touching anything.
+- **Prose — surname dropped ("Debbi Cohilas" → "Debbi"), 4 references:** `content/catalogue/bespoke-magical-shoes.md` (×2), `content/catalogue/bespoke-rosicrucian-battle-jacket.md` (×1), `content/catalogue/pelican-battle-jacket.md` (×1).
+- **Image alt text (1):** `bespoke-rosicrucian-battle-jacket.md` gallery-2 alt — "Debbi Cohilas hand-painting…" → "Debbi hand-painting…".
+- **JSON-LD (`index.html`, 2 Person records):** `"name": "Debbi Cohilas"` → `"Debbi"` and `"name": "Drew Cohilas"` → `"Drew"`; both `"familyName": "Cohilas"` lines removed, `givenName` retained. **This reverses the 2026-06-09 decision** that kept the JSON-LD artist name as protected shared metadata — done this pass per explicit instruction. Structured data re-validated as parseable JSON.
+- **Flagged but NOT changed (slug/identifier — needs a separate 301/rename task):** `admin/config.yml` Decap CMS backend `repo: acohilas-sudo/arcane-visions` (a GitHub identifier; renaming breaks the CMS). Also left untouched: `.claude/settings.local.json` local file paths (macOS username + repo slug — tooling config, not site content). No filenames or directories contain the surname.
+- No pricing, Stripe links, button labels, layout, styling, or CTA behavior changed. `dist/` left as-is (regenerates from source on next `npm run build`). Work done against a clean tree; the pre-existing WIP in `stash@{0}` was left untouched.
+
 ## 2026-06-09
 
 ### Alchemical Quadriptych — Copy Refinement & Attribution Cleanup — 2026-06-09

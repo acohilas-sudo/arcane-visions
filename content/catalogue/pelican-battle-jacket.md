@@ -41,7 +41,7 @@ Across the shoulders runs the motto *IGNE NATURA RENOVATUR INTEGRA*. Beneath it,
 
 ## Artist & Craftsmanship
 
-The jacket is the work of Debbi Cohilas. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
+The jacket is the work of Debbi. A graduate of the California Institute of the Arts, she has spent more than thirty years in film and television as a storyboard artist, director, and animation timer — her credits include *Avatar: The Last Airbender*, *Family Guy*, and *King of the Hill*. That discipline — the practised translation of an idea into a clear, weighted image — is present in every inch of this piece.
 
 The imagery is hand-painted in professional acrylics, with high-quality heat-applied vinyl elements and rhinestone accents introduced with restraint — catching light where the composition asks for it and nowhere it does not — and sealed for the realities of wear.
 
