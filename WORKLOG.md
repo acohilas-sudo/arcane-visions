@@ -8,6 +8,14 @@ Git history remains the authoritative technical record.
 
 ---
 
+## 2026-11-18
+
+### Site outage fix — stray brace killed all page JavaScript — 2026-11-18
+
+- Live site had dead navigation and buttons, and product/hero images were returning 404. Root cause of the dead UI: one extra `}` after the inquiry-form handler (`setupInquiryForm`) in `index.html`, line 3079 (`}}` → `}`). That syntax error made the browser discard the entire 48 KB main script, so every JS-driven link, button, and gallery stopped working. Fixed by removing the single character; the patched script passes `node --check`. Nothing else in the file changed.
+- Image 404s cleared with the same redeploy. `dist/images/uploads/` was complete locally, so the live outage came from a deploy that shipped without those files. Note: only `images/uploads/team/` is tracked in git, so any build made from git alone ships without product photos.
+- Deploy was blocked by a stale `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` in `~/.zshrc` pointing at the personal Gmail Cloudflare account (`0df86c20…`). The Pages project lives in the Arcane Visions LLC account (`d82b4492…`). Both lines commented out (backup at `~/.zshrc.backup`); Wrangler re-logged in via OAuth to the LLC account. Redeployed via `npm run deploy` (Direct Upload); live site verified: no script errors, nav works, all homepage images and hero video return 200.
+
 ## 2026-06-20
 
 ### Surname scrub — removed "Cohilas" from remaining site copy and JSON-LD — 2026-06-20

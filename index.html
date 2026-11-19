@@ -1658,6 +1658,14 @@
     }
   }
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K0J4FS9B3L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-K0J4FS9B3L');
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -1870,7 +1878,7 @@
         <!-- Submitting opens the visitor's own email client with the inquiry
              prefilled (handled by JS below). The mailto action is the no-JS
              fallback so the form still reaches the atelier without scripts. -->
-        <form class="inquiry-form" id="inquiryForm" action="mailto:info@arcanevisionsstudios.com" method="post" enctype="text/plain" aria-describedby="inquireHeading">
+        <form class="inquiry-form" id="inquiryForm" action="/api/inquiry" method="post" aria-describedby="inquireHeading">
           <div class="field-row">
             <div class="field">
               <label for="if-name">Name <span class="req" aria-hidden="true">*</span></label>
@@ -1941,16 +1949,22 @@
 
           <div class="form-actions">
             <button type="submit" class="btn" id="inquirySubmit">Send Inquiry</button>
-            <p class="form-note">A personal response follows within 24&ndash;48 hours. Or write directly to <a href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a>.</p>
+            <p class="form-note">A personal response follows within 24&ndash;48 hours. If this form fails, write directly to <a href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a>.</p>
           </div>
         </form>
 
         <!-- Success state (revealed in place on submission) -->
         <div class="inquiry-success" id="inquirySuccess" role="status" tabindex="-1" hidden>
           <div class="inquiry-success-mark" aria-hidden="true">✦</div>
-          <h2>Your inquiry draft is opening in your email client.</h2>
-          <p>Press send to reach us.</p>
-          <p style="font-size:15px;color:var(--text-mid)">If your mail client did not open, write to us directly at <a href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a></p>
+          <h2>Your inquiry was received.</h2>
+          <p>Thank you. A personal response follows within 24&ndash;48 hours.</p>
+        </div>
+
+        <div class="inquiry-success" id="inquiryError" role="alert" tabindex="-1" hidden>
+          <div class="inquiry-success-mark" aria-hidden="true">!</div>
+          <h2>We could not send your inquiry.</h2>
+          <p id="inquiryErrorMsg">Something went wrong on our side. Your message was not delivered.</p>
+          <p style="font-size:15px;color:var(--text-mid)">Please write us directly: <a id="inquiryMailtoFallback" href="mailto:info@arcanevisionsstudios.com" style="color:var(--gold)">info@arcanevisionsstudios.com</a> (opens your email app as a backup only).</p>
         </div>
       </section>
 
@@ -2921,6 +2935,8 @@ function setupInquiryForm() {
   if (isCommissionsActive()) trackEvent('inquiry_open', { via: 'page_load' });
 
   const successBox = document.getElementById('inquirySuccess');
+  const errorBox = document.getElementById('inquiryError');
+  const submitBtn = document.getElementById('inquirySubmit');
 
   function msgEl(input) {
     const id = input && input.getAttribute('aria-describedby');
@@ -2954,6 +2970,7 @@ function setupInquiryForm() {
 
   function showSuccess() {
     form.hidden = true;
+    if (errorBox) errorBox.hidden = true;
     const lead = document.querySelector('.inquire-lead');
     if (lead) lead.hidden = true;
     if (successBox) {
@@ -2961,14 +2978,29 @@ function setupInquiryForm() {
       successBox.focus();
       successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-    // A mailto: draft was handed to the visitor's email client — this is NOT a
-    // confirmed send (no reliable browser signal exists for that), so the event
-    // is named for what actually happened, not for success.
-    trackEvent('inquiry_draft_opened');
+    trackEvent('inquiry_sent');
   }
 
-  // Compose a prefilled mailto: link to the atelier from the inquiry fields.
-  // Multi-line fields (use, references, notes) get their own labelled blocks.
+  function showError(message, mailtoHref) {
+    if (successBox) successBox.hidden = true;
+    form.hidden = false;
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+    }
+    const msg = document.getElementById('inquiryErrorMsg');
+    if (msg && message) msg.textContent = message;
+    const fallback = document.getElementById('inquiryMailtoFallback');
+    if (fallback && mailtoHref) fallback.setAttribute('href', mailtoHref);
+    if (errorBox) {
+      errorBox.hidden = false;
+      errorBox.focus();
+      errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    trackEvent('inquiry_error', { kind: 'server_or_network' });
+  }
+
+  // Mailto is a FALLBACK link only — never used as the primary success path.
   function buildInquiryMailto(fields) {
     const get = k => (typeof fields[k] === 'string' ? fields[k].trim() : '');
     const subject = 'Commission Inquiry' + (get('commission_type') ? ' — ' + get('commission_type') : '');
@@ -2992,9 +3024,10 @@ function setupInquiryForm() {
       '&body=' + encodeURIComponent(lines.join('\r\n'));
   }
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
     clearErrors();
+    if (errorBox) errorBox.hidden = true;
 
     const errs = validateClient();
     if (errs.length) {
@@ -3005,21 +3038,43 @@ function setupInquiryForm() {
       return;
     }
 
-    // Honeypot: a hidden field real visitors never fill. If populated, show the
-    // confirmation but open no email client — the submission goes nowhere.
+    const fields = {};
+    new FormData(form).forEach((val, key) => { fields[key] = typeof val === 'string' ? val : ''; });
+    const mailtoHref = buildInquiryMailto(fields);
+
+    // Honeypot: pretend success, send nothing useful to the mailbox.
     const hp = form.querySelector('[name="company_url"]');
     if (hp && hp.value.trim()) { showSuccess(); return; }
 
-    const fields = {};
-    new FormData(form).forEach((val, key) => { fields[key] = typeof val === 'string' ? val : ''; });
-
     trackEvent('inquiry_submit');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.setAttribute('aria-busy', 'true');
+    }
 
-    // Hand the inquiry to the visitor's own email client, prefilled and
-    // addressed to the atelier. Nothing leaves the page until they press send.
-    window.location.href = buildInquiryMailto(fields);
-
-    showSuccess();
+    try {
+      const res = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(fields),
+      });
+      let payload = null;
+      try { payload = await res.json(); } catch (_) { payload = null; }
+      if (res.ok && payload && payload.ok && payload.delivered !== false) {
+        showSuccess();
+        return;
+      }
+      // Honeypot server response also returns ok without delivered mail.
+      if (res.ok && payload && payload.honeypot) { showSuccess(); return; }
+      const errMsg = (payload && payload.error) ||
+        'Something went wrong on our side. Your message was not delivered.';
+      showError(errMsg, mailtoHref);
+    } catch (err) {
+      showError(
+        'Network error — your inquiry did not reach the atelier. Use the email link below.',
+        mailtoHref
+      );
+    }
   });
 }
 
@@ -3325,7 +3380,7 @@ setupCtaTracking();
      function in the block below, all events are silently dropped — the UI
      never breaks.
 
-     LAUNCH BLOCKER — Analytics Provider Required:
+     Analytics: GA4 wired (Measurement ID in <head>).
      No analytics platform is connected. To capture conversions: (a) add the
      provider's loader tag to <head>, then (b) uncomment ONE assignment block
      below and replace the placeholder id/domain. Do not commit real
@@ -3335,7 +3390,7 @@ setupCtaTracking();
      script element below, because a literal closing-script sequence would end
      that element early):
        Google Analytics 4 (gtag.js):
-         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+         <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0J4FS9B3L"></script>
        Plausible (privacy-friendly, cookieless):
          <script defer data-domain="your-domain.com" src="https://plausible.io/js/script.js"></script>
 
@@ -3353,12 +3408,8 @@ setupCtaTracking();
   // calls it as avAnalytics(name, params). Leave undefined to no-op. Add the
   // matching provider loader tag to the document head (see the comment above).
 
-  // ── Google Analytics 4 (after the gtag.js loader is in the head) ──────
-  // window.dataLayer = window.dataLayer || [];
-  // function gtag(){ dataLayer.push(arguments); }
-  // gtag('js', new Date());
-  // gtag('config', 'G-XXXXXXXXXX');
-  // window.avAnalytics = function (name, params) { gtag('event', name, params); };
+  // ── Google Analytics 4 (loader in <head>) ──────
+  window.avAnalytics = function (name, params) { gtag('event', name, params || {}); };
 
   // ── Plausible (after the Plausible loader is in the head) ─────────────
   // window.avAnalytics = function (name, params) {
