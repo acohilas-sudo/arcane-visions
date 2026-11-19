@@ -2144,71 +2144,78 @@
 (function setupHeroVideo() {
   const vid = document.querySelector('.hero-video-bg');
   if (!vid) return;
-  const src = vid.querySelector('source');
-  // The <source> ships with data-src only, so the browser fetches exactly one
-  // file: the desktop cut here, or the mobile cut in the branch below. (With a
-  // real src in the markup, phones began downloading the desktop file before
-  // this script could swap it.)
-  const isMobile = !!(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
-  if (src && !isMobile && src.dataset.src) {
-    src.src = src.dataset.src;
-    vid.muted = true;
-    vid.load();
-    const p = vid.play();
-    if (p && typeof p.then === 'function') p.catch(() => { /* blocked: poster stays */ });
-  }
-  if (src && isMobile) {
-    // ── Mobile: lighter 720p source + robust autoplay ──────────────────────
-    // iOS/WebKit only grants muted autoplay when `muted` is set as a JS
-    // *property* (the HTML attribute alone is unreliable), and a programmatic
-    // load() drops the parse-time autoplay grant. Set the gating properties in
-    // script, then attempt playback across several readiness events — not just
-    // `canplay`, which can fail to fire under preload="metadata" on iOS.
-    vid.muted = true;
-    vid.defaultMuted = true;
-    vid.playsInline = true;
-
-    src.src = '/images/uploads/hero/hero-video-mobile.mp4';
-    vid.load();
-
-    // Idempotent play attempt: safe to call repeatedly. A rejected promise
-    // (autoplay policy / Low Power Mode) is caught so it never surfaces as an
-    // unhandled rejection — no visible UI is added; the poster simply remains
-    // and the tap fallback below stays armed.
-    let heroPlaying = false;
-    const tryPlay = () => {
-      if (heroPlaying) return;
-      vid.muted = true; // re-assert in case the property was reset
+  // Start the footage once the page has finished loading, so on phones it
+  // doesn't compete with the first screen for bandwidth. The still shown
+  // until then is the video's own frame, so nothing visibly changes.
+  const startHeroVideo = () => {
+    const src = vid.querySelector('source');
+    // The <source> ships with data-src only, so the browser fetches exactly one
+    // file: the desktop cut here, or the mobile cut in the branch below. (With a
+    // real src in the markup, phones began downloading the desktop file before
+    // this script could swap it.)
+    const isMobile = !!(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+    if (src && !isMobile && src.dataset.src) {
+      src.src = src.dataset.src;
+      vid.muted = true;
+      vid.load();
       const p = vid.play();
-      if (p && typeof p.then === 'function') {
-        p.then(() => { heroPlaying = true; }).catch(() => { /* blocked — poster stays, tap fallback armed */ });
-      }
-    };
-
-    tryPlay();                                      // immediately after load()
-    vid.addEventListener('loadedmetadata', tryPlay);
-    vid.addEventListener('loadeddata', tryPlay);
-    vid.addEventListener('canplay', tryPlay);
-
-    // Manual fallback: if autoplay cannot be granted, a tap anywhere on the
-    // hero starts playback (a real user gesture always satisfies the policy).
-    // The handler is attached to the .hero CONTAINER, not the video, so
-    // .hero-video-bg keeps pointer-events:none and the visual layering / hero
-    // design are unchanged. It adds no visible control and is removed once the
-    // video is actually playing. It never preventDefaults, so the "View the
-    // Work" CTA and all other hero interactions keep working.
-    const hero = vid.closest('.hero');
-    if (hero) {
-      const onTap = () => { vid.muted = true; tryPlay(); };
-      hero.addEventListener('click', onTap);
-      hero.addEventListener('touchstart', onTap, { passive: true });
-      vid.addEventListener('playing', () => {
-        heroPlaying = true;
-        hero.removeEventListener('click', onTap);
-        hero.removeEventListener('touchstart', onTap);
-      }, { once: true });
+      if (p && typeof p.then === 'function') p.catch(() => { /* blocked: poster stays */ });
     }
-  }
+    if (src && isMobile) {
+      // ── Mobile: lighter 720p source + robust autoplay ──────────────────────
+      // iOS/WebKit only grants muted autoplay when `muted` is set as a JS
+      // *property* (the HTML attribute alone is unreliable), and a programmatic
+      // load() drops the parse-time autoplay grant. Set the gating properties in
+      // script, then attempt playback across several readiness events — not just
+      // `canplay`, which can fail to fire under preload="metadata" on iOS.
+      vid.muted = true;
+      vid.defaultMuted = true;
+      vid.playsInline = true;
+
+      src.src = '/images/uploads/hero/hero-video-mobile.mp4';
+      vid.load();
+
+      // Idempotent play attempt: safe to call repeatedly. A rejected promise
+      // (autoplay policy / Low Power Mode) is caught so it never surfaces as an
+      // unhandled rejection — no visible UI is added; the poster simply remains
+      // and the tap fallback below stays armed.
+      let heroPlaying = false;
+      const tryPlay = () => {
+        if (heroPlaying) return;
+        vid.muted = true; // re-assert in case the property was reset
+        const p = vid.play();
+        if (p && typeof p.then === 'function') {
+          p.then(() => { heroPlaying = true; }).catch(() => { /* blocked — poster stays, tap fallback armed */ });
+        }
+      };
+
+      tryPlay();                                      // immediately after load()
+      vid.addEventListener('loadedmetadata', tryPlay);
+      vid.addEventListener('loadeddata', tryPlay);
+      vid.addEventListener('canplay', tryPlay);
+
+      // Manual fallback: if autoplay cannot be granted, a tap anywhere on the
+      // hero starts playback (a real user gesture always satisfies the policy).
+      // The handler is attached to the .hero CONTAINER, not the video, so
+      // .hero-video-bg keeps pointer-events:none and the visual layering / hero
+      // design are unchanged. It adds no visible control and is removed once the
+      // video is actually playing. It never preventDefaults, so the "View the
+      // Work" CTA and all other hero interactions keep working.
+      const hero = vid.closest('.hero');
+      if (hero) {
+        const onTap = () => { vid.muted = true; tryPlay(); };
+        hero.addEventListener('click', onTap);
+        hero.addEventListener('touchstart', onTap, { passive: true });
+        vid.addEventListener('playing', () => {
+          heroPlaying = true;
+          hero.removeEventListener('click', onTap);
+          hero.removeEventListener('touchstart', onTap);
+        }, { once: true });
+      }
+    }
+  };
+  if (document.readyState === 'complete') startHeroVideo();
+  else window.addEventListener('load', startHeroVideo, { once: true });
   const HERO_PLAYBACK_RATE = 0.78;
   const applyRate = () => { try { vid.playbackRate = HERO_PLAYBACK_RATE; } catch (e) { /* noop */ } };
   // Some browsers reset playbackRate on play; reapply on every play and after metadata loads.
@@ -2264,8 +2271,10 @@ function createProductCard(product, showSpecs) {
     const imgs = photos.map(p => p.image);
     const imagesJson = JSON.stringify(imgs).replace(/"/g, '&quot;');
     const dimAttr = p => (p.width && p.height) ? ` width="${p.width}" height="${p.height}"` : '';
+    // Mirrors build.js cardSrcsetAttrs: 640px card copy when the build found one.
+    const srcsetAttr = p => (p.thumb && p.width) ? ` srcset="${p.thumb} 640w, ${p.image} ${p.width}w" sizes="${photos.length > 1 ? '(max-width: 768px) 46vw, 200px' : '(max-width: 768px) 92vw, 400px'}"` : '';
     visualHTML = `<div class="product-images${multiClass}">
-      ${photos.map((p, i) => `<img src="${p.image}" alt="${p.alt || product.name}"${dimAttr(p)} loading="lazy" decoding="async" data-lightbox-index="${i}" data-lightbox-images="${imagesJson}">`).join('')}
+      ${photos.map((p, i) => `<img src="${p.image}"${srcsetAttr(p)} alt="${p.alt || product.name}"${dimAttr(p)} loading="lazy" decoding="async" data-lightbox-index="${i}" data-lightbox-images="${imagesJson}">`).join('')}
     </div>`;
   } else {
     visualHTML = `<div class="product-glyph">${product.glyph || '✦'}</div>`;
