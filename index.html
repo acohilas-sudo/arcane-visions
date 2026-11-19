@@ -26,7 +26,7 @@
 <!-- Hero fallback still — preloaded so the home above-the-fold paints without delay
      and serves as the poster/instant frame while the hero video buffers. Hero-page
      only; other routes can skip this without penalty since the still doesn't appear there. -->
-<link rel="preload" as="image" href="/images/uploads/hero/hero-fallback.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/images/uploads/hero/hero-fallback-v2.jpg" fetchpriority="high">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Arcane Visions">
@@ -144,8 +144,8 @@
       "@id": "https://arcanevisions.art/#hero-video",
       "name": "Arcane Visions atelier — cinematic hero footage",
       "description": "Atmospheric footage of relief, gold, and material surfaces from the Arcane Visions atelier in the Washington, DC region.",
-      "thumbnailUrl": "https://arcanevisions.art/images/uploads/hero/hero-fallback.jpg",
-      "contentUrl": "https://arcanevisions.art/images/uploads/hero/hero-video.mp4",
+      "thumbnailUrl": "https://arcanevisions.art/images/uploads/hero/hero-fallback-v2.jpg",
+      "contentUrl": "https://arcanevisions.art/images/uploads/hero/hero-video-v2.mp4",
       "uploadDate": "2026-05-27",
       "duration": "PT12S",
       "isFamilyFriendly": true,
@@ -1709,14 +1709,14 @@
   <div class="page active" id="page-home">
     <section class="hero">
       <div class="hero-bg-still" aria-hidden="true">
-        <img src="/images/uploads/hero/hero-fallback.jpg" alt="" width="2400" height="1600" fetchpriority="high" decoding="async">
+        <img src="/images/uploads/hero/hero-fallback-v2.jpg" alt="" width="2400" height="1600" fetchpriority="high" decoding="async">
       </div>
       <video class="hero-video-bg"
              autoplay muted loop playsinline
              preload="auto"
-             poster="/images/uploads/hero/hero-fallback.jpg"
+             poster="/images/uploads/hero/hero-fallback-v2.jpg"
              aria-hidden="true">
-        <source data-src="/images/uploads/hero/hero-video.mp4" type="video/mp4">
+        <source data-src="/images/uploads/hero/hero-video-v2.mp4" type="video/mp4">
       </video>
       <div class="hero-scrim" aria-hidden="true"></div>
 
@@ -2172,7 +2172,7 @@
       vid.defaultMuted = true;
       vid.playsInline = true;
 
-      src.src = '/images/uploads/hero/hero-video-mobile.mp4';
+      src.src = '/images/uploads/hero/hero-video-mobile-v2.mp4';
       vid.load();
 
       // Idempotent play attempt: safe to call repeatedly. A rejected promise
