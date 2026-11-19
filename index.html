@@ -1716,7 +1716,7 @@
              preload="auto"
              poster="/images/uploads/hero/hero-fallback.jpg"
              aria-hidden="true">
-        <source src="/images/uploads/hero/hero-video.mp4" type="video/mp4">
+        <source data-src="/images/uploads/hero/hero-video.mp4" type="video/mp4">
       </video>
       <div class="hero-scrim" aria-hidden="true"></div>
 
@@ -2145,7 +2145,19 @@
   const vid = document.querySelector('.hero-video-bg');
   if (!vid) return;
   const src = vid.querySelector('source');
-  if (src && window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+  // The <source> ships with data-src only, so the browser fetches exactly one
+  // file: the desktop cut here, or the mobile cut in the branch below. (With a
+  // real src in the markup, phones began downloading the desktop file before
+  // this script could swap it.)
+  const isMobile = !!(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+  if (src && !isMobile && src.dataset.src) {
+    src.src = src.dataset.src;
+    vid.muted = true;
+    vid.load();
+    const p = vid.play();
+    if (p && typeof p.then === 'function') p.catch(() => { /* blocked: poster stays */ });
+  }
+  if (src && isMobile) {
     // ── Mobile: lighter 720p source + robust autoplay ──────────────────────
     // iOS/WebKit only grants muted autoplay when `muted` is set as a JS
     // *property* (the HTML attribute alone is unreliable), and a programmatic
