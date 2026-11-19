@@ -87,6 +87,22 @@ function imgDims(refPath) {
   _dimCache.set(refPath, result);
   return result;
 }
+// Card thumbnails: a 640px "-640.jpg" sibling, when one has been generated, is
+// offered via srcset so product cards (~200-400px wide) don't pull the full-size
+// photo. The lightbox and product pages keep using the full image.
+const CARD_SIZES = { multi: '(max-width: 768px) 46vw, 200px', single: '(max-width: 768px) 92vw, 400px' };
+function thumbFor(refPath) {
+  if (!refPath) return null;
+  const t = refPath.replace(/\.(jpe?g)$/i, '-640.jpg');
+  if (t === refPath) return null;
+  return fs.existsSync(path.join(SRC, t.replace(/^\//, ''))) ? t : null;
+}
+function cardSrcsetAttrs(refPath, multi) {
+  const t = thumbFor(refPath), d = imgDims(refPath);
+  if (!t || !d) return '';
+  return ` srcset="${escapeAttr(t)} 640w, ${escapeAttr(refPath)} ${d.width}w" sizes="${multi ? CARD_SIZES.multi : CARD_SIZES.single}"`;
+}
+
 function dimAttrs(refPath) {
   const d = imgDims(refPath);
   return d ? ` width="${d.width}" height="${d.height}"` : '';
@@ -690,7 +706,7 @@ function renderProductCardHTML(product, showSpecs) {
     const multiClass = imgs.length > 1 ? ' multi' : '';
     const imagesJson = JSON.stringify(imgs).replace(/"/g, '&quot;');
     visualHTML = `<div class="product-images${multiClass}">
-      ${photos.map((p, i) => `<img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.alt || product.name)}"${dimAttrs(p.image)} loading="lazy" decoding="async" data-lightbox-index="${i}" data-lightbox-images="${imagesJson}">`).join('\n      ')}
+      ${photos.map((p, i) => `<img src="${escapeAttr(p.image)}"${cardSrcsetAttrs(p.image, imgs.length > 1)} alt="${escapeAttr(p.alt || product.name)}"${dimAttrs(p.image)} loading="lazy" decoding="async" data-lightbox-index="${i}" data-lightbox-images="${imagesJson}">`).join('\n      ')}
     </div>`;
   } else {
     visualHTML = `<div class="product-glyph">✦</div>`;
@@ -1096,7 +1112,8 @@ fs.writeFileSync(
       // matching the static build output. Same source of truth, same CLS budget.
       photos: (p.photos || []).map(ph => {
         const d = imgDims(ph.image);
-        return d ? { ...ph, width: d.width, height: d.height } : { ...ph };
+        const thumb = thumbFor(ph.image);
+        return d ? { ...ph, width: d.width, height: d.height, ...(thumb ? { thumb } : {}) } : { ...ph };
       }),
       specs: p.specs,
       price: p.price,
